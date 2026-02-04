@@ -1,0 +1,1 @@
+{"problem": "Let $n$ be a positive integer.  What is the greatest possible value of $\\gcd(n + 7, 2n + 1)$?", "solution": "13", "level": 4, "type": "Number Theory"}

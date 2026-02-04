@@ -1,0 +1,1 @@
+{"problem": "Let $f(x) = x^3 + 3x^2 + 1.$  There exist real numbers $a \\neq 0$ and $b,$ such that\n\\[f(x) - f(a) = (x - a)^2 (x - b).\\]Enter the ordered pair $(a,b).$", "solution": "(-2,1)", "level": 4, "type": "Intermediate Algebra"}

@@ -1,0 +1,1 @@
+{"problem": "Let $f$ be defined by  \\[f(x) = \\left\\{\n\\begin{array}{cl}\n3-x & \\text{ if } x \\leq 3, \\\\\n-x^3+2x^2+3x & \\text{ if } x>3.\n\\end{array}\n\\right.\\]Calculate $f^{-1}(0)+f^{-1}(6)$.", "solution": "0", "level": 5, "type": "Algebra"}

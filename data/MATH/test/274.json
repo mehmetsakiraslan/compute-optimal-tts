@@ -1,0 +1,1 @@
+{"problem": "Let $S$ be the union of the set of all points inside a regular nonagon with side length $2$ units and the set of all points less than $1$ unit away from a point on the perimeter of the nonagon.  What, in units, is the perimeter of $S$?", "solution": "18+2\\pi", "level": 5, "type": "Geometry"}

@@ -1,0 +1,104 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=16:ngpus=1:mem=128gb
+#PBS -l walltime=4:00:00
+#PBS -q workq@e5-cse-cbgpu01.eecscl.psu.edu
+#PBS -N tts_exec_graph
+#PBS -k oed
+#PBS -o /scratch/msa6093/compute-optimal-tts/exec_graph_profile.out
+#PBS -e /scratch/msa6093/compute-optimal-tts/exec_graph_profile.err
+#PBS -V
+
+# Execution Graph Profiling for Test-Time Compute
+# Generates Chrome trace files for visualizing LM/RM execution patterns
+# and dependency relationships.
+
+echo "========================================"
+echo "EXECUTION GRAPH PROFILING JOB START: $(date)"
+echo "HOST: $(hostname)"
+echo "========================================"
+
+which python3 || true
+python3 --version || true
+nvidia-smi || true
+
+# Source the system conda.sh
+if [ -f /usr/local/anaconda3/etc/profile.d/conda.sh ]; then
+    source /usr/local/anaconda3/etc/profile.d/conda.sh
+else
+    export PATH=/usr/local/anaconda3/bin:$PATH
+fi
+
+# Activate tts environment
+conda activate /scratch/msa6093/.conda/envs/tts
+
+# Set environment variables
+export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
+export CUDA_VISIBLE_DEVICES=0
+
+# Create timestamped profile output directory
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+PROFILE_DIR="/scratch/msa6093/compute-optimal-tts/profiles/${TIMESTAMP}"
+mkdir -p "${PROFILE_DIR}"
+
+echo ""
+echo "Profile output directory: ${PROFILE_DIR}"
+echo ""
+
+cd /scratch/msa6093/compute-optimal-tts/src
+
+# Configuration - adjust these as needed
+NUM_PROBLEMS=3
+# Use local model paths (same as run_beam.py)
+LM="/scratch/msa6093/models/Qwen2.5-1.5B-Instruct"
+RM="/scratch/msa6093/models/math-shepherd-mistral-7b-prm"
+METHOD="beam_search"
+TREE_MAX_DEPTH=40
+TREE_MAX_WIDTH=4
+NUM_SEQUENCE=1
+
+echo "Configuration:"
+echo "  LM: ${LM}"
+echo "  RM: ${RM}"
+echo "  Method: ${METHOD}"
+echo "  Num problems: ${NUM_PROBLEMS}"
+echo "  Tree depth: ${TREE_MAX_DEPTH}"
+echo "  Tree width: ${TREE_MAX_WIDTH}"
+echo "  Beam size: ${NUM_SEQUENCE}"
+echo ""
+
+# Run the execution graph profiling script
+# The script will start its own servers, so we don't need to pass controller_addr
+python3 scripts/profile_execution_graph.py \
+    --LM "${LM}" \
+    --RM "${RM}" \
+    --method "${METHOD}" \
+    --num_problems ${NUM_PROBLEMS} \
+    --tree_max_depth ${TREE_MAX_DEPTH} \
+    --tree_max_width ${TREE_MAX_WIDTH} \
+    --num_sequence ${NUM_SEQUENCE} \
+    --output_dir "${PROFILE_DIR}" \
+    --show_ascii_timeline
+
+rc=$?
+
+echo ""
+echo "========================================"
+echo "PROFILING JOB COMPLETED"
+echo "Exit code: $rc"
+echo "Profile directory: ${PROFILE_DIR}"
+echo "End time: $(date)"
+echo "========================================"
+
+# List generated profile files
+echo ""
+echo "Generated profile files:"
+ls -lh "${PROFILE_DIR}"/ 2>/dev/null || echo "No files found"
+
+echo ""
+echo "To visualize the execution graph:"
+echo "  1. Open https://ui.perfetto.dev/ or chrome://tracing"
+echo "  2. Load: ${PROFILE_DIR}/chrome_trace_*.json"
+echo ""
+echo "For programmatic analysis, see: ${PROFILE_DIR}/execution_graph_*.json"
+
+exit $rc

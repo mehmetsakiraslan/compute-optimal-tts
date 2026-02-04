@@ -1,0 +1,37 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=16:ngpus=1:mem=128gb
+#PBS -l walltime=200:00:00
+#PBS -q workq@e5-cse-cbgpu01.eecscl.psu.edu
+#PBS -N tts
+#PBS -k oed
+#PBS -o /scratch/msa6093/compute-optimal-tts/tts.out
+#PBS -e /scratch/msa6093/compute-optimal-tts/tts.err
+#PBS -V
+
+
+echo "JOB START: $(date)"
+echo "HOST: $(hostname)"
+which python3 || true
+python3 --version || true
+nvidia-smi || true
+
+# Source the system conda.sh
+if [ -f /usr/local/anaconda3/etc/profile.d/conda.sh ]; then
+    source /usr/local/anaconda3/etc/profile.d/conda.sh
+else
+    export PATH=/usr/local/anaconda3/bin:$PATH
+fi
+
+# activate tts
+conda activate /scratch/msa6093/.conda/envs/tts
+
+# Set environment variables
+export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
+export CUDA_VISIBLE_DEVICES=0
+
+cd /scratch/msa6093/compute-optimal-tts/src
+
+python3 scripts/run_beam.py
+rc=$?
+echo "python exit code = $rc"
+exit $rc

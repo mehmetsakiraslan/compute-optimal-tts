@@ -1,0 +1,1 @@
+{"problem": "A sequence $(a_n)$ is defined as follows:\n\\[a_{i + 1} = \\frac{1}{1 - a_i}\\]for $i \\ge 1.$  If $a_3 = a_1,$ compute $(a_9)^9.$", "solution": "-1", "level": 5, "type": "Intermediate Algebra"}

@@ -1,0 +1,2534 @@
+{
+  "traceEvents": [
+    {
+      "name": "process_name",
+      "ph": "M",
+      "pid": 1,
+      "args": {
+        "name": "Test-Time Scaling"
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "name": "Policy Model"
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "name": "Value Model"
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "pid": 1,
+      "tid": 3,
+      "args": {
+        "name": "Tree Model"
+      }
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 22233.9130859375,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 0,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 215,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 493090.6110839844,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 493381.5720214844,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 1,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 1366637.6879882812,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 0,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 493381.5720214844,
+      "pid": 1,
+      "tid": 2,
+      "id": 0,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 1367073.9189453125,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 2,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 152,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 1792939.607055664,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 1793187.9639892578,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 3,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 2025710.1629638672,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 1,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 1793187.9639892578,
+      "pid": 1,
+      "tid": 2,
+      "id": 1,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 2026049.8729248047,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 4,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 329,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 2659035.4759521484,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 2659195.8319091797,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 5,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 2896912.4420166016,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 2,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 2659195.8319091797,
+      "pid": 1,
+      "tid": 2,
+      "id": 2,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 2897359.0799560547,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 6,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 90,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 3090458.9599609375,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 3090562.0469970703,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 7,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 3342631.8349609375,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 3,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 3090562.0469970703,
+      "pid": 1,
+      "tid": 2,
+      "id": 3,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 3348493.7239990234,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 8,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 298,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 3916115.6849365234,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 3916501.2109375,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 9,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 4125447.9060058594,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 4,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 3916501.2109375,
+      "pid": 1,
+      "tid": 2,
+      "id": 4,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 4125945.5290527344,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 10,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 386,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 4893164.260009766,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 4893272.583984375,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 11,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 5140954.076049805,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 5,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 4893272.583984375,
+      "pid": 1,
+      "tid": 2,
+      "id": 5,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 5141334.50390625,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 12,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 178,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 5471246.838989258,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 5471352.369995117,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 13,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 5728544.980957031,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 6,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 5471352.369995117,
+      "pid": 1,
+      "tid": 2,
+      "id": 6,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 5728921.149047852,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 14,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 377,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 6384239.979003906,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 6384362.551025391,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 15,
+        "depth": 0,
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 6630951.99609375,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 7,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 6384362.551025391,
+      "pid": 1,
+      "tid": 2,
+      "id": 7,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 6631298.8310546875,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 16,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 27,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 6710950.697998047,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 6711039.74597168,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 17,
+        "depth": 0,
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 6906190.460083008,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 8,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 6711039.74597168,
+      "pid": 1,
+      "tid": 2,
+      "id": 8,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 6906517.947998047,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 18,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 552,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 7712928.518920898,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 7713040.685058594,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 19,
+        "depth": 0,
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 7869242.25793457,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 9,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 7713040.685058594,
+      "pid": 1,
+      "tid": 2,
+      "id": 9,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 7869565.345947266,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 20,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 36,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 7971560.429077148,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 7971679.649047852,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 21,
+        "depth": 0,
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 8236420.965942383,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 10,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 7971679.649047852,
+      "pid": 1,
+      "tid": 2,
+      "id": 10,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 8236804.677001953,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 22,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 375,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 9083174.229003906,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 9083274.521972656,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 23,
+        "depth": 0,
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 9390523.416992188,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 11,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 9083274.521972656,
+      "pid": 1,
+      "tid": 2,
+      "id": 11,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 9390901.470947266,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 24,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 257,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 10053861.61694336,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 10053999.764038086,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 25,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 10458196.067993164,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 12,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 10053999.764038086,
+      "pid": 1,
+      "tid": 2,
+      "id": 12,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 10458636.071044922,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 26,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 283,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 11250559.295898438,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 11250721.46899414,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 27,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 11698160.15600586,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 13,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 11250721.46899414,
+      "pid": 1,
+      "tid": 2,
+      "id": 13,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 11698618.108886719,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 28,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 149,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 11989953.140991211,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 11990069.566894531,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 29,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 12424238.529907227,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 14,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 11990069.566894531,
+      "pid": 1,
+      "tid": 2,
+      "id": 14,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 12424597.098022461,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 30,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 163,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 12884326.606933594,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 12884491.713012695,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 31,
+        "depth": 0,
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 13248764.096069336,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 15,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 12884491.713012695,
+      "pid": 1,
+      "tid": 2,
+      "id": 15,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 13586614.923950195,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 32,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 246,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 14053174.25793457,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 14053334.265014648,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 33,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 14260072.28503418,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 16,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 14053334.265014648,
+      "pid": 1,
+      "tid": 2,
+      "id": 16,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 14260442.236083984,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 34,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 150,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 14628107.880981445,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 14628228.916015625,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 35,
+        "depth": 0,
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 14786005.141967773,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 17,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 14628228.916015625,
+      "pid": 1,
+      "tid": 2,
+      "id": 17,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 14786390.66796875,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 36,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 204,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 15086938.735961914,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 15087064.102050781,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 37,
+        "depth": 0,
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 15222089.305908203,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 18,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 15087064.102050781,
+      "pid": 1,
+      "tid": 2,
+      "id": 18,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 15222473.854003906,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 38,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 48,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 15314063.144042969,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 15314188.510009766,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 39,
+        "depth": 0,
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 15447770.155029297,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 19,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 15314188.510009766,
+      "pid": 1,
+      "tid": 2,
+      "id": 19,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 15448040.791992188,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 40,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 220,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 15774827.2890625,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 15774945.041992188,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 41,
+        "depth": 0,
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 15915116.326049805,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 20,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 15774945.041992188,
+      "pid": 1,
+      "tid": 2,
+      "id": 20,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 15915411.057983398,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 42,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 48,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 16010889.835083008,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 16011000.114990234,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 43,
+        "depth": 0,
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 16149266.953979492,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 21,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 16011000.114990234,
+      "pid": 1,
+      "tid": 2,
+      "id": 21,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 16149577.401000977,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 44,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 188,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 16456800.315063477,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 16456943.140991211,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 45,
+        "depth": 0,
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 16634110.231079102,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 22,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 16456943.140991211,
+      "pid": 1,
+      "tid": 2,
+      "id": 22,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 16634445.121948242,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 46,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 52,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 16832748.353027344,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 16832880.354003906,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 47,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 17093530.619995117,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 23,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 16832880.354003906,
+      "pid": 1,
+      "tid": 2,
+      "id": 23,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 17093897.219970703,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 48,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 132,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 17310411.408081055,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 17310537.682006836,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 49,
+        "depth": 0,
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 17462428.6920166,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 24,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 17310537.682006836,
+      "pid": 1,
+      "tid": 2,
+      "id": 24,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 17462699.747924805,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 50,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 164,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 17763693.056030273,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 17763835.952026367,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 51,
+        "depth": 0,
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 18084070.175048828,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 25,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 17763835.952026367,
+      "pid": 1,
+      "tid": 2,
+      "id": 25,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 18084593.010009766,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 52,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 107,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 18304517.85095215,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 18304646.56994629,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 53,
+        "depth": 0,
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 18505436.0970459,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 26,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 18304646.56994629,
+      "pid": 1,
+      "tid": 2,
+      "id": 26,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 18505777.623046875,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 54,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 31,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 18591928.334960938,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 18592082.126953125,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 55,
+        "depth": 0,
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 18843190.891967773,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 27,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 18592082.126953125,
+      "pid": 1,
+      "tid": 2,
+      "id": 27,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 18843497.496948242,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 56,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 215,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 19248752.60192871,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 19248869.447021484,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 57,
+        "depth": 0,
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 19459465.874023438,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 28,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 19248869.447021484,
+      "pid": 1,
+      "tid": 2,
+      "id": 28,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 19466275.93395996,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 58,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 135,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 19718101.973999023,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 19718316.736938477,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 59,
+        "depth": 0,
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 19931385.213012695,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 29,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 19718316.736938477,
+      "pid": 1,
+      "tid": 2,
+      "id": 29,
+      "bp": "e"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "B",
+      "ts": 19931801.958984375,
+      "pid": 1,
+      "tid": 1,
+      "args": {
+        "event_id": 60,
+        "depth": 0,
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 60,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      },
+      "cname": "good"
+    },
+    {
+      "name": "lm_call",
+      "cat": "Policy",
+      "ph": "E",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "B",
+      "ts": 20060020.385009766,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "event_id": 61,
+        "depth": 0,
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      },
+      "cname": "bad"
+    },
+    {
+      "name": "rm_call",
+      "cat": "Value",
+      "ph": "E",
+      "ts": 20213609.736938477,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "s",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 1,
+      "id": 30,
+      "bp": "e"
+    },
+    {
+      "name": "dependency",
+      "cat": "flow",
+      "ph": "f",
+      "ts": 20060020.385009766,
+      "pid": 1,
+      "tid": 2,
+      "id": 30,
+      "bp": "e"
+    },
+    {
+      "name": "stall",
+      "cat": "stall",
+      "ph": "B",
+      "ts": 20059908.637939453,
+      "pid": 1,
+      "tid": 2,
+      "args": {
+        "stall_time_us": 111.7470703125
+      },
+      "cname": "grey"
+    },
+    {
+      "name": "stall",
+      "cat": "stall",
+      "ph": "E",
+      "ts": 20060020.385009766,
+      "pid": 1,
+      "tid": 2
+    },
+    {
+      "name": "Depth 0",
+      "cat": "depth",
+      "ph": "B",
+      "ts": 22233.9130859375,
+      "pid": 1,
+      "tid": 0,
+      "cname": "cq_build_running"
+    },
+    {
+      "name": "Depth 0",
+      "cat": "depth",
+      "ph": "E",
+      "ts": 20213609.736938477,
+      "pid": 1,
+      "tid": 0
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "pid": 1,
+      "tid": 0,
+      "args": {
+        "name": "Depth Progress"
+      }
+    }
+  ]
+}

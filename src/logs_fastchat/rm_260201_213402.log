@@ -1,0 +1,46 @@
+2026-02-01 21:34:02 | INFO | reward_model_worker | args: Namespace(host='0.0.0.0', port=10081, worker_address='http://0.0.0.0:10081', controller_address='http://0.0.0.0:10014', model_path='/scratch/msa6093/models/math-shepherd-mistral-7b-prm', revision='main', device='cuda', gpus=None, num_gpus=1, max_gpu_memory=None, dtype=None, load_8bit=False, cpu_offloading=False, gptq_ckpt=None, gptq_wbits=16, gptq_groupsize=-1, gptq_act_order=False, awq_ckpt=None, awq_wbits=16, awq_groupsize=-1, enable_exllama=False, exllama_max_seq_len=4096, exllama_gpu_split=None, exllama_cache_8bit=False, enable_xft=False, xft_max_seq_len=4096, xft_dtype=None, model_names=None, conv_template=None, embed_in_truncate=False, limit_worker_concurrency=5, stream_interval=2, no_register=False, seed=None, debug=False, ssl=False, good_tag='+', bad_tag='-', prm_step_tag='ки\n', prm_format_str='{question} {answer}')
+2026-02-01 21:34:02 | INFO | reward_model_worker | Loading the model ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'] on worker 5bedda80 ...
+2026-02-01 21:34:02 | ERROR | stderr | Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+2026-02-01 21:34:04 | ERROR | stderr | Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.20s/it]
+2026-02-01 21:34:06 | ERROR | stderr | Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.77s/it]
+2026-02-01 21:34:06 | ERROR | stderr | Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.84s/it]
+2026-02-01 21:34:06 | ERROR | stderr | 
+2026-02-01 21:34:08 | ERROR | stderr | INFO:     Started server process [304024]
+2026-02-01 21:34:08 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 21:34:08 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 21:34:08 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10081 (Press CTRL+C to quit)
+2026-02-01 21:34:43 | INFO | stdout | INFO:     127.0.0.1:34944 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:44 | INFO | stdout | INFO:     127.0.0.1:34948 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:45 | INFO | stdout | INFO:     127.0.0.1:34962 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:45 | INFO | stdout | INFO:     127.0.0.1:34966 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:46 | INFO | stdout | INFO:     127.0.0.1:34978 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:47 | INFO | stdout | INFO:     127.0.0.1:34986 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:47 | INFO | stdout | INFO:     127.0.0.1:34996 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:48 | INFO | stdout | INFO:     127.0.0.1:35010 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:49 | INFO | stdout | INFO:     127.0.0.1:35016 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:50 | INFO | stdout | INFO:     127.0.0.1:35028 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:50 | INFO | stdout | INFO:     127.0.0.1:35042 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:51 | INFO | stdout | INFO:     127.0.0.1:35050 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:52 | INFO | stdout | INFO:     127.0.0.1:36866 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:53 | INFO | stdout | INFO:     127.0.0.1:36876 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:54 | INFO | stdout | INFO:     127.0.0.1:36886 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:55 | INFO | stdout | INFO:     127.0.0.1:36892 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:56 | INFO | stdout | INFO:     127.0.0.1:36900 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:57 | INFO | stdout | INFO:     127.0.0.1:36908 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:57 | INFO | stdout | INFO:     127.0.0.1:36924 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:57 | INFO | stdout | INFO:     127.0.0.1:36926 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:58 | INFO | stdout | INFO:     127.0.0.1:36942 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:58 | INFO | stdout | INFO:     127.0.0.1:36944 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:58 | INFO | stdout | INFO:     127.0.0.1:36956 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:59 | INFO | stdout | INFO:     127.0.0.1:36968 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:34:59 | INFO | stdout | INFO:     127.0.0.1:36972 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:35:00 | INFO | stdout | INFO:     127.0.0.1:36986 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:35:00 | INFO | stdout | INFO:     127.0.0.1:36990 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:35:01 | INFO | stdout | INFO:     127.0.0.1:37004 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:35:01 | INFO | stdout | INFO:     127.0.0.1:44520 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:35:02 | INFO | stdout | INFO:     127.0.0.1:44522 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:35:02 | INFO | stdout | INFO:     127.0.0.1:44538 - "POST /worker_reward_inference HTTP/1.1" 200 OK
+2026-02-01 21:35:02 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 21:35:02 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 21:35:02 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 21:35:02 | ERROR | stderr | INFO:     Finished server process [304024]

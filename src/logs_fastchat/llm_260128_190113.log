@@ -1,0 +1,5 @@
+2026-01-28 19:01:19 | INFO | model_worker | Register to controller
+2026-01-28 19:02:04 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']. Semaphore: None. call_ct: 0. worker_id: 1f9ff83e. 
+2026-01-28 19:02:49 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']. Semaphore: Semaphore(value=0, locked=True). call_ct: 0. worker_id: 1f9ff83e. 
+2026-01-28 19:03:34 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']. Semaphore: Semaphore(value=0, locked=True). call_ct: 0. worker_id: 1f9ff83e. 
+2026-01-28 19:04:19 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']. Semaphore: Semaphore(value=5, locked=False). call_ct: 0. worker_id: 1f9ff83e. 

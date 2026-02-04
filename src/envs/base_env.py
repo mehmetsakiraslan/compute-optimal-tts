@@ -12,6 +12,9 @@ from utils import print_with_rank
 from transformers import PreTrainedTokenizer
 from reason.inference.lm_call import LMCallingConfig, ConcatedLMGenResult
 
+# NVTX profiling imports
+from reason.profiling.nvtx_utils import nvtx_range, NVTXColors
+
 INVALID_ANS = "[invalid]"
 
 
@@ -240,6 +243,10 @@ class CoTEnv(BaseEnv):
         return action
 
     def update_legal_actions(self, initial=False, force_update=False, custom_n=0):
+        with nvtx_range("update_legal_actions", NVTXColors.LM_GREEN):
+            return self._update_legal_actions_impl(initial, force_update, custom_n)
+
+    def _update_legal_actions_impl(self, initial=False, force_update=False, custom_n=0):
         if len(self.llm_gen_fns) == 1:
             if initial:
                 n = self.config["max_actions"]

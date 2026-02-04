@@ -1,0 +1,51 @@
+2026-02-01 21:34:10 | ERROR | stderr | Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+2026-02-01 21:34:10 | ERROR | stderr | 
+2026-02-01 21:34:10 | ERROR | stderr | Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.43it/s]
+2026-02-01 21:34:10 | ERROR | stderr | 
+2026-02-01 21:34:10 | ERROR | stderr | Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.43it/s]
+2026-02-01 21:34:10 | ERROR | stderr | 
+2026-02-01 21:34:10 | ERROR | stderr | 
+2026-02-01 21:34:32 | INFO | model_worker | Loading the model ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'] on worker 881a8c4a, worker type: vLLM worker...
+2026-02-01 21:34:32 | INFO | model_worker | Register to controller
+2026-02-01 21:34:32 | INFO | stdout | Namespace(host='0.0.0.0', port=10082, worker_address='http://0.0.0.0:10082', controller_address='http://0.0.0.0:10014', model_path='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', model_names=None, limit_worker_concurrency=1024, no_register=False, num_gpus=1, conv_template=None, trust_remote_code=True, gpu_memory_utilization=0.88, swap_space=16.0, max_model_length=8192, max_num_sequences=0, enable_chunked_prefill=False, model='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', task='auto', tokenizer=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', chat_template_text_format='string', allowed_local_media_path=None, download_dir=None, load_format='auto', config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, max_model_len=8192, guided_decoding_backend='outlines', distributed_executor_backend=None, worker_use_ray=False, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, ray_workers_use_nsight=False, block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, num_lookahead_slots=0, seed=0, cpu_offload_gb=0, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_seqs=256, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, hf_overrides=None, enforce_eager=False, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, limit_mm_per_prompt=None, mm_processor_kwargs=None, enable_lora=False, enable_lora_bias=False, max_loras=1, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', num_scheduler_steps=1, multi_step_stream_outputs=True, scheduler_delay_factor=0.0, speculative_model=None, speculative_model_quantization=None, num_speculative_tokens=None, speculative_disable_mqa_scorer=False, speculative_draft_tensor_parallel_size=None, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', typical_acceptance_sampler_posterior_threshold=None, typical_acceptance_sampler_posterior_alpha=None, disable_logprobs_during_spec_decoding=None, model_loader_extra_config=None, ignore_patterns=[], preemption_mode=None, served_model_name=None, qlora_adapter_name_or_path=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, scheduling_policy='fcfs', override_neuron_config=None, override_pooler_config=None, disable_log_requests=False)
+2026-02-01 21:34:32 | INFO | stdout | **************************************************
+2026-02-01 21:34:32 | INFO | stdout | AsyncEngineArgs(model='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', served_model_name=None, tokenizer='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', task='auto', skip_tokenizer_init=False, tokenizer_mode='auto', chat_template_text_format='string', trust_remote_code=True, allowed_local_media_path=None, download_dir=None, load_format='auto', config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, seed=0, max_model_len=8192, worker_use_ray=False, distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, swap_space=16.0, cpu_offload_gb=0, gpu_memory_utilization=0.88, max_num_batched_tokens=None, max_num_seqs=256, max_logprobs=20, disable_log_stats=False, revision=None, code_revision=None, rope_scaling=None, rope_theta=None, hf_overrides=None, tokenizer_revision=None, quantization=None, enforce_eager=False, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, limit_mm_per_prompt=None, mm_processor_kwargs=None, enable_lora=False, enable_lora_bias=False, max_loras=1, max_lora_rank=16, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, fully_sharded_loras=False, lora_extra_vocab_size=256, long_lora_scaling_factors=None, lora_dtype='auto', max_cpu_loras=None, device='auto', num_scheduler_steps=1, multi_step_stream_outputs=True, ray_workers_use_nsight=False, num_gpu_blocks_override=None, num_lookahead_slots=0, model_loader_extra_config=None, ignore_patterns=[], preemption_mode=None, scheduler_delay_factor=0.0, enable_chunked_prefill=False, guided_decoding_backend='outlines', speculative_model=None, speculative_model_quantization=None, speculative_draft_tensor_parallel_size=None, num_speculative_tokens=None, speculative_disable_mqa_scorer=False, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', typical_acceptance_sampler_posterior_threshold=None, typical_acceptance_sampler_posterior_alpha=None, qlora_adapter_name_or_path=None, disable_logprobs_during_spec_decoding=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, scheduling_policy='fcfs', override_neuron_config=None, override_pooler_config=None, disable_log_requests=False)
+2026-02-01 21:34:32 | ERROR | stderr | INFO:     Started server process [304078]
+2026-02-01 21:34:32 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 21:34:32 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 21:34:32 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10082 (Press CTRL+C to quit)
+2026-02-01 21:34:42 | INFO | stdout | INFO:     127.0.0.1:37152 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:44 | INFO | stdout | INFO:     127.0.0.1:37168 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:44 | INFO | stdout | INFO:     127.0.0.1:37178 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:45 | INFO | stdout | INFO:     127.0.0.1:37190 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:46 | INFO | stdout | INFO:     127.0.0.1:37200 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:47 | INFO | stdout | INFO:     127.0.0.1:37206 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:47 | INFO | stdout | INFO:     127.0.0.1:37220 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:48 | INFO | stdout | INFO:     127.0.0.1:37226 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:48 | INFO | stdout | INFO:     127.0.0.1:37236 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:49 | INFO | stdout | INFO:     127.0.0.1:37250 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:50 | INFO | stdout | INFO:     127.0.0.1:37256 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:51 | INFO | stdout | INFO:     127.0.0.1:37268 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:52 | INFO | stdout | INFO:     127.0.0.1:35936 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:53 | INFO | stdout | INFO:     127.0.0.1:35946 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:54 | INFO | stdout | INFO:     127.0.0.1:35952 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:55 | INFO | stdout | INFO:     127.0.0.1:35966 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:56 | INFO | stdout | INFO:     127.0.0.1:35976 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:56 | INFO | stdout | INFO:     127.0.0.1:35982 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:57 | INFO | stdout | INFO:     127.0.0.1:35986 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:57 | INFO | stdout | INFO:     127.0.0.1:35996 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:58 | INFO | stdout | INFO:     127.0.0.1:35998 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:58 | INFO | stdout | INFO:     127.0.0.1:36010 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:58 | INFO | stdout | INFO:     127.0.0.1:36024 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:59 | INFO | stdout | INFO:     127.0.0.1:36028 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:34:59 | INFO | stdout | INFO:     127.0.0.1:36038 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:35:00 | INFO | stdout | INFO:     127.0.0.1:36044 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:35:00 | INFO | stdout | INFO:     127.0.0.1:36048 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:35:00 | INFO | stdout | INFO:     127.0.0.1:36050 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:35:01 | INFO | stdout | INFO:     127.0.0.1:36060 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:35:01 | INFO | stdout | INFO:     127.0.0.1:37172 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:35:02 | INFO | stdout | INFO:     127.0.0.1:37174 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 21:35:03 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 21:35:03 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 21:35:03 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 21:35:03 | ERROR | stderr | INFO:     Finished server process [304078]

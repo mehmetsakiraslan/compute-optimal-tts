@@ -9,6 +9,9 @@ from typing import List, Optional, Tuple, Union
 
 import requests
 
+# NVTX profiling imports
+from reason.profiling.nvtx_utils import nvtx_range, NVTXColors
+
 from reason.inference.infer_fns import (
     _math_shepherd_infer_fn,
     _skywork_infer_fn,
@@ -167,12 +170,13 @@ def _reward_inference_fastchat(input_str, model_name, controller_addr="http://lo
     headers = {"User-Agent": "FastChat Client"}
     gen_params = {"input_str": input_str}
     try:
-        if timeout > 0:
-            response = requests.post(worker_addr + "/worker_reward_inference", headers=headers, json=gen_params, stream=True, timeout=timeout)
-        else:
-            response = requests.post(worker_addr + "/worker_reward_inference", headers=headers, json=gen_params, stream=True)
-        results = response.json()
-        reward = results["reward"]
+        with nvtx_range("rm_http_request", NVTXColors.HTTP_ORANGE):
+            if timeout > 0:
+                response = requests.post(worker_addr + "/worker_reward_inference", headers=headers, json=gen_params, stream=True, timeout=timeout)
+            else:
+                response = requests.post(worker_addr + "/worker_reward_inference", headers=headers, json=gen_params, stream=True)
+            results = response.json()
+            reward = results["reward"]
     except Exception as e:
         for i in range(len(input_str)):
             print(f'input_str {i}: {input_str[i]}')

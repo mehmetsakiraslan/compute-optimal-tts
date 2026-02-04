@@ -1,0 +1,981 @@
+2026-01-28 14:18:48 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 14:18:48 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2538211[0m]
+2026-01-28 14:18:48 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 14:18:48 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 14:18:48 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 14:19:02 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 14:19:02 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 14:19:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52722 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:19:22 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 14:19:22 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 14:19:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36544 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:19:47 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 14:19:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48058 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:20:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 14:20:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53020 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:24:33 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 14:24:33 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2553920[0m]
+2026-01-28 14:24:33 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 14:24:33 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 14:24:33 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 14:24:47 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 14:24:47 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 14:24:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49300 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:25:06 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 14:25:06 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 14:25:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52046 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:25:32 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 14:25:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41762 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:25:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 14:25:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57524 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:28:32 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 14:28:32 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2569154[0m]
+2026-01-28 14:28:32 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 14:28:32 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 14:28:32 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 14:28:46 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 14:28:46 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 14:28:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49648 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:29:05 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 14:29:05 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 14:29:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49552 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:29:31 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 14:29:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57248 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:29:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 14:29:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46024 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:33:45 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 14:33:45 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2584995[0m]
+2026-01-28 14:33:45 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 14:33:45 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 14:33:45 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 14:33:58 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 14:33:58 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 14:33:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35518 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:34:18 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 14:34:18 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 14:34:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38582 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:34:44 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 14:34:44 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48246 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 14:35:03 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 14:35:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53424 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:18:02 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 18:18:02 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2696683[0m]
+2026-01-28 18:18:02 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 18:18:02 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 18:18:02 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 18:18:16 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 18:18:16 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:18:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39580 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:18:35 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 18:18:35 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:18:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33902 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:19:01 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 18:19:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47126 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:19:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 18:19:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37792 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:31:23 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 18:31:23 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2714787[0m]
+2026-01-28 18:31:23 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 18:31:23 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 18:31:23 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 18:31:36 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 18:31:36 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:31:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38042 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:31:56 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 18:31:56 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:31:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48296 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:32:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 18:32:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39576 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:32:41 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 18:32:41 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45136 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:47:03 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 18:47:03 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2731552[0m]
+2026-01-28 18:47:03 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 18:47:03 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 18:47:03 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 18:47:17 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 18:47:17 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:47:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50506 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:47:36 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 18:47:36 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:47:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43654 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:48:02 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 18:48:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50348 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:48:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 18:48:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43184 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:51:47 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 18:51:47 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2746771[0m]
+2026-01-28 18:51:47 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 18:51:47 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 18:51:47 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 18:52:01 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 18:52:01 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:52:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57116 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:52:20 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 18:52:20 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:52:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33492 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:52:46 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 18:52:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59262 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:53:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 18:53:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54608 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:58:10 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 18:58:10 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2762712[0m]
+2026-01-28 18:58:10 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 18:58:10 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 18:58:10 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 18:58:23 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 18:58:23 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:58:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52102 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 18:58:43 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 18:58:43 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 18:58:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57758 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:01:06 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 19:01:06 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2768453[0m]
+2026-01-28 19:01:06 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 19:01:06 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 19:01:06 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 19:01:19 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 19:01:19 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 19:01:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47210 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:01:39 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 19:01:39 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 19:01:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41028 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:02:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 19:02:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43556 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:02:24 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 19:02:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59958 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:02:49 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 19:02:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43758 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:03:09 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 19:03:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42228 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:03:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 19:03:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38850 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:03:54 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 19:03:54 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43576 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 19:04:19 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 19:04:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37888 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:08:32 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 22:08:32 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2831158[0m]
+2026-01-28 22:08:32 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 22:08:32 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 22:08:32 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 22:08:45 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 22:08:45 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 22:08:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47626 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:09:05 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 22:09:05 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 22:09:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47234 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:19:41 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 22:19:41 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2837486[0m]
+2026-01-28 22:19:41 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 22:19:41 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 22:19:41 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 22:19:54 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 22:19:54 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 22:19:54 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38578 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:20:14 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 22:20:14 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 22:20:14 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52528 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:20:39 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 22:20:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33232 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:20:59 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 22:20:59 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52974 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:21:24 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 22:21:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35596 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:41:43 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 22:41:43 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2845697[0m]
+2026-01-28 22:41:43 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 22:41:43 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 22:41:43 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 22:41:56 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 22:41:56 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 22:41:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43916 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:42:16 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 22:42:16 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 22:42:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52350 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:47:26 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-28 22:47:26 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2851306[0m]
+2026-01-28 22:47:26 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-28 22:47:26 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-28 22:47:26 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-28 22:47:39 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-28 22:47:39 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-28 22:47:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51578 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:47:59 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-28 22:47:59 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-28 22:47:59 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38838 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:48:24 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 22:48:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54246 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:48:44 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-28 22:48:44 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54436 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-28 22:49:09 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-28 22:49:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54398 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:49:30 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 10:49:30 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2998286[0m]
+2026-01-29 10:49:30 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 10:49:30 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 10:49:30 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 10:49:43 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 10:49:43 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 10:49:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58368 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:50:03 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 10:50:03 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 10:50:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49346 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:50:28 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 10:50:28 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60890 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:54:49 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 10:54:49 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3004064[0m]
+2026-01-29 10:54:49 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 10:54:49 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 10:54:49 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 10:55:03 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 10:55:03 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 10:55:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56684 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:55:22 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 10:55:22 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 10:55:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57478 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:55:48 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 10:55:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46888 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:56:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 10:56:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35862 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:56:33 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 10:56:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47002 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:56:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 10:56:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59920 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:57:18 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 10:57:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43962 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:57:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 10:57:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58586 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:58:03 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 10:58:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54224 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 10:58:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 10:58:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55518 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:38:38 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 11:38:38 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3038094[0m]
+2026-01-29 11:38:38 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 11:38:38 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 11:38:38 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 11:38:51 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 11:38:51 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 11:38:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35482 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:39:11 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 11:39:11 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 11:39:11 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45764 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:39:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 11:39:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51128 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:39:56 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 11:39:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41782 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:40:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 11:40:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58458 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:40:41 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 11:40:41 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42118 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:41:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 11:41:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59184 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:41:26 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 11:41:26 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51170 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:41:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 11:41:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36626 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:42:11 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 11:42:11 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47994 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:42:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 11:42:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60412 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:42:56 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 11:42:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50080 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 11:43:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 11:43:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38544 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:00:35 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 13:00:35 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3087444[0m]
+2026-01-29 13:00:35 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 13:00:35 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 13:00:35 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 13:00:48 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 13:00:48 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 13:00:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55392 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:08 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 13:01:08 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 13:01:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49678 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:33 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:01:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39808 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:53 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:01:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46604 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:19 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:02:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46394 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:38 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:02:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58092 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:03:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49312 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:23 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:03:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37558 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:49 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:03:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42648 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:04:08 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:04:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58764 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:04:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:04:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57190 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:04:53 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:04:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57498 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:05:19 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:05:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33296 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:05:38 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:05:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55728 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:06:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:06:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40594 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:06:23 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:06:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42392 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:06:49 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:06:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38394 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:07:08 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:07:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45854 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:07:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:07:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43892 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:07:53 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:07:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42956 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:08:19 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:08:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52064 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:08:38 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:08:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40952 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:09:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:09:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:32980 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:09:23 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:09:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38682 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:09:49 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:09:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37204 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:10:08 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:10:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59156 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:10:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 13:10:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45942 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:10:53 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-29 13:10:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34460 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:26:29 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 15:26:29 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3149344[0m]
+2026-01-29 15:26:29 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 15:26:29 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 15:26:29 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 15:26:42 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 15:26:42 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:26:42 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36474 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:27:02 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 15:27:02 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:27:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38882 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:27:27 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 15:27:27 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43194 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:28:18 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 15:28:18 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3154836[0m]
+2026-01-29 15:28:18 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 15:28:18 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 15:28:18 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 15:28:31 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 15:28:31 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:28:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59590 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:28:51 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 15:28:51 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:28:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43902 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:29:16 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 15:29:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42104 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:30:55 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 15:30:55 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3160561[0m]
+2026-01-29 15:30:55 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 15:30:55 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 15:30:55 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 15:31:08 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 15:31:08 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:31:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46524 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:31:27 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 15:31:27 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:31:27 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35352 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:31:53 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 15:31:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50374 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:34:18 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 15:34:18 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3166896[0m]
+2026-01-29 15:34:18 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 15:34:18 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 15:34:18 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 15:34:31 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 15:34:31 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:34:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50534 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:34:50 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 15:34:50 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:34:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48486 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:35:16 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 15:35:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53426 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:40:58 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 15:40:58 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3172952[0m]
+2026-01-29 15:40:58 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 15:40:58 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 15:40:58 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 15:41:12 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 15:41:12 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:41:12 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38050 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:41:31 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 15:41:31 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:41:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41360 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:41:57 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 15:41:57 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57028 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:47:00 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-29 15:47:00 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3178978[0m]
+2026-01-29 15:47:00 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 15:47:00 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 15:47:00 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-29 15:47:13 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-29 15:47:13 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:47:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52336 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:47:34 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-29 15:47:34 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-29 15:47:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34492 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 15:47:58 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-29 15:47:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36870 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-30 10:02:35 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-30 10:02:35 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3429297[0m]
+2026-01-30 10:02:35 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-30 10:02:35 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-30 10:02:35 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-30 10:02:48 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-30 10:02:48 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-30 10:02:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40852 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-30 10:03:09 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-30 10:03:09 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-30 10:03:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44502 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-30 10:35:27 | ERROR | stderr | usage: controller.py [-h] [--host HOST] [--port PORT]
+2026-01-30 10:35:27 | ERROR | stderr |                      [--dispatch-method {lottery,shortest_queue}] [--ssl]
+2026-01-30 10:35:27 | ERROR | stderr | controller.py: error: argument --port: invalid int value: 'HOST_ADDR'
+2026-01-30 11:33:41 | ERROR | stderr | usage: controller.py [-h] [--host HOST] [--port PORT]
+2026-01-30 11:33:41 | ERROR | stderr |                      [--dispatch-method {lottery,shortest_queue}] [--ssl]
+2026-01-30 11:33:41 | ERROR | stderr | controller.py: error: argument --port: invalid int value: 'HOST_ADDR'
+2026-01-30 11:37:26 | ERROR | stderr | usage: controller.py [-h] [--host HOST] [--port PORT]
+2026-01-30 11:37:26 | ERROR | stderr |                      [--dispatch-method {lottery,shortest_queue}] [--ssl]
+2026-01-30 11:37:26 | ERROR | stderr | controller.py: error: argument --port: invalid int value: 'HOST_ADDR'
+2026-01-30 12:04:34 | ERROR | stderr | usage: controller.py [-h] [--host HOST] [--port PORT]
+2026-01-30 12:04:34 | ERROR | stderr |                      [--dispatch-method {lottery,shortest_queue}] [--ssl]
+2026-01-30 12:04:34 | ERROR | stderr | controller.py: error: argument --port: invalid int value: 'HOST_ADDR'
+2026-01-30 12:07:16 | ERROR | stderr | usage: controller.py [-h] [--host HOST] [--port PORT]
+2026-01-30 12:07:16 | ERROR | stderr |                      [--dispatch-method {lottery,shortest_queue}] [--ssl]
+2026-01-30 12:07:16 | ERROR | stderr | controller.py: error: argument --port: invalid int value: '0.0.0.0'
+2026-01-30 16:31:40 | ERROR | stderr | usage: controller.py [-h] [--host HOST] [--port PORT]
+2026-01-30 16:31:40 | ERROR | stderr |                      [--dispatch-method {lottery,shortest_queue}] [--ssl]
+2026-01-30 16:31:40 | ERROR | stderr | controller.py: error: argument --port: invalid int value: '0.0.0.0'
+2026-01-30 16:36:45 | INFO | controller | args: Namespace(host='/scratch/msa6093/tts_logs/20260130_163642/serve.log', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-30 16:36:45 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3544133[0m]
+2026-01-30 16:36:45 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-30 16:36:45 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-30 16:36:45 | ERROR | stderr | [31mERROR[0m:    [Errno -2] Name or service not known
+2026-01-30 16:36:45 | ERROR | stderr | [32mINFO[0m:     Waiting for application shutdown.
+2026-01-30 16:36:45 | ERROR | stderr | [32mINFO[0m:     Application shutdown complete.
+2026-01-30 16:38:59 | INFO | controller | args: Namespace(host='/scratch/msa6093/tts_logs/20260130_163856', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-30 16:38:59 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3547290[0m]
+2026-01-30 16:38:59 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-30 16:38:59 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-30 16:38:59 | ERROR | stderr | [31mERROR[0m:    [Errno -2] Name or service not known
+2026-01-30 16:38:59 | ERROR | stderr | [32mINFO[0m:     Waiting for application shutdown.
+2026-01-30 16:38:59 | ERROR | stderr | [32mINFO[0m:     Application shutdown complete.
+2026-01-30 16:42:34 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-30 16:42:34 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3550904[0m]
+2026-01-30 16:42:34 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-30 16:42:34 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-30 16:42:34 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:10014[0m (Press CTRL+C to quit)
+2026-01-30 16:54:05 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-30 16:54:05 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3557106[0m]
+2026-01-30 16:54:05 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-30 16:54:05 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-30 16:54:05 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:10014[0m (Press CTRL+C to quit)
+2026-01-31 13:09:17 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-31 13:09:17 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3815348[0m]
+2026-01-31 13:09:17 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-31 13:09:17 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-31 13:09:17 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:10014[0m (Press CTRL+C to quit)
+2026-01-31 13:17:21 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-31 13:17:21 | ERROR | stderr | INFO:     Started server process [3822127]
+2026-01-31 13:17:21 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-01-31 13:17:21 | ERROR | stderr | INFO:     Application startup complete.
+2026-01-31 13:17:21 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-01-31 13:17:28 | INFO | stdout | INFO:     127.0.0.1:43116 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:17:34 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-01-31 13:17:34 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-31 13:17:34 | INFO | stdout | INFO:     127.0.0.1:42618 - "POST /register_worker HTTP/1.1" 200 OK
+2026-01-31 13:17:38 | INFO | stdout | INFO:     127.0.0.1:42622 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:17:48 | INFO | stdout | INFO:     127.0.0.1:59354 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:17:58 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-01-31 13:17:58 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-31 13:17:58 | INFO | stdout | INFO:     127.0.0.1:39536 - "POST /register_worker HTTP/1.1" 200 OK
+2026-01-31 13:17:58 | INFO | stdout | INFO:     127.0.0.1:39540 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:18:08 | INFO | stdout | INFO:     127.0.0.1:60694 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:18:18 | INFO | stdout | INFO:     127.0.0.1:47526 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:18:19 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-01-31 13:18:19 | INFO | stdout | INFO:     127.0.0.1:47534 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:18:28 | INFO | stdout | INFO:     127.0.0.1:60802 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:18:38 | INFO | stdout | INFO:     127.0.0.1:34494 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:18:43 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-01-31 13:18:43 | INFO | stdout | INFO:     127.0.0.1:49276 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:18:48 | INFO | stdout | INFO:     127.0.0.1:49288 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:18:58 | INFO | stdout | INFO:     127.0.0.1:56798 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:19:04 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-01-31 13:19:04 | INFO | stdout | INFO:     127.0.0.1:39692 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:19:08 | INFO | stdout | INFO:     127.0.0.1:39694 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:19:18 | INFO | stdout | INFO:     127.0.0.1:48936 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:19:28 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-01-31 13:19:28 | INFO | stdout | INFO:     127.0.0.1:35768 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:19:28 | INFO | stdout | INFO:     127.0.0.1:35784 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:19:38 | INFO | stdout | INFO:     127.0.0.1:33562 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:19:48 | INFO | stdout | INFO:     127.0.0.1:40370 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:19:49 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-01-31 13:19:49 | INFO | stdout | INFO:     127.0.0.1:40384 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:19:58 | INFO | stdout | INFO:     127.0.0.1:37508 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:20:08 | INFO | stdout | INFO:     127.0.0.1:52598 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:20:13 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-01-31 13:20:13 | INFO | stdout | INFO:     127.0.0.1:35440 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:20:18 | INFO | stdout | INFO:     127.0.0.1:35448 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:20:28 | INFO | stdout | INFO:     127.0.0.1:37484 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:20:34 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-01-31 13:20:34 | INFO | stdout | INFO:     127.0.0.1:36024 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:20:38 | INFO | stdout | INFO:     127.0.0.1:36036 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:20:48 | INFO | stdout | INFO:     127.0.0.1:37858 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:20:58 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-01-31 13:20:58 | INFO | stdout | INFO:     127.0.0.1:45688 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:20:58 | INFO | stdout | INFO:     127.0.0.1:45704 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:21:08 | INFO | stdout | INFO:     127.0.0.1:45052 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:21:18 | INFO | stdout | INFO:     127.0.0.1:35518 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:21:19 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-01-31 13:21:19 | INFO | stdout | INFO:     127.0.0.1:35530 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:21:28 | INFO | stdout | INFO:     127.0.0.1:56164 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:21:38 | INFO | stdout | INFO:     127.0.0.1:37238 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:21:43 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-01-31 13:21:43 | INFO | stdout | INFO:     127.0.0.1:46588 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:21:48 | INFO | stdout | INFO:     127.0.0.1:46596 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:21:58 | INFO | stdout | INFO:     127.0.0.1:59138 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:22:04 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-01-31 13:22:04 | INFO | stdout | INFO:     127.0.0.1:58238 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:22:08 | INFO | stdout | INFO:     127.0.0.1:58240 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:22:18 | INFO | stdout | INFO:     127.0.0.1:50370 - "GET /list_models HTTP/1.1" 405 Method Not Allowed
+2026-01-31 13:22:28 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-01-31 13:22:28 | INFO | stdout | INFO:     127.0.0.1:33184 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-01-31 13:22:28 | ERROR | stderr | INFO:     Shutting down
+2026-01-31 13:22:29 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-01-31 13:22:29 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-01-31 13:22:29 | ERROR | stderr | INFO:     Finished server process [3822127]
+2026-01-31 13:30:14 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-31 13:30:14 | ERROR | stderr | INFO:     Started server process [3829833]
+2026-01-31 13:30:14 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-01-31 13:30:14 | ERROR | stderr | INFO:     Application startup complete.
+2026-01-31 13:30:14 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-01-31 13:30:20 | INFO | stdout | INFO:     127.0.0.1:41980 - "POST /list_models HTTP/1.1" 200 OK
+2026-01-31 13:30:27 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-01-31 13:30:27 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-31 13:30:27 | INFO | stdout | INFO:     127.0.0.1:51460 - "POST /register_worker HTTP/1.1" 200 OK
+2026-01-31 13:30:30 | INFO | stdout | INFO:     127.0.0.1:51466 - "POST /list_models HTTP/1.1" 200 OK
+2026-01-31 13:30:40 | INFO | stdout | INFO:     127.0.0.1:42286 - "POST /list_models HTTP/1.1" 200 OK
+2026-01-31 13:30:50 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-01-31 13:30:50 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-31 13:30:50 | INFO | stdout | INFO:     127.0.0.1:60980 - "POST /register_worker HTTP/1.1" 200 OK
+2026-01-31 13:30:50 | INFO | stdout | INFO:     127.0.0.1:60988 - "POST /list_models HTTP/1.1" 200 OK
+2026-01-31 13:31:03 | ERROR | stderr | INFO:     Shutting down
+2026-01-31 13:31:03 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-01-31 13:31:03 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-01-31 13:31:03 | ERROR | stderr | INFO:     Finished server process [3829833]
+2026-01-31 14:22:19 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-31 14:22:19 | ERROR | stderr | INFO:     Started server process [3866925]
+2026-01-31 14:22:19 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-01-31 14:22:19 | ERROR | stderr | INFO:     Application startup complete.
+2026-01-31 14:22:19 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-01-31 14:22:26 | INFO | stdout | INFO:     127.0.0.1:44352 - "POST /list_models HTTP/1.1" 200 OK
+2026-01-31 14:22:32 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-01-31 14:22:32 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-31 14:22:32 | INFO | stdout | INFO:     127.0.0.1:48248 - "POST /register_worker HTTP/1.1" 200 OK
+2026-01-31 14:22:36 | INFO | stdout | INFO:     127.0.0.1:48264 - "POST /list_models HTTP/1.1" 200 OK
+2026-01-31 14:22:46 | INFO | stdout | INFO:     127.0.0.1:49848 - "POST /list_models HTTP/1.1" 200 OK
+2026-01-31 14:22:55 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-01-31 14:22:55 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-31 14:22:55 | INFO | stdout | INFO:     127.0.0.1:44972 - "POST /register_worker HTTP/1.1" 200 OK
+2026-01-31 14:22:56 | INFO | stdout | INFO:     127.0.0.1:44978 - "POST /list_models HTTP/1.1" 200 OK
+2026-01-31 14:22:56 | ERROR | stderr | INFO:     Shutting down
+2026-01-31 14:22:56 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-01-31 14:22:56 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-01-31 14:22:56 | ERROR | stderr | INFO:     Finished server process [3866925]
+2026-02-01 09:25:50 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 09:25:50 | ERROR | stderr | INFO:     Started server process [4155155]
+2026-02-01 09:25:50 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 09:25:50 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 09:25:50 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 09:25:56 | INFO | stdout | INFO:     127.0.0.1:34712 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:26:03 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 09:26:03 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:26:03 | INFO | stdout | INFO:     127.0.0.1:42844 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:26:06 | INFO | stdout | INFO:     127.0.0.1:42846 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:26:16 | INFO | stdout | INFO:     127.0.0.1:34322 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:26:26 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 09:26:26 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:26:26 | INFO | stdout | INFO:     127.0.0.1:37028 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:26:26 | INFO | stdout | INFO:     127.0.0.1:37038 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:26:26 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 09:26:26 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 09:26:26 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 09:26:26 | ERROR | stderr | INFO:     Finished server process [4155155]
+2026-02-01 09:40:13 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 09:40:13 | ERROR | stderr | INFO:     Started server process [4163191]
+2026-02-01 09:40:13 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 09:40:13 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 09:40:13 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 09:40:20 | INFO | stdout | INFO:     127.0.0.1:59346 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:40:26 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 09:40:26 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:40:26 | INFO | stdout | INFO:     127.0.0.1:37892 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:40:30 | INFO | stdout | INFO:     127.0.0.1:37900 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:40:40 | INFO | stdout | INFO:     127.0.0.1:57904 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:40:49 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 09:40:49 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:40:49 | INFO | stdout | INFO:     127.0.0.1:59088 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:40:50 | INFO | stdout | INFO:     127.0.0.1:59092 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:40:50 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 09:40:50 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 09:40:50 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 09:40:50 | ERROR | stderr | INFO:     Finished server process [4163191]
+2026-02-01 09:45:30 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 09:45:30 | ERROR | stderr | INFO:     Started server process [4184082]
+2026-02-01 09:45:30 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 09:45:30 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 09:45:30 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 09:45:37 | INFO | stdout | INFO:     127.0.0.1:36600 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:45:43 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 09:45:43 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:45:43 | INFO | stdout | INFO:     127.0.0.1:58766 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:45:47 | INFO | stdout | INFO:     127.0.0.1:58770 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:45:57 | INFO | stdout | INFO:     127.0.0.1:37560 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:46:07 | INFO | stdout | INFO:     127.0.0.1:35050 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:46:07 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 09:46:07 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:46:07 | INFO | stdout | INFO:     127.0.0.1:35058 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:46:17 | INFO | stdout | INFO:     127.0.0.1:47890 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:46:28 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 09:46:28 | INFO | stdout | INFO:     127.0.0.1:59284 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:46:52 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 09:46:52 | INFO | stdout | INFO:     127.0.0.1:37372 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:47:13 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 09:47:13 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 09:47:13 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 09:47:13 | ERROR | stderr | INFO:     Finished server process [4184082]
+2026-02-01 09:50:44 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 09:50:44 | ERROR | stderr | INFO:     Started server process [6616]
+2026-02-01 09:50:44 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 09:50:44 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 09:50:44 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 09:50:51 | INFO | stdout | INFO:     127.0.0.1:41436 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:50:57 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 09:50:57 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:50:57 | INFO | stdout | INFO:     127.0.0.1:41452 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:51:01 | INFO | stdout | INFO:     127.0.0.1:53578 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:51:11 | INFO | stdout | INFO:     127.0.0.1:60476 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:51:21 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 09:51:21 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:51:21 | INFO | stdout | INFO:     127.0.0.1:60478 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:51:21 | INFO | stdout | INFO:     127.0.0.1:50066 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:51:42 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 09:51:42 | INFO | stdout | INFO:     127.0.0.1:39310 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:52:06 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 09:52:06 | INFO | stdout | INFO:     127.0.0.1:47634 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:52:28 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 09:52:28 | INFO | stdout | INFO:     127.0.0.1:39670 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:52:51 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 09:52:51 | INFO | stdout | INFO:     127.0.0.1:34988 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:53:13 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 09:53:13 | INFO | stdout | INFO:     127.0.0.1:52892 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:53:36 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 09:53:36 | INFO | stdout | INFO:     127.0.0.1:38050 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:53:58 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 09:53:58 | INFO | stdout | INFO:     127.0.0.1:37584 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:54:21 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 09:54:21 | INFO | stdout | INFO:     127.0.0.1:54292 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:54:43 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 09:54:43 | INFO | stdout | INFO:     127.0.0.1:50238 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:55:06 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 09:55:06 | INFO | stdout | INFO:     127.0.0.1:41052 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 09:55:12 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 09:55:12 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 09:55:12 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 09:55:12 | ERROR | stderr | INFO:     Finished server process [6616]
+2026-02-01 09:58:43 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 09:58:43 | ERROR | stderr | INFO:     Started server process [26210]
+2026-02-01 09:58:43 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 09:58:43 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 09:58:43 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 09:58:50 | INFO | stdout | INFO:     127.0.0.1:38798 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:58:56 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 09:58:56 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:58:56 | INFO | stdout | INFO:     127.0.0.1:35964 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:59:00 | INFO | stdout | INFO:     127.0.0.1:35978 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:59:10 | INFO | stdout | INFO:     127.0.0.1:57466 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:59:20 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 09:59:20 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 09:59:20 | INFO | stdout | INFO:     127.0.0.1:32876 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 09:59:20 | INFO | stdout | INFO:     127.0.0.1:32892 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 09:59:41 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 09:59:41 | INFO | stdout | INFO:     127.0.0.1:38804 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:00:05 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:00:05 | INFO | stdout | INFO:     127.0.0.1:34250 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:00:26 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:00:26 | INFO | stdout | INFO:     127.0.0.1:60858 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:00:50 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:00:50 | INFO | stdout | INFO:     127.0.0.1:59890 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:01:11 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:01:11 | INFO | stdout | INFO:     127.0.0.1:37406 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:01:35 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:01:35 | INFO | stdout | INFO:     127.0.0.1:38414 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:01:56 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:01:56 | INFO | stdout | INFO:     127.0.0.1:50926 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:02:20 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:02:20 | INFO | stdout | INFO:     127.0.0.1:36850 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:02:41 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:02:41 | INFO | stdout | INFO:     127.0.0.1:54822 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:03:05 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:03:05 | INFO | stdout | INFO:     127.0.0.1:35516 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:03:11 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 10:03:12 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 10:03:12 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 10:03:12 | ERROR | stderr | INFO:     Finished server process [26210]
+2026-02-01 10:34:26 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 10:34:26 | ERROR | stderr | INFO:     Started server process [44351]
+2026-02-01 10:34:26 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 10:34:26 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 10:34:26 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 10:34:33 | INFO | stdout | INFO:     127.0.0.1:53014 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:34:39 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 10:34:39 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 10:34:39 | INFO | stdout | INFO:     127.0.0.1:53020 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 10:34:43 | INFO | stdout | INFO:     127.0.0.1:59214 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:34:53 | INFO | stdout | INFO:     127.0.0.1:56586 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:35:03 | INFO | stdout | INFO:     127.0.0.1:43830 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:35:03 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 10:35:03 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 10:35:03 | INFO | stdout | INFO:     127.0.0.1:43838 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 10:35:13 | INFO | stdout | INFO:     127.0.0.1:33568 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:35:24 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:35:24 | INFO | stdout | INFO:     127.0.0.1:41846 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:35:48 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:35:48 | INFO | stdout | INFO:     127.0.0.1:56386 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:36:09 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:36:09 | INFO | stdout | INFO:     127.0.0.1:51720 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:36:33 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:36:33 | INFO | stdout | INFO:     127.0.0.1:38296 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:36:54 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:36:54 | INFO | stdout | INFO:     127.0.0.1:56612 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:37:18 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:37:18 | INFO | stdout | INFO:     127.0.0.1:50804 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:37:39 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:37:39 | INFO | stdout | INFO:     127.0.0.1:50252 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:38:03 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:38:03 | INFO | stdout | INFO:     127.0.0.1:53072 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:38:24 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:38:24 | INFO | stdout | INFO:     127.0.0.1:40486 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:38:48 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:38:48 | INFO | stdout | INFO:     127.0.0.1:36320 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:38:55 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 10:38:55 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 10:38:55 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 10:38:55 | ERROR | stderr | INFO:     Finished server process [44351]
+2026-02-01 10:49:46 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 10:49:46 | ERROR | stderr | INFO:     Started server process [62433]
+2026-02-01 10:49:46 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 10:49:46 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 10:49:46 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 10:49:53 | INFO | stdout | INFO:     127.0.0.1:44008 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:49:59 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 10:49:59 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 10:49:59 | INFO | stdout | INFO:     127.0.0.1:44024 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 10:50:03 | INFO | stdout | INFO:     127.0.0.1:54704 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:50:13 | INFO | stdout | INFO:     127.0.0.1:42580 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:50:23 | INFO | stdout | INFO:     127.0.0.1:42008 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:50:31 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 10:50:31 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 10:50:31 | INFO | stdout | INFO:     127.0.0.1:35724 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 10:50:33 | INFO | stdout | INFO:     127.0.0.1:35730 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:50:44 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:50:44 | INFO | stdout | INFO:     127.0.0.1:38376 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:51:16 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:51:16 | INFO | stdout | INFO:     127.0.0.1:57070 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:51:29 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 10:51:29 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 10:51:29 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 10:51:29 | ERROR | stderr | INFO:     Finished server process [62433]
+2026-02-01 10:54:35 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 10:54:35 | ERROR | stderr | INFO:     Started server process [80913]
+2026-02-01 10:54:35 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 10:54:35 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 10:54:35 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 10:54:41 | INFO | stdout | INFO:     127.0.0.1:38126 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:54:47 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 10:54:47 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 10:54:47 | INFO | stdout | INFO:     127.0.0.1:38142 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 10:54:51 | INFO | stdout | INFO:     127.0.0.1:48616 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:55:01 | INFO | stdout | INFO:     127.0.0.1:40412 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:55:11 | INFO | stdout | INFO:     127.0.0.1:59648 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:55:19 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 10:55:19 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 10:55:19 | INFO | stdout | INFO:     127.0.0.1:59656 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 10:55:21 | INFO | stdout | INFO:     127.0.0.1:41746 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 10:55:32 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:55:32 | INFO | stdout | INFO:     127.0.0.1:37482 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:56:04 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 10:56:04 | INFO | stdout | INFO:     127.0.0.1:48236 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:56:17 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 10:56:17 | INFO | stdout | INFO:     127.0.0.1:40784 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 10:56:18 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 10:56:18 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 10:56:18 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 10:56:18 | ERROR | stderr | INFO:     Finished server process [80913]
+2026-02-01 18:12:27 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 18:12:27 | ERROR | stderr | INFO:     Started server process [175425]
+2026-02-01 18:12:27 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 18:12:27 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 18:12:27 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 18:12:34 | INFO | stdout | INFO:     127.0.0.1:35440 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:12:40 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 18:12:40 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 18:12:40 | INFO | stdout | INFO:     127.0.0.1:35454 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 18:12:44 | INFO | stdout | INFO:     127.0.0.1:49038 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:12:54 | INFO | stdout | INFO:     127.0.0.1:58764 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:13:04 | INFO | stdout | INFO:     127.0.0.1:33266 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:13:11 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 18:13:11 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 18:13:11 | INFO | stdout | INFO:     127.0.0.1:33278 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 18:13:14 | INFO | stdout | INFO:     127.0.0.1:41212 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:13:25 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:13:25 | INFO | stdout | INFO:     127.0.0.1:33034 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:13:56 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:13:56 | INFO | stdout | INFO:     127.0.0.1:46108 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:14:10 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:14:10 | INFO | stdout | INFO:     127.0.0.1:45790 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:14:41 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:14:41 | INFO | stdout | INFO:     127.0.0.1:47984 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:14:55 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:14:55 | INFO | stdout | INFO:     127.0.0.1:43270 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:15:26 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:15:26 | INFO | stdout | INFO:     127.0.0.1:60334 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:15:40 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:15:40 | INFO | stdout | INFO:     127.0.0.1:57182 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:16:11 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:16:11 | INFO | stdout | INFO:     127.0.0.1:47426 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:16:25 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:16:25 | INFO | stdout | INFO:     127.0.0.1:51430 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:16:56 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:16:56 | INFO | stdout | INFO:     127.0.0.1:36102 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:17:10 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:17:10 | INFO | stdout | INFO:     127.0.0.1:52824 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:17:41 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:17:41 | INFO | stdout | INFO:     127.0.0.1:47898 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:17:55 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:17:55 | INFO | stdout | INFO:     127.0.0.1:59820 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:18:26 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:18:26 | INFO | stdout | INFO:     127.0.0.1:47448 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:18:40 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:18:40 | INFO | stdout | INFO:     127.0.0.1:41274 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:19:11 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:19:11 | INFO | stdout | INFO:     127.0.0.1:51574 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:19:25 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:19:25 | INFO | stdout | INFO:     127.0.0.1:41084 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:19:56 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:19:56 | INFO | stdout | INFO:     127.0.0.1:33034 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:20:10 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:20:10 | INFO | stdout | INFO:     127.0.0.1:51124 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:20:41 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:20:41 | INFO | stdout | INFO:     127.0.0.1:49916 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:20:56 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:20:56 | INFO | stdout | INFO:     127.0.0.1:57840 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:21:26 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:21:26 | INFO | stdout | INFO:     127.0.0.1:49152 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:21:41 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:21:41 | INFO | stdout | INFO:     127.0.0.1:36554 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:22:11 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:22:11 | INFO | stdout | INFO:     127.0.0.1:44794 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:22:25 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 18:22:25 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 18:22:25 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 18:22:25 | ERROR | stderr | INFO:     Finished server process [175425]
+2026-02-01 18:33:33 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 18:33:33 | ERROR | stderr | INFO:     Started server process [205043]
+2026-02-01 18:33:33 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 18:33:33 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 18:33:33 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 18:33:40 | INFO | stdout | INFO:     127.0.0.1:52090 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:33:45 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 18:33:45 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 18:33:45 | INFO | stdout | INFO:     127.0.0.1:59006 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 18:33:50 | INFO | stdout | INFO:     127.0.0.1:59016 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:34:00 | INFO | stdout | INFO:     127.0.0.1:45376 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:34:10 | INFO | stdout | INFO:     127.0.0.1:46200 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:34:17 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 18:34:17 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 18:34:17 | INFO | stdout | INFO:     127.0.0.1:54160 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 18:34:20 | INFO | stdout | INFO:     127.0.0.1:54176 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 18:34:30 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:34:30 | INFO | stdout | INFO:     127.0.0.1:38428 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:35:02 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:35:02 | INFO | stdout | INFO:     127.0.0.1:51540 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:35:15 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:35:15 | INFO | stdout | INFO:     127.0.0.1:54008 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:35:47 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:35:47 | INFO | stdout | INFO:     127.0.0.1:33954 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:36:01 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:36:01 | INFO | stdout | INFO:     127.0.0.1:55996 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:36:32 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:36:32 | INFO | stdout | INFO:     127.0.0.1:59142 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:36:46 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:36:46 | INFO | stdout | INFO:     127.0.0.1:32804 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:37:17 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:37:17 | INFO | stdout | INFO:     127.0.0.1:42060 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:37:31 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:37:31 | INFO | stdout | INFO:     127.0.0.1:34486 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:38:02 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:38:02 | INFO | stdout | INFO:     127.0.0.1:53012 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:38:16 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:38:16 | INFO | stdout | INFO:     127.0.0.1:60086 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:38:47 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:38:47 | INFO | stdout | INFO:     127.0.0.1:58158 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:39:01 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:39:01 | INFO | stdout | INFO:     127.0.0.1:39066 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:39:32 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:39:32 | INFO | stdout | INFO:     127.0.0.1:53390 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:39:46 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:39:46 | INFO | stdout | INFO:     127.0.0.1:58792 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:40:17 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:40:17 | INFO | stdout | INFO:     127.0.0.1:41622 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:40:31 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:40:31 | INFO | stdout | INFO:     127.0.0.1:43956 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:41:02 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:41:02 | INFO | stdout | INFO:     127.0.0.1:35208 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:41:16 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:41:16 | INFO | stdout | INFO:     127.0.0.1:44826 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:41:47 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:41:47 | INFO | stdout | INFO:     127.0.0.1:52092 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:42:01 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:42:01 | INFO | stdout | INFO:     127.0.0.1:50394 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:42:32 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:42:32 | INFO | stdout | INFO:     127.0.0.1:51252 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:42:46 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:42:46 | INFO | stdout | INFO:     127.0.0.1:45532 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:43:18 | INFO | controller | Receive heart beat. http://0.0.0.0:10082
+2026-02-01 18:43:18 | INFO | stdout | INFO:     127.0.0.1:52240 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:43:31 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 18:43:31 | INFO | stdout | INFO:     127.0.0.1:49446 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 18:43:35 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 18:43:35 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 18:43:35 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 18:43:35 | ERROR | stderr | INFO:     Finished server process [205043]
+2026-02-01 21:33:54 | INFO | controller | args: Namespace(host='0.0.0.0', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-02-01 21:33:54 | ERROR | stderr | INFO:     Started server process [303273]
+2026-02-01 21:33:54 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 21:33:54 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 21:33:54 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10014 (Press CTRL+C to quit)
+2026-02-01 21:34:01 | INFO | stdout | INFO:     127.0.0.1:48124 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 21:34:08 | INFO | controller | Register a new worker: http://0.0.0.0:10081
+2026-02-01 21:34:08 | INFO | controller | Register done: http://0.0.0.0:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-02-01 21:34:08 | INFO | stdout | INFO:     127.0.0.1:48140 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 21:34:11 | INFO | stdout | INFO:     127.0.0.1:46610 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 21:34:21 | INFO | stdout | INFO:     127.0.0.1:36796 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 21:34:31 | INFO | stdout | INFO:     127.0.0.1:48936 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 21:34:32 | INFO | controller | Register a new worker: http://0.0.0.0:10082
+2026-02-01 21:34:32 | INFO | controller | Register done: http://0.0.0.0:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-02-01 21:34:32 | INFO | stdout | INFO:     127.0.0.1:48948 - "POST /register_worker HTTP/1.1" 200 OK
+2026-02-01 21:34:41 | INFO | stdout | INFO:     127.0.0.1:42616 - "POST /list_models HTTP/1.1" 200 OK
+2026-02-01 21:34:53 | INFO | controller | Receive heart beat. http://0.0.0.0:10081
+2026-02-01 21:34:53 | INFO | stdout | INFO:     127.0.0.1:59130 - "POST /receive_heart_beat HTTP/1.1" 200 OK
+2026-02-01 21:35:02 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 21:35:02 | ERROR | stderr | INFO:     Waiting for application shutdown.
+2026-02-01 21:35:02 | ERROR | stderr | INFO:     Application shutdown complete.
+2026-02-01 21:35:02 | ERROR | stderr | INFO:     Finished server process [303273]

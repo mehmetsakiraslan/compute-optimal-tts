@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "/scratch/msa6093/compute-optimal-tts/src/scripts/profile_execution_graph.py", line 28, in <module>
+    from reason.evaluation.methods import BeamSearchConfig, Task
+  File "/scratch/msa6093/compute-optimal-tts/src/reason/evaluation/methods.py", line 8, in <module>
+    from reason.inference.lm_call import LMCallingConfig, LanguageModelCallingFunction
+  File "/scratch/msa6093/compute-optimal-tts/src/reason/inference/lm_call.py", line 10, in <module>
+    from reason.inference.text_generation import ConcatedLMGenResult, _generate_fastchat, _generate_sgl
+  File "/scratch/msa6093/compute-optimal-tts/src/reason/inference/text_generation.py", line 13, in <module>
+    from reason.profiling.nvtx_utils import nvtx_range, NVTXColors
+  File "/scratch/msa6093/compute-optimal-tts/src/reason/profiling/__init__.py", line 15, in <module>
+    from reason.profiling.traced_callers import (
+  File "/scratch/msa6093/compute-optimal-tts/src/reason/profiling/traced_callers.py", line 10, in <module>
+    from reason.inference.lm_call import (
+ImportError: cannot import name 'VLLMRemoteCaller' from partially initialized module 'reason.inference.lm_call' (most likely due to a circular import) (/scratch/msa6093/compute-optimal-tts/src/reason/inference/lm_call.py)
+Traceback (most recent call last):
+  File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 167, in validate_repo_id
+    raise HFValidationError(f"Cannot have -- or .. in repo_id: '{repo_id}'.")
+huggingface_hub.errors.HFValidationError: Cannot have -- or .. in repo_id: 'models--meta-llama--Llama-3.2-1B-Instruct'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/msa6093/compute-optimal-tts/src/scripts/profile_execution_graph.py", line 428, in <module>
+    main()
+  File "/scratch/msa6093/compute-optimal-tts/src/scripts/profile_execution_graph.py", line 241, in main
+    TracedVLLMRemoteCaller(
+  File "/scratch/msa6093/compute-optimal-tts/src/reason/profiling/traced_callers.py", line 44, in __init__
+    super().__init__(
+  File "/scratch/msa6093/compute-optimal-tts/src/reason/inference/lm_call.py", line 51, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+  File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 858, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 690, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/transformers/utils/hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'models--meta-llama--Llama-3.2-1B-Instruct'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.

@@ -1,0 +1,1 @@
+{"problem": "What is the largest integer less than $2010$ that has a remainder of $5$ when divided by $7,$ a remainder of $10$ when divided by $11,$ and a remainder of $10$ when divided by $13$?", "solution": "1440", "level": 5, "type": "Number Theory"}

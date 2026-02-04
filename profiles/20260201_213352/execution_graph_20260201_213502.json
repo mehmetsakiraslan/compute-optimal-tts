@@ -1,0 +1,3245 @@
+{
+  "version": "1.0",
+  "summary": {
+    "total_execution_time_ms": 20217.002090942384,
+    "total_compute_time_ms": 19826.227486450196,
+    "total_stall_time_ms": 0.1117470703125,
+    "pipeline_efficiency": 0.9806709915379955,
+    "language_model": {
+      "total_calls": 31,
+      "total_time_ms": 11846.179340209961,
+      "avg_call_duration_ms": 382.13481742612777,
+      "stall_time_ms": 0.0
+    },
+    "reward_model": {
+      "total_calls": 31,
+      "total_time_ms": 7980.048146240234,
+      "avg_call_duration_ms": 257.4209079432334,
+      "stall_time_ms": 0.1117470703125
+    },
+    "tree_operations": {
+      "total_calls": 0,
+      "total_time_ms": 0.0
+    }
+  },
+  "depth_statistics": {
+    "0": {
+      "total_events": 62,
+      "lm_calls": 31,
+      "rm_calls": 31,
+      "lm_time_ms": 11846.179340209961,
+      "rm_time_ms": 7980.048146240234,
+      "total_stall_ms": 0.1117470703125
+    }
+  },
+  "events": [
+    {
+      "event_id": 0,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 22233.9130859375,
+      "end_time": 493090.6110839844,
+      "duration": 470856.6979980469,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 215,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 1,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 493381.5720214844,
+      "end_time": 1366637.6879882812,
+      "duration": 873256.1159667969,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 2,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 1367073.9189453125,
+      "end_time": 1792939.607055664,
+      "duration": 425865.68811035156,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 152,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 3,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 1793187.9639892578,
+      "end_time": 2025710.1629638672,
+      "duration": 232522.19897460938,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 4,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 2026049.8729248047,
+      "end_time": 2659035.4759521484,
+      "duration": 632985.6030273438,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 329,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 5,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 2659195.8319091797,
+      "end_time": 2896912.4420166016,
+      "duration": 237716.61010742188,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 6,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 2897359.0799560547,
+      "end_time": 3090458.9599609375,
+      "duration": 193099.8800048828,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 90,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 7,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 3090562.0469970703,
+      "end_time": 3342631.8349609375,
+      "duration": 252069.7879638672,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 8,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 3348493.7239990234,
+      "end_time": 3916115.6849365234,
+      "duration": 567621.9609375,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 298,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 9,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 3916501.2109375,
+      "end_time": 4125447.9060058594,
+      "duration": 208946.69506835938,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 10,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 4125945.5290527344,
+      "end_time": 4893164.260009766,
+      "duration": 767218.7309570312,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 386,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 11,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 4893272.583984375,
+      "end_time": 5140954.076049805,
+      "duration": 247681.4920654297,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 12,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 5141334.50390625,
+      "end_time": 5471246.838989258,
+      "duration": 329912.3350830078,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 178,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 13,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 5471352.369995117,
+      "end_time": 5728544.980957031,
+      "duration": 257192.61096191406,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 14,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 5728921.149047852,
+      "end_time": 6384239.979003906,
+      "duration": 655318.8299560547,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 377,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 15,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 6384362.551025391,
+      "end_time": 6630951.99609375,
+      "duration": 246589.44506835938,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      }
+    },
+    {
+      "event_id": 16,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 6631298.8310546875,
+      "end_time": 6710950.697998047,
+      "duration": 79651.86694335938,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 27,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 17,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 6711039.74597168,
+      "end_time": 6906190.460083008,
+      "duration": 195150.71411132812,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      }
+    },
+    {
+      "event_id": 18,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 6906517.947998047,
+      "end_time": 7712928.518920898,
+      "duration": 806410.5709228516,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 552,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 19,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 7713040.685058594,
+      "end_time": 7869242.25793457,
+      "duration": 156201.57287597656,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      }
+    },
+    {
+      "event_id": 20,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 7869565.345947266,
+      "end_time": 7971560.429077148,
+      "duration": 101995.08312988281,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 36,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 21,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 7971679.649047852,
+      "end_time": 8236420.965942383,
+      "duration": 264741.31689453125,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      }
+    },
+    {
+      "event_id": 22,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 8236804.677001953,
+      "end_time": 9083174.229003906,
+      "duration": 846369.5520019531,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 375,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 23,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 9083274.521972656,
+      "end_time": 9390523.416992188,
+      "duration": 307248.89501953125,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      }
+    },
+    {
+      "event_id": 24,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 9390901.470947266,
+      "end_time": 10053861.61694336,
+      "duration": 662960.1459960938,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 257,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 25,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 10053999.764038086,
+      "end_time": 10458196.067993164,
+      "duration": 404196.3039550781,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 26,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 10458636.071044922,
+      "end_time": 11250559.295898438,
+      "duration": 791923.2248535156,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 283,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 27,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 11250721.46899414,
+      "end_time": 11698160.15600586,
+      "duration": 447438.68701171875,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 28,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 11698618.108886719,
+      "end_time": 11989953.140991211,
+      "duration": 291335.0321044922,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 149,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 29,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 11990069.566894531,
+      "end_time": 12424238.529907227,
+      "duration": 434168.9630126953,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 30,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 12424597.098022461,
+      "end_time": 12884326.606933594,
+      "duration": 459729.5089111328,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 163,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 31,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 12884491.713012695,
+      "end_time": 13248764.096069336,
+      "duration": 364272.3830566406,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      }
+    },
+    {
+      "event_id": 32,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 13586614.923950195,
+      "end_time": 14053174.25793457,
+      "duration": 466559.333984375,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 246,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 33,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 14053334.265014648,
+      "end_time": 14260072.28503418,
+      "duration": 206738.02001953125,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 34,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 14260442.236083984,
+      "end_time": 14628107.880981445,
+      "duration": 367665.64489746094,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 150,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 35,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 14628228.916015625,
+      "end_time": 14786005.141967773,
+      "duration": 157776.22595214844,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      }
+    },
+    {
+      "event_id": 36,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 14786390.66796875,
+      "end_time": 15086938.735961914,
+      "duration": 300548.06799316406,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 204,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 37,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 15087064.102050781,
+      "end_time": 15222089.305908203,
+      "duration": 135025.20385742188,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      }
+    },
+    {
+      "event_id": 38,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 15222473.854003906,
+      "end_time": 15314063.144042969,
+      "duration": 91589.2900390625,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 48,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 39,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 15314188.510009766,
+      "end_time": 15447770.155029297,
+      "duration": 133581.64501953125,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      }
+    },
+    {
+      "event_id": 40,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 15448040.791992188,
+      "end_time": 15774827.2890625,
+      "duration": 326786.4970703125,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 220,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 41,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 15774945.041992188,
+      "end_time": 15915116.326049805,
+      "duration": 140171.2840576172,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      }
+    },
+    {
+      "event_id": 42,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 15915411.057983398,
+      "end_time": 16010889.835083008,
+      "duration": 95478.77709960938,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 48,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 43,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 16011000.114990234,
+      "end_time": 16149266.953979492,
+      "duration": 138266.8389892578,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      }
+    },
+    {
+      "event_id": 44,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 16149577.401000977,
+      "end_time": 16456800.315063477,
+      "duration": 307222.9140625,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 188,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 45,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 16456943.140991211,
+      "end_time": 16634110.231079102,
+      "duration": 177167.09008789062,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      }
+    },
+    {
+      "event_id": 46,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 16634445.121948242,
+      "end_time": 16832748.353027344,
+      "duration": 198303.23107910156,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 52,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 47,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 16832880.354003906,
+      "end_time": 17093530.619995117,
+      "duration": 260650.26599121094,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 48,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 17093897.219970703,
+      "end_time": 17310411.408081055,
+      "duration": 216514.18811035156,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 132,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 49,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 17310537.682006836,
+      "end_time": 17462428.6920166,
+      "duration": 151891.01000976562,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      }
+    },
+    {
+      "event_id": 50,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 17462699.747924805,
+      "end_time": 17763693.056030273,
+      "duration": 300993.30810546875,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 164,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 51,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 17763835.952026367,
+      "end_time": 18084070.175048828,
+      "duration": 320234.22302246094,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 4,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 4
+      }
+    },
+    {
+      "event_id": 52,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 18084593.010009766,
+      "end_time": 18304517.85095215,
+      "duration": 219924.8409423828,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 107,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 53,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 18304646.56994629,
+      "end_time": 18505436.0970459,
+      "duration": 200789.52709960938,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      }
+    },
+    {
+      "event_id": 54,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 18505777.623046875,
+      "end_time": 18591928.334960938,
+      "duration": 86150.7119140625,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 31,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 55,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 18592082.126953125,
+      "end_time": 18843190.891967773,
+      "duration": 251108.76501464844,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 3,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 3
+      }
+    },
+    {
+      "event_id": 56,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 18843497.496948242,
+      "end_time": 19248752.60192871,
+      "duration": 405255.10498046875,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 215,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 57,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 19248869.447021484,
+      "end_time": 19459465.874023438,
+      "duration": 210596.42700195312,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      }
+    },
+    {
+      "event_id": 58,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 19466275.93395996,
+      "end_time": 19718101.973999023,
+      "duration": 251826.0400390625,
+      "triggered_by": null,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 135,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 59,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 19718316.736938477,
+      "end_time": 19931385.213012695,
+      "duration": 213068.47607421875,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 2,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 2
+      }
+    },
+    {
+      "event_id": 60,
+      "event_type": "lm_call",
+      "model": "Policy",
+      "start_time": 19931801.958984375,
+      "end_time": 20059908.637939453,
+      "duration": 128106.67895507812,
+      "triggered_by": null,
+      "triggers": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        61
+      ],
+      "stall_time": 0.0,
+      "depth": 0,
+      "metadata": {
+        "input_tokens_estimate": 0,
+        "n": 4,
+        "temperature": 0.7,
+        "max_new_tokens": 2048,
+        "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+        "output_tokens": 60,
+        "num_sequences": 4,
+        "finish_reasons": [
+          "stop",
+          "stop",
+          "stop",
+          "stop"
+        ]
+      }
+    },
+    {
+      "event_id": 61,
+      "event_type": "rm_call",
+      "model": "Value",
+      "start_time": 20060020.385009766,
+      "end_time": 20213609.736938477,
+      "duration": 153589.35192871094,
+      "triggered_by": 60,
+      "triggers": [],
+      "stall_time": 111.7470703125,
+      "depth": 0,
+      "metadata": {
+        "num_candidates": 1,
+        "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+        "local": false,
+        "num_scores_returned": 1
+      }
+    }
+  ],
+  "events_by_type": {
+    "lm_call": [
+      {
+        "event_id": 0,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 22233.9130859375,
+        "end_time": 493090.6110839844,
+        "duration": 470856.6979980469,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 215,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 2,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 1367073.9189453125,
+        "end_time": 1792939.607055664,
+        "duration": 425865.68811035156,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 152,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 4,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 2026049.8729248047,
+        "end_time": 2659035.4759521484,
+        "duration": 632985.6030273438,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 329,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 6,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 2897359.0799560547,
+        "end_time": 3090458.9599609375,
+        "duration": 193099.8800048828,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 90,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 8,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 3348493.7239990234,
+        "end_time": 3916115.6849365234,
+        "duration": 567621.9609375,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 298,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 10,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 4125945.5290527344,
+        "end_time": 4893164.260009766,
+        "duration": 767218.7309570312,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 386,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 12,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 5141334.50390625,
+        "end_time": 5471246.838989258,
+        "duration": 329912.3350830078,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 178,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 14,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 5728921.149047852,
+        "end_time": 6384239.979003906,
+        "duration": 655318.8299560547,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 377,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 16,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 6631298.8310546875,
+        "end_time": 6710950.697998047,
+        "duration": 79651.86694335938,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 27,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 18,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 6906517.947998047,
+        "end_time": 7712928.518920898,
+        "duration": 806410.5709228516,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 552,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 20,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 7869565.345947266,
+        "end_time": 7971560.429077148,
+        "duration": 101995.08312988281,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 36,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 22,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 8236804.677001953,
+        "end_time": 9083174.229003906,
+        "duration": 846369.5520019531,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 375,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 24,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 9390901.470947266,
+        "end_time": 10053861.61694336,
+        "duration": 662960.1459960938,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 257,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 26,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 10458636.071044922,
+        "end_time": 11250559.295898438,
+        "duration": 791923.2248535156,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 283,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 28,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 11698618.108886719,
+        "end_time": 11989953.140991211,
+        "duration": 291335.0321044922,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 149,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 30,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 12424597.098022461,
+        "end_time": 12884326.606933594,
+        "duration": 459729.5089111328,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 163,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 32,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 13586614.923950195,
+        "end_time": 14053174.25793457,
+        "duration": 466559.333984375,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 246,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 34,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 14260442.236083984,
+        "end_time": 14628107.880981445,
+        "duration": 367665.64489746094,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 150,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 36,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 14786390.66796875,
+        "end_time": 15086938.735961914,
+        "duration": 300548.06799316406,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 204,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 38,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 15222473.854003906,
+        "end_time": 15314063.144042969,
+        "duration": 91589.2900390625,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 48,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 40,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 15448040.791992188,
+        "end_time": 15774827.2890625,
+        "duration": 326786.4970703125,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 220,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 42,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 15915411.057983398,
+        "end_time": 16010889.835083008,
+        "duration": 95478.77709960938,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 48,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 44,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 16149577.401000977,
+        "end_time": 16456800.315063477,
+        "duration": 307222.9140625,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 188,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 46,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 16634445.121948242,
+        "end_time": 16832748.353027344,
+        "duration": 198303.23107910156,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 52,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 48,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 17093897.219970703,
+        "end_time": 17310411.408081055,
+        "duration": 216514.18811035156,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 132,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 50,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 17462699.747924805,
+        "end_time": 17763693.056030273,
+        "duration": 300993.30810546875,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 164,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 52,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 18084593.010009766,
+        "end_time": 18304517.85095215,
+        "duration": 219924.8409423828,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 107,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 54,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 18505777.623046875,
+        "end_time": 18591928.334960938,
+        "duration": 86150.7119140625,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 31,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 56,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 18843497.496948242,
+        "end_time": 19248752.60192871,
+        "duration": 405255.10498046875,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 215,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 58,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 19466275.93395996,
+        "end_time": 19718101.973999023,
+        "duration": 251826.0400390625,
+        "triggered_by": null,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 135,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      },
+      {
+        "event_id": 60,
+        "event_type": "lm_call",
+        "model": "Policy",
+        "start_time": 19931801.958984375,
+        "end_time": 20059908.637939453,
+        "duration": 128106.67895507812,
+        "triggered_by": null,
+        "triggers": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27,
+          29,
+          31,
+          33,
+          35,
+          37,
+          39,
+          41,
+          43,
+          45,
+          47,
+          49,
+          51,
+          53,
+          55,
+          57,
+          59,
+          61
+        ],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "input_tokens_estimate": 0,
+          "n": 4,
+          "temperature": 0.7,
+          "max_new_tokens": 2048,
+          "model_name": "/scratch/msa6093/models/Qwen2.5-1.5B-Instruct",
+          "output_tokens": 60,
+          "num_sequences": 4,
+          "finish_reasons": [
+            "stop",
+            "stop",
+            "stop",
+            "stop"
+          ]
+        }
+      }
+    ],
+    "rm_call": [
+      {
+        "event_id": 1,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 493381.5720214844,
+        "end_time": 1366637.6879882812,
+        "duration": 873256.1159667969,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 3,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 1793187.9639892578,
+        "end_time": 2025710.1629638672,
+        "duration": 232522.19897460938,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 5,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 2659195.8319091797,
+        "end_time": 2896912.4420166016,
+        "duration": 237716.61010742188,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 7,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 3090562.0469970703,
+        "end_time": 3342631.8349609375,
+        "duration": 252069.7879638672,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 9,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 3916501.2109375,
+        "end_time": 4125447.9060058594,
+        "duration": 208946.69506835938,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 11,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 4893272.583984375,
+        "end_time": 5140954.076049805,
+        "duration": 247681.4920654297,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 13,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 5471352.369995117,
+        "end_time": 5728544.980957031,
+        "duration": 257192.61096191406,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 15,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 6384362.551025391,
+        "end_time": 6630951.99609375,
+        "duration": 246589.44506835938,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 3,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 3
+        }
+      },
+      {
+        "event_id": 17,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 6711039.74597168,
+        "end_time": 6906190.460083008,
+        "duration": 195150.71411132812,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 2,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 2
+        }
+      },
+      {
+        "event_id": 19,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 7713040.685058594,
+        "end_time": 7869242.25793457,
+        "duration": 156201.57287597656,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 1,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 1
+        }
+      },
+      {
+        "event_id": 21,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 7971679.649047852,
+        "end_time": 8236420.965942383,
+        "duration": 264741.31689453125,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 3,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 3
+        }
+      },
+      {
+        "event_id": 23,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 9083274.521972656,
+        "end_time": 9390523.416992188,
+        "duration": 307248.89501953125,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 3,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 3
+        }
+      },
+      {
+        "event_id": 25,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 10053999.764038086,
+        "end_time": 10458196.067993164,
+        "duration": 404196.3039550781,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 27,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 11250721.46899414,
+        "end_time": 11698160.15600586,
+        "duration": 447438.68701171875,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 29,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 11990069.566894531,
+        "end_time": 12424238.529907227,
+        "duration": 434168.9630126953,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 31,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 12884491.713012695,
+        "end_time": 13248764.096069336,
+        "duration": 364272.3830566406,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 3,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 3
+        }
+      },
+      {
+        "event_id": 33,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 14053334.265014648,
+        "end_time": 14260072.28503418,
+        "duration": 206738.02001953125,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 35,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 14628228.916015625,
+        "end_time": 14786005.141967773,
+        "duration": 157776.22595214844,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 2,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 2
+        }
+      },
+      {
+        "event_id": 37,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 15087064.102050781,
+        "end_time": 15222089.305908203,
+        "duration": 135025.20385742188,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 1,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 1
+        }
+      },
+      {
+        "event_id": 39,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 15314188.510009766,
+        "end_time": 15447770.155029297,
+        "duration": 133581.64501953125,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 1,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 1
+        }
+      },
+      {
+        "event_id": 41,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 15774945.041992188,
+        "end_time": 15915116.326049805,
+        "duration": 140171.2840576172,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 1,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 1
+        }
+      },
+      {
+        "event_id": 43,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 16011000.114990234,
+        "end_time": 16149266.953979492,
+        "duration": 138266.8389892578,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 1,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 1
+        }
+      },
+      {
+        "event_id": 45,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 16456943.140991211,
+        "end_time": 16634110.231079102,
+        "duration": 177167.09008789062,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 2,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 2
+        }
+      },
+      {
+        "event_id": 47,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 16832880.354003906,
+        "end_time": 17093530.619995117,
+        "duration": 260650.26599121094,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 49,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 17310537.682006836,
+        "end_time": 17462428.6920166,
+        "duration": 151891.01000976562,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 1,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 1
+        }
+      },
+      {
+        "event_id": 51,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 17763835.952026367,
+        "end_time": 18084070.175048828,
+        "duration": 320234.22302246094,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 4,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 4
+        }
+      },
+      {
+        "event_id": 53,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 18304646.56994629,
+        "end_time": 18505436.0970459,
+        "duration": 200789.52709960938,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 2,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 2
+        }
+      },
+      {
+        "event_id": 55,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 18592082.126953125,
+        "end_time": 18843190.891967773,
+        "duration": 251108.76501464844,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 3,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 3
+        }
+      },
+      {
+        "event_id": 57,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 19248869.447021484,
+        "end_time": 19459465.874023438,
+        "duration": 210596.42700195312,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 2,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 2
+        }
+      },
+      {
+        "event_id": 59,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 19718316.736938477,
+        "end_time": 19931385.213012695,
+        "duration": 213068.47607421875,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 0.0,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 2,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 2
+        }
+      },
+      {
+        "event_id": 61,
+        "event_type": "rm_call",
+        "model": "Value",
+        "start_time": 20060020.385009766,
+        "end_time": 20213609.736938477,
+        "duration": 153589.35192871094,
+        "triggered_by": 60,
+        "triggers": [],
+        "stall_time": 111.7470703125,
+        "depth": 0,
+        "metadata": {
+          "num_candidates": 1,
+          "model_name": "/scratch/msa6093/models/math-shepherd-mistral-7b-prm",
+          "local": false,
+          "num_scores_returned": 1
+        }
+      }
+    ]
+  },
+  "events_by_depth": {
+    "0": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ]
+  },
+  "dependency_graph": {
+    "0": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "1": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "2": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "3": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "4": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "5": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "6": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "7": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "8": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "9": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "10": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "11": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "12": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "13": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "14": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "15": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "16": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "17": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "18": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "19": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "20": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "21": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "22": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "23": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "24": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "25": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "26": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "27": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "28": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "29": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "30": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "31": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "32": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "33": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "34": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "35": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "36": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "37": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "38": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "39": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "40": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "41": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "42": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "43": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "44": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "45": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "46": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "47": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "48": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "49": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "50": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "51": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "52": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "53": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "54": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "55": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "56": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "57": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "58": {
+      "triggered_by": null,
+      "triggers": []
+    },
+    "59": {
+      "triggered_by": 60,
+      "triggers": []
+    },
+    "60": {
+      "triggered_by": null,
+      "triggers": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        61
+      ]
+    },
+    "61": {
+      "triggered_by": 60,
+      "triggers": []
+    }
+  }
+}

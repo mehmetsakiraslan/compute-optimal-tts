@@ -1,0 +1,76 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=16:ngpus=1:mem=128gb
+#PBS -l walltime=4:00:00
+#PBS -q workq@e5-cse-cbgpu01.eecscl.psu.edu
+#PBS -N tts_profile
+#PBS -k oed
+#PBS -o /scratch/msa6093/compute-optimal-tts/tts_profile.out
+#PBS -e /scratch/msa6093/compute-optimal-tts/tts_profile.err
+#PBS -V
+
+# Profiling job for beam search inference using NVIDIA Nsight Systems
+# Produces .nsys-rep files for analysis of:
+# - Variable parallelism (batch size changes)
+# - Branch dependencies (blocking RM calls, sequential depth loops)
+
+echo "========================================"
+echo "TTS PROFILING JOB START: $(date)"
+echo "HOST: $(hostname)"
+echo "========================================"
+
+which python3 || true
+python3 --version || true
+nvidia-smi || true
+
+# Check for nsys availability
+which nsys || echo "WARNING: nsys not found in PATH"
+nsys --version || true
+
+# Source the system conda.sh
+if [ -f /usr/local/anaconda3/etc/profile.d/conda.sh ]; then
+    source /usr/local/anaconda3/etc/profile.d/conda.sh
+else
+    export PATH=/usr/local/anaconda3/bin:$PATH
+fi
+
+# Activate tts environment
+conda activate /scratch/msa6093/.conda/envs/tts
+
+# Set environment variables
+export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
+export CUDA_VISIBLE_DEVICES=0
+
+# Create timestamped profile output directory
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+PROFILE_DIR="/scratch/msa6093/tts_profiles/${TIMESTAMP}"
+mkdir -p "${PROFILE_DIR}"
+
+echo ""
+echo "Profile output directory: ${PROFILE_DIR}"
+echo ""
+
+cd /scratch/msa6093/compute-optimal-tts/src
+
+# Run profiling script with 50 problems
+python3 scripts/profile_beam.py \
+    --num_problems 50 \
+    --profile_dir "${PROFILE_DIR}"
+
+rc=$?
+
+echo ""
+echo "========================================"
+echo "PROFILING JOB COMPLETED"
+echo "Exit code: $rc"
+echo "Profile directory: ${PROFILE_DIR}"
+echo "End time: $(date)"
+echo "========================================"
+
+# List generated profile files
+echo ""
+echo "Generated profile files:"
+ls -lh "${PROFILE_DIR}"/*.nsys-rep 2>/dev/null || echo "No .nsys-rep files found"
+echo ""
+echo "To analyze GPU activity, use: nsys stats ${PROFILE_DIR}/vllm_worker_profile.nsys-rep"
+
+exit $rc

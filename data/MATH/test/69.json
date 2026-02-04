@@ -1,0 +1,1 @@
+{"problem": "Let $z$ be a complex number such that $z^5 = 1$ and $z \\neq 1.$  Compute\n\\[z + \\frac{1}{z} + z^2 + \\frac{1}{z^2}.\\]", "solution": "-1", "level": 4, "type": "Intermediate Algebra"}

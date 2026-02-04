@@ -1,0 +1,1 @@
+{"problem": "I have a deck of $54$ cards, and I deal all of the cards to $x$ players, with each player getting $y$ cards. If $x$ is at least $2$ and $y$ is at least $5$, then how many possible values of $x$ are there?", "solution": "4", "level": 5, "type": "Prealgebra"}

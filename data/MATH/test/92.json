@@ -1,0 +1,1 @@
+{"problem": "A pirate searches seven islands for buried treasure. If each island has a $\\frac{1}{5}$ chance of having treasure, what is the probability that exactly 4 of the islands have treasure?", "solution": "\\frac{448}{15625}", "level": 4, "type": "Counting & Probability"}

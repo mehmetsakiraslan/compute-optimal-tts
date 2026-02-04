@@ -1,0 +1,4 @@
+2026-02-01 10:49:59 | INFO | model_worker | Register to controller
+2026-02-01 10:50:44 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']. Semaphore: None. call_ct: 0. worker_id: 64d975f0. 
+2026-02-01 10:51:29 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']. Semaphore: Semaphore(value=5, locked=False). call_ct: 0. worker_id: 64d975f0. 
+2026-02-01 10:51:29 | ERROR | model_worker | heart beat error: HTTPConnectionPool(host='0.0.0.0', port=10014): Max retries exceeded with url: /receive_heart_beat (Caused by NewConnectionError("HTTPConnection(host='0.0.0.0', port=10014): Failed to establish a new connection: [Errno 111] Connection refused"))

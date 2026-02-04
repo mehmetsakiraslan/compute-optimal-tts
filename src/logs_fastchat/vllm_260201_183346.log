@@ -1,0 +1,1274 @@
+2026-02-01 18:33:53 | ERROR | stderr | Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+2026-02-01 18:33:53 | ERROR | stderr | 
+2026-02-01 18:33:53 | ERROR | stderr | Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.10it/s]
+2026-02-01 18:33:53 | ERROR | stderr | 
+2026-02-01 18:33:53 | ERROR | stderr | Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.09it/s]
+2026-02-01 18:33:53 | ERROR | stderr | 
+2026-02-01 18:33:53 | ERROR | stderr | 
+2026-02-01 18:34:17 | INFO | model_worker | Loading the model ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'] on worker 5934a895, worker type: vLLM worker...
+2026-02-01 18:34:17 | INFO | model_worker | Register to controller
+2026-02-01 18:34:17 | INFO | stdout | Namespace(host='0.0.0.0', port=10082, worker_address='http://0.0.0.0:10082', controller_address='http://0.0.0.0:10014', model_path='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', model_names=None, limit_worker_concurrency=1024, no_register=False, num_gpus=1, conv_template=None, trust_remote_code=True, gpu_memory_utilization=0.88, swap_space=16.0, max_model_length=8192, max_num_sequences=0, enable_chunked_prefill=False, model='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', task='auto', tokenizer=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', chat_template_text_format='string', allowed_local_media_path=None, download_dir=None, load_format='auto', config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, max_model_len=8192, guided_decoding_backend='outlines', distributed_executor_backend=None, worker_use_ray=False, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, ray_workers_use_nsight=False, block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, num_lookahead_slots=0, seed=0, cpu_offload_gb=0, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_seqs=256, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, hf_overrides=None, enforce_eager=False, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, limit_mm_per_prompt=None, mm_processor_kwargs=None, enable_lora=False, enable_lora_bias=False, max_loras=1, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', num_scheduler_steps=1, multi_step_stream_outputs=True, scheduler_delay_factor=0.0, speculative_model=None, speculative_model_quantization=None, num_speculative_tokens=None, speculative_disable_mqa_scorer=False, speculative_draft_tensor_parallel_size=None, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', typical_acceptance_sampler_posterior_threshold=None, typical_acceptance_sampler_posterior_alpha=None, disable_logprobs_during_spec_decoding=None, model_loader_extra_config=None, ignore_patterns=[], preemption_mode=None, served_model_name=None, qlora_adapter_name_or_path=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, scheduling_policy='fcfs', override_neuron_config=None, override_pooler_config=None, disable_log_requests=False)
+2026-02-01 18:34:17 | INFO | stdout | **************************************************
+2026-02-01 18:34:17 | INFO | stdout | AsyncEngineArgs(model='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', served_model_name=None, tokenizer='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', task='auto', skip_tokenizer_init=False, tokenizer_mode='auto', chat_template_text_format='string', trust_remote_code=True, allowed_local_media_path=None, download_dir=None, load_format='auto', config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, seed=0, max_model_len=8192, worker_use_ray=False, distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, swap_space=16.0, cpu_offload_gb=0, gpu_memory_utilization=0.88, max_num_batched_tokens=None, max_num_seqs=256, max_logprobs=20, disable_log_stats=False, revision=None, code_revision=None, rope_scaling=None, rope_theta=None, hf_overrides=None, tokenizer_revision=None, quantization=None, enforce_eager=False, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, limit_mm_per_prompt=None, mm_processor_kwargs=None, enable_lora=False, enable_lora_bias=False, max_loras=1, max_lora_rank=16, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, fully_sharded_loras=False, lora_extra_vocab_size=256, long_lora_scaling_factors=None, lora_dtype='auto', max_cpu_loras=None, device='auto', num_scheduler_steps=1, multi_step_stream_outputs=True, ray_workers_use_nsight=False, num_gpu_blocks_override=None, num_lookahead_slots=0, model_loader_extra_config=None, ignore_patterns=[], preemption_mode=None, scheduler_delay_factor=0.0, enable_chunked_prefill=False, guided_decoding_backend='outlines', speculative_model=None, speculative_model_quantization=None, speculative_draft_tensor_parallel_size=None, num_speculative_tokens=None, speculative_disable_mqa_scorer=False, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', typical_acceptance_sampler_posterior_threshold=None, typical_acceptance_sampler_posterior_alpha=None, qlora_adapter_name_or_path=None, disable_logprobs_during_spec_decoding=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, scheduling_policy='fcfs', override_neuron_config=None, override_pooler_config=None, disable_log_requests=False)
+2026-02-01 18:34:17 | ERROR | stderr | INFO:     Started server process [205215]
+2026-02-01 18:34:17 | ERROR | stderr | INFO:     Waiting for application startup.
+2026-02-01 18:34:17 | ERROR | stderr | INFO:     Application startup complete.
+2026-02-01 18:34:17 | ERROR | stderr | INFO:     Uvicorn running on http://0.0.0.0:10082 (Press CTRL+C to quit)
+2026-02-01 18:34:32 | INFO | stdout | INFO:     127.0.0.1:50454 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:34 | INFO | stdout | INFO:     127.0.0.1:50456 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:35 | INFO | stdout | INFO:     127.0.0.1:50466 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:36 | INFO | stdout | INFO:     127.0.0.1:50480 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:37 | INFO | stdout | INFO:     127.0.0.1:50490 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:38 | INFO | stdout | INFO:     127.0.0.1:50498 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:39 | INFO | stdout | INFO:     127.0.0.1:50504 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:40 | INFO | stdout | INFO:     127.0.0.1:50510 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:41 | INFO | stdout | INFO:     127.0.0.1:50522 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:42 | INFO | stdout | INFO:     127.0.0.1:37060 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:43 | INFO | stdout | INFO:     127.0.0.1:37070 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:44 | INFO | stdout | INFO:     127.0.0.1:37080 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:46 | INFO | stdout | INFO:     127.0.0.1:37082 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:47 | INFO | stdout | INFO:     127.0.0.1:37098 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:48 | INFO | stdout | INFO:     127.0.0.1:37102 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:49 | INFO | stdout | INFO:     127.0.0.1:37114 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:51 | INFO | stdout | INFO:     127.0.0.1:37122 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:52 | INFO | stdout | INFO:     127.0.0.1:48126 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:53 | INFO | stdout | INFO:     127.0.0.1:48136 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:53 | INFO | stdout | INFO:     127.0.0.1:48148 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:54 | INFO | stdout | INFO:     127.0.0.1:48150 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:54 | INFO | stdout | INFO:     127.0.0.1:48158 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:55 | INFO | stdout | INFO:     127.0.0.1:48160 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:55 | INFO | stdout | INFO:     127.0.0.1:48172 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:56 | INFO | stdout | INFO:     127.0.0.1:48176 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:57 | INFO | stdout | INFO:     127.0.0.1:48182 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:57 | INFO | stdout | INFO:     127.0.0.1:48186 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:58 | INFO | stdout | INFO:     127.0.0.1:48200 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:58 | INFO | stdout | INFO:     127.0.0.1:48216 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:59 | INFO | stdout | INFO:     127.0.0.1:48218 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:34:59 | INFO | stdout | INFO:     127.0.0.1:48226 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:00 | INFO | stdout | INFO:     127.0.0.1:48242 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:02 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 33. worker_id: 5934a895. 
+2026-02-01 18:35:02 | INFO | stdout | INFO:     127.0.0.1:48254 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:04 | INFO | stdout | INFO:     127.0.0.1:44856 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:05 | INFO | stdout | INFO:     127.0.0.1:44864 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:05 | INFO | stdout | INFO:     127.0.0.1:44866 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:06 | INFO | stdout | INFO:     127.0.0.1:44882 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:07 | INFO | stdout | INFO:     127.0.0.1:44896 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:07 | INFO | stdout | INFO:     127.0.0.1:44902 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:08 | INFO | stdout | INFO:     127.0.0.1:44918 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:09 | INFO | stdout | INFO:     127.0.0.1:44934 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:10 | INFO | stdout | INFO:     127.0.0.1:44950 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:11 | INFO | stdout | INFO:     127.0.0.1:44962 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:11 | INFO | stdout | INFO:     127.0.0.1:47278 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:12 | INFO | stdout | INFO:     127.0.0.1:47286 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:13 | INFO | stdout | INFO:     127.0.0.1:47298 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:13 | INFO | stdout | INFO:     127.0.0.1:47302 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:14 | INFO | stdout | INFO:     127.0.0.1:47316 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:15 | INFO | stdout | INFO:     127.0.0.1:47332 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:16 | INFO | stdout | INFO:     127.0.0.1:47338 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:17 | INFO | stdout | INFO:     127.0.0.1:47342 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:18 | INFO | stdout | INFO:     127.0.0.1:47346 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:19 | INFO | stdout | INFO:     127.0.0.1:47350 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:20 | INFO | stdout | INFO:     127.0.0.1:47360 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:20 | INFO | stdout | INFO:     127.0.0.1:47374 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:22 | INFO | stdout | INFO:     127.0.0.1:47386 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:22 | INFO | stdout | INFO:     127.0.0.1:36174 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:23 | INFO | stdout | INFO:     127.0.0.1:36182 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:24 | INFO | stdout | INFO:     127.0.0.1:36186 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:24 | INFO | stdout | INFO:     127.0.0.1:36200 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:24 | INFO | stdout | INFO:     127.0.0.1:36214 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:26 | INFO | stdout | INFO:     127.0.0.1:36228 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:26 | INFO | stdout | INFO:     127.0.0.1:36230 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:27 | INFO | stdout | INFO:     127.0.0.1:36238 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:28 | INFO | stdout | INFO:     127.0.0.1:36242 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:28 | INFO | stdout | INFO:     127.0.0.1:36248 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:28 | INFO | stdout | INFO:     127.0.0.1:36262 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:29 | INFO | stdout | INFO:     127.0.0.1:36278 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:30 | INFO | stdout | INFO:     127.0.0.1:36292 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:30 | INFO | stdout | INFO:     127.0.0.1:36296 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:30 | INFO | stdout | INFO:     127.0.0.1:36310 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:31 | INFO | stdout | INFO:     127.0.0.1:36312 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:31 | INFO | stdout | INFO:     127.0.0.1:36328 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:32 | INFO | stdout | INFO:     127.0.0.1:60758 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:33 | INFO | stdout | INFO:     127.0.0.1:60768 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:34 | INFO | stdout | INFO:     127.0.0.1:60776 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:35 | INFO | stdout | INFO:     127.0.0.1:60790 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:37 | INFO | stdout | INFO:     127.0.0.1:60792 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:38 | INFO | stdout | INFO:     127.0.0.1:60808 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:39 | INFO | stdout | INFO:     127.0.0.1:60818 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:40 | INFO | stdout | INFO:     127.0.0.1:60826 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:41 | INFO | stdout | INFO:     127.0.0.1:60842 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:41 | INFO | stdout | INFO:     127.0.0.1:58512 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:42 | INFO | stdout | INFO:     127.0.0.1:58516 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:42 | INFO | stdout | INFO:     127.0.0.1:58520 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:43 | INFO | stdout | INFO:     127.0.0.1:58526 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:44 | INFO | stdout | INFO:     127.0.0.1:58536 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:44 | INFO | stdout | INFO:     127.0.0.1:58544 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:46 | INFO | stdout | INFO:     127.0.0.1:58552 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:47 | INFO | stdout | INFO:     127.0.0.1:58564 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:47 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 90. worker_id: 5934a895. 
+2026-02-01 18:35:48 | INFO | stdout | INFO:     127.0.0.1:58574 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:48 | INFO | stdout | INFO:     127.0.0.1:58586 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:49 | INFO | stdout | INFO:     127.0.0.1:58590 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:50 | INFO | stdout | INFO:     127.0.0.1:58600 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:50 | INFO | stdout | INFO:     127.0.0.1:58614 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:51 | INFO | stdout | INFO:     127.0.0.1:58624 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:52 | INFO | stdout | INFO:     127.0.0.1:43938 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:53 | INFO | stdout | INFO:     127.0.0.1:43942 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:54 | INFO | stdout | INFO:     127.0.0.1:43958 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:55 | INFO | stdout | INFO:     127.0.0.1:43962 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:55 | INFO | stdout | INFO:     127.0.0.1:43968 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:57 | INFO | stdout | INFO:     127.0.0.1:43980 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:58 | INFO | stdout | INFO:     127.0.0.1:43982 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:35:59 | INFO | stdout | INFO:     127.0.0.1:43984 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:00 | INFO | stdout | INFO:     127.0.0.1:43992 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:01 | INFO | stdout | INFO:     127.0.0.1:44002 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:01 | INFO | stdout | INFO:     127.0.0.1:44702 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:02 | INFO | stdout | INFO:     127.0.0.1:44708 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:03 | INFO | stdout | INFO:     127.0.0.1:44724 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:04 | INFO | stdout | INFO:     127.0.0.1:44726 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:05 | INFO | stdout | INFO:     127.0.0.1:44742 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:06 | INFO | stdout | INFO:     127.0.0.1:44754 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:06 | INFO | stdout | INFO:     127.0.0.1:44768 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:07 | INFO | stdout | INFO:     127.0.0.1:44780 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:07 | INFO | stdout | INFO:     127.0.0.1:44792 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:08 | INFO | stdout | INFO:     127.0.0.1:44804 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:08 | INFO | stdout | INFO:     127.0.0.1:44810 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:09 | INFO | stdout | INFO:     127.0.0.1:44824 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:09 | INFO | stdout | INFO:     127.0.0.1:44836 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:09 | INFO | stdout | INFO:     127.0.0.1:44842 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:10 | INFO | stdout | INFO:     127.0.0.1:44856 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:10 | INFO | stdout | INFO:     127.0.0.1:44868 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:11 | INFO | stdout | INFO:     127.0.0.1:44880 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:11 | INFO | stdout | INFO:     127.0.0.1:60492 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:12 | INFO | stdout | INFO:     127.0.0.1:60496 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:12 | INFO | stdout | INFO:     127.0.0.1:60506 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:13 | INFO | stdout | INFO:     127.0.0.1:60512 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:13 | INFO | stdout | INFO:     127.0.0.1:60518 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:14 | INFO | stdout | INFO:     127.0.0.1:60532 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:15 | INFO | stdout | INFO:     127.0.0.1:60544 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:17 | INFO | stdout | INFO:     127.0.0.1:60550 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:21 | INFO | stdout | INFO:     127.0.0.1:60564 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:22 | INFO | stdout | INFO:     127.0.0.1:60576 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:23 | INFO | stdout | INFO:     127.0.0.1:49110 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:24 | INFO | stdout | INFO:     127.0.0.1:49112 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:25 | INFO | stdout | INFO:     127.0.0.1:49114 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:26 | INFO | stdout | INFO:     127.0.0.1:49116 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:27 | INFO | stdout | INFO:     127.0.0.1:49128 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:28 | INFO | stdout | INFO:     127.0.0.1:49140 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:29 | INFO | stdout | INFO:     127.0.0.1:49154 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:31 | INFO | stdout | INFO:     127.0.0.1:49160 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:32 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 142. worker_id: 5934a895. 
+2026-02-01 18:36:33 | INFO | stdout | INFO:     127.0.0.1:49252 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:34 | INFO | stdout | INFO:     127.0.0.1:49260 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:40 | INFO | stdout | INFO:     127.0.0.1:49264 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:41 | INFO | stdout | INFO:     127.0.0.1:49270 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:41 | INFO | stdout | INFO:     127.0.0.1:36804 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:42 | INFO | stdout | INFO:     127.0.0.1:36816 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:42 | INFO | stdout | INFO:     127.0.0.1:36826 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:43 | INFO | stdout | INFO:     127.0.0.1:36836 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:43 | INFO | stdout | INFO:     127.0.0.1:36846 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:44 | INFO | stdout | INFO:     127.0.0.1:36862 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:44 | INFO | stdout | INFO:     127.0.0.1:36876 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:45 | INFO | stdout | INFO:     127.0.0.1:36886 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:45 | INFO | stdout | INFO:     127.0.0.1:36902 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:46 | INFO | stdout | INFO:     127.0.0.1:36906 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:46 | INFO | stdout | INFO:     127.0.0.1:36916 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:47 | INFO | stdout | INFO:     127.0.0.1:36926 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:47 | INFO | stdout | INFO:     127.0.0.1:36930 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:48 | INFO | stdout | INFO:     127.0.0.1:36938 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:49 | INFO | stdout | INFO:     127.0.0.1:36946 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:49 | INFO | stdout | INFO:     127.0.0.1:36950 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:50 | INFO | stdout | INFO:     127.0.0.1:36956 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:51 | INFO | stdout | INFO:     127.0.0.1:36960 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:51 | INFO | stdout | INFO:     127.0.0.1:36964 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:52 | INFO | stdout | INFO:     127.0.0.1:54064 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:52 | INFO | stdout | INFO:     127.0.0.1:54076 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:52 | INFO | stdout | INFO:     127.0.0.1:54078 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:53 | INFO | stdout | INFO:     127.0.0.1:54086 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:56 | INFO | stdout | INFO:     127.0.0.1:54094 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:57 | INFO | stdout | INFO:     127.0.0.1:54098 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:58 | INFO | stdout | INFO:     127.0.0.1:54114 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:58 | INFO | stdout | INFO:     127.0.0.1:54124 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:36:59 | INFO | stdout | INFO:     127.0.0.1:54126 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:00 | INFO | stdout | INFO:     127.0.0.1:54140 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:01 | INFO | stdout | INFO:     127.0.0.1:54152 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:01 | INFO | stdout | INFO:     127.0.0.1:54162 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:02 | INFO | stdout | INFO:     127.0.0.1:39294 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:02 | INFO | stdout | INFO:     127.0.0.1:39304 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:03 | INFO | stdout | INFO:     127.0.0.1:39308 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:03 | INFO | stdout | INFO:     127.0.0.1:39312 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:04 | INFO | stdout | INFO:     127.0.0.1:39314 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:04 | INFO | stdout | INFO:     127.0.0.1:39320 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:05 | INFO | stdout | INFO:     127.0.0.1:39326 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:05 | INFO | stdout | INFO:     127.0.0.1:39332 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:05 | INFO | stdout | INFO:     127.0.0.1:39338 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:06 | INFO | stdout | INFO:     127.0.0.1:39344 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:06 | INFO | stdout | INFO:     127.0.0.1:39350 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:06 | INFO | stdout | INFO:     127.0.0.1:39362 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:07 | INFO | stdout | INFO:     127.0.0.1:39364 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:08 | INFO | stdout | INFO:     127.0.0.1:39380 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:10 | INFO | stdout | INFO:     127.0.0.1:39386 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:10 | INFO | stdout | INFO:     127.0.0.1:39392 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:11 | INFO | stdout | INFO:     127.0.0.1:39396 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:12 | INFO | stdout | INFO:     127.0.0.1:54812 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:12 | INFO | stdout | INFO:     127.0.0.1:54816 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:13 | INFO | stdout | INFO:     127.0.0.1:54820 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:17 | INFO | stdout | INFO:     127.0.0.1:54836 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:17 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 198. worker_id: 5934a895. 
+2026-02-01 18:37:18 | INFO | stdout | INFO:     127.0.0.1:54844 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:19 | INFO | stdout | INFO:     127.0.0.1:54852 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:19 | INFO | stdout | INFO:     127.0.0.1:54858 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:20 | INFO | stdout | INFO:     127.0.0.1:54868 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:21 | INFO | stdout | INFO:     127.0.0.1:54884 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:21 | INFO | stdout | INFO:     127.0.0.1:54896 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:23 | INFO | stdout | INFO:     127.0.0.1:50256 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:24 | INFO | stdout | INFO:     127.0.0.1:50272 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:25 | INFO | stdout | INFO:     127.0.0.1:50280 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:27 | INFO | stdout | INFO:     127.0.0.1:50282 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:29 | INFO | stdout | INFO:     127.0.0.1:50292 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:30 | INFO | stdout | INFO:     127.0.0.1:50298 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:32 | INFO | stdout | INFO:     127.0.0.1:48664 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:33 | INFO | stdout | INFO:     127.0.0.1:48680 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:35 | INFO | stdout | INFO:     127.0.0.1:48688 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:36 | INFO | stdout | INFO:     127.0.0.1:48696 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:37 | INFO | stdout | INFO:     127.0.0.1:48698 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:38 | INFO | stdout | INFO:     127.0.0.1:48702 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:38 | INFO | stdout | INFO:     127.0.0.1:48710 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:39 | INFO | stdout | INFO:     127.0.0.1:48726 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:40 | INFO | stdout | INFO:     127.0.0.1:48732 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:41 | INFO | stdout | INFO:     127.0.0.1:48738 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:43 | INFO | stdout | INFO:     127.0.0.1:48754 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:44 | INFO | stdout | INFO:     127.0.0.1:39480 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:46 | INFO | stdout | INFO:     127.0.0.1:39482 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:48 | INFO | stdout | INFO:     127.0.0.1:39484 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:50 | INFO | stdout | INFO:     127.0.0.1:39498 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:50 | INFO | stdout | INFO:     127.0.0.1:39504 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:51 | INFO | stdout | INFO:     127.0.0.1:39512 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:52 | INFO | stdout | INFO:     127.0.0.1:48144 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:53 | INFO | stdout | INFO:     127.0.0.1:48156 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:55 | INFO | stdout | INFO:     127.0.0.1:48162 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:56 | INFO | stdout | INFO:     127.0.0.1:48170 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:57 | INFO | stdout | INFO:     127.0.0.1:48178 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:58 | INFO | stdout | INFO:     127.0.0.1:48180 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:37:59 | INFO | stdout | INFO:     127.0.0.1:48184 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:00 | INFO | stdout | INFO:     127.0.0.1:48190 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:02 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 235. worker_id: 5934a895. 
+2026-02-01 18:38:05 | INFO | stdout | INFO:     127.0.0.1:48196 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:05 | INFO | stdout | INFO:     127.0.0.1:46288 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:07 | INFO | stdout | INFO:     127.0.0.1:46304 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:08 | INFO | stdout | INFO:     127.0.0.1:46310 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:09 | INFO | stdout | INFO:     127.0.0.1:46316 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:09 | INFO | stdout | INFO:     127.0.0.1:46318 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:09 | INFO | stdout | INFO:     127.0.0.1:46330 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:10 | INFO | stdout | INFO:     127.0.0.1:46342 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:10 | INFO | stdout | INFO:     127.0.0.1:46348 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:10 | INFO | stdout | INFO:     127.0.0.1:46364 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:11 | INFO | stdout | INFO:     127.0.0.1:46374 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:12 | INFO | stdout | INFO:     127.0.0.1:42698 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:12 | INFO | stdout | INFO:     127.0.0.1:42712 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:12 | INFO | stdout | INFO:     127.0.0.1:42722 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:13 | INFO | stdout | INFO:     127.0.0.1:42730 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:14 | INFO | stdout | INFO:     127.0.0.1:42744 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:14 | INFO | stdout | INFO:     127.0.0.1:42754 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:15 | INFO | stdout | INFO:     127.0.0.1:42766 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:16 | INFO | stdout | INFO:     127.0.0.1:42774 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:16 | INFO | stdout | INFO:     127.0.0.1:42784 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:18 | INFO | stdout | INFO:     127.0.0.1:42800 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:18 | INFO | stdout | INFO:     127.0.0.1:42812 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:19 | INFO | stdout | INFO:     127.0.0.1:42820 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:27 | INFO | stdout | INFO:     127.0.0.1:42826 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:29 | INFO | stdout | INFO:     127.0.0.1:38410 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:33 | INFO | stdout | INFO:     127.0.0.1:38424 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:34 | INFO | stdout | INFO:     127.0.0.1:58132 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:35 | INFO | stdout | INFO:     127.0.0.1:58146 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:36 | INFO | stdout | INFO:     127.0.0.1:58150 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:37 | INFO | stdout | INFO:     127.0.0.1:58158 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:38 | INFO | stdout | INFO:     127.0.0.1:58174 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:39 | INFO | stdout | INFO:     127.0.0.1:58180 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:41 | INFO | stdout | INFO:     127.0.0.1:58192 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:42 | INFO | stdout | INFO:     127.0.0.1:40868 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:43 | INFO | stdout | INFO:     127.0.0.1:40884 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:44 | INFO | stdout | INFO:     127.0.0.1:40888 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:44 | INFO | stdout | INFO:     127.0.0.1:40898 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:45 | INFO | stdout | INFO:     127.0.0.1:40914 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:46 | INFO | stdout | INFO:     127.0.0.1:40930 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:47 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 274. worker_id: 5934a895. 
+2026-02-01 18:38:47 | INFO | stdout | INFO:     127.0.0.1:40942 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:48 | INFO | stdout | INFO:     127.0.0.1:40946 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:49 | INFO | stdout | INFO:     127.0.0.1:40950 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:50 | INFO | stdout | INFO:     127.0.0.1:40954 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:51 | INFO | stdout | INFO:     127.0.0.1:40964 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:52 | INFO | stdout | INFO:     127.0.0.1:54882 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:53 | INFO | stdout | INFO:     127.0.0.1:54890 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:54 | INFO | stdout | INFO:     127.0.0.1:54902 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:54 | INFO | stdout | INFO:     127.0.0.1:54912 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:55 | INFO | stdout | INFO:     127.0.0.1:54924 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:56 | INFO | stdout | INFO:     127.0.0.1:54926 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:57 | INFO | stdout | INFO:     127.0.0.1:54940 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:58 | INFO | stdout | INFO:     127.0.0.1:54954 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:58 | INFO | stdout | INFO:     127.0.0.1:54968 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:38:59 | INFO | stdout | INFO:     127.0.0.1:54974 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:00 | INFO | stdout | INFO:     127.0.0.1:54986 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:01 | INFO | stdout | INFO:     127.0.0.1:55000 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:01 | INFO | stdout | INFO:     127.0.0.1:47224 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:02 | INFO | stdout | INFO:     127.0.0.1:47228 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:03 | INFO | stdout | INFO:     127.0.0.1:47238 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:04 | INFO | stdout | INFO:     127.0.0.1:47252 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:04 | INFO | stdout | INFO:     127.0.0.1:47258 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:05 | INFO | stdout | INFO:     127.0.0.1:47270 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:06 | INFO | stdout | INFO:     127.0.0.1:47272 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:06 | INFO | stdout | INFO:     127.0.0.1:47278 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:07 | INFO | stdout | INFO:     127.0.0.1:47288 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:08 | INFO | stdout | INFO:     127.0.0.1:47294 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:09 | INFO | stdout | INFO:     127.0.0.1:47300 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:09 | INFO | stdout | INFO:     127.0.0.1:47312 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:10 | INFO | stdout | INFO:     127.0.0.1:47320 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:11 | INFO | stdout | INFO:     127.0.0.1:47334 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:12 | INFO | stdout | INFO:     127.0.0.1:48998 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:13 | INFO | stdout | INFO:     127.0.0.1:49012 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:13 | INFO | stdout | INFO:     127.0.0.1:49020 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:14 | INFO | stdout | INFO:     127.0.0.1:49030 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:15 | INFO | stdout | INFO:     127.0.0.1:49034 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:15 | INFO | stdout | INFO:     127.0.0.1:49050 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:16 | INFO | stdout | INFO:     127.0.0.1:49058 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:17 | INFO | stdout | INFO:     127.0.0.1:49062 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:18 | INFO | stdout | INFO:     127.0.0.1:49070 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:20 | INFO | stdout | INFO:     127.0.0.1:49084 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:21 | INFO | stdout | INFO:     127.0.0.1:49098 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:21 | INFO | stdout | INFO:     127.0.0.1:55044 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:22 | INFO | stdout | INFO:     127.0.0.1:55048 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:23 | INFO | stdout | INFO:     127.0.0.1:55052 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:24 | INFO | stdout | INFO:     127.0.0.1:55058 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:25 | INFO | stdout | INFO:     127.0.0.1:55074 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:25 | INFO | stdout | INFO:     127.0.0.1:55076 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:26 | INFO | stdout | INFO:     127.0.0.1:55090 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:26 | INFO | stdout | INFO:     127.0.0.1:55098 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:27 | INFO | stdout | INFO:     127.0.0.1:55112 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:27 | INFO | stdout | INFO:     127.0.0.1:55118 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:28 | INFO | stdout | INFO:     127.0.0.1:55132 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:28 | INFO | stdout | INFO:     127.0.0.1:55136 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:29 | INFO | stdout | INFO:     127.0.0.1:55152 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:29 | INFO | stdout | INFO:     127.0.0.1:55154 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:30 | INFO | stdout | INFO:     127.0.0.1:55166 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:30 | INFO | stdout | INFO:     127.0.0.1:55174 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:31 | INFO | stdout | INFO:     127.0.0.1:55178 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:31 | INFO | stdout | INFO:     127.0.0.1:60898 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:32 | INFO | stdout | INFO:     127.0.0.1:60904 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:32 | INFO | stdout | INFO:     127.0.0.1:60914 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:32 | INFO | stdout | INFO:     127.0.0.1:60922 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:32 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 336. worker_id: 5934a895. 
+2026-02-01 18:39:33 | INFO | stdout | INFO:     127.0.0.1:60930 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:33 | INFO | stdout | INFO:     127.0.0.1:60946 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:34 | INFO | stdout | INFO:     127.0.0.1:60952 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:34 | INFO | stdout | INFO:     127.0.0.1:60956 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:35 | INFO | stdout | INFO:     127.0.0.1:60964 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:36 | INFO | stdout | INFO:     127.0.0.1:60968 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:38 | INFO | stdout | INFO:     127.0.0.1:60972 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:41 | INFO | stdout | INFO:     127.0.0.1:60986 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:44 | INFO | stdout | INFO:     127.0.0.1:59412 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:45 | INFO | stdout | INFO:     127.0.0.1:59424 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:46 | INFO | stdout | INFO:     127.0.0.1:59438 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:48 | INFO | stdout | INFO:     127.0.0.1:59442 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:50 | INFO | stdout | INFO:     127.0.0.1:59456 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:50 | INFO | stdout | INFO:     127.0.0.1:59468 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:51 | INFO | stdout | INFO:     127.0.0.1:59478 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:52 | INFO | stdout | INFO:     127.0.0.1:59278 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:53 | INFO | stdout | INFO:     127.0.0.1:59282 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:54 | INFO | stdout | INFO:     127.0.0.1:59290 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:54 | INFO | stdout | INFO:     127.0.0.1:59306 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:56 | INFO | stdout | INFO:     127.0.0.1:59314 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:57 | INFO | stdout | INFO:     127.0.0.1:59318 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:58 | INFO | stdout | INFO:     127.0.0.1:59328 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:58 | INFO | stdout | INFO:     127.0.0.1:59334 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:39:59 | INFO | stdout | INFO:     127.0.0.1:59342 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:01 | INFO | stdout | INFO:     127.0.0.1:59348 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:02 | INFO | stdout | INFO:     127.0.0.1:59350 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:04 | INFO | stdout | INFO:     127.0.0.1:58384 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:05 | INFO | stdout | INFO:     127.0.0.1:58398 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:06 | INFO | stdout | INFO:     127.0.0.1:58406 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:07 | INFO | stdout | INFO:     127.0.0.1:58418 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:08 | INFO | stdout | INFO:     127.0.0.1:58426 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:09 | INFO | stdout | INFO:     127.0.0.1:58442 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:10 | INFO | stdout | INFO:     127.0.0.1:58448 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:12 | INFO | stdout | INFO:     127.0.0.1:58458 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:13 | INFO | stdout | INFO:     127.0.0.1:48958 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:13 | INFO | stdout | INFO:     127.0.0.1:48968 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:14 | INFO | stdout | INFO:     127.0.0.1:48972 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:15 | INFO | stdout | INFO:     127.0.0.1:48988 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:17 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 375. worker_id: 5934a895. 
+2026-02-01 18:40:18 | INFO | stdout | INFO:     127.0.0.1:49002 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:19 | INFO | stdout | INFO:     127.0.0.1:49016 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:20 | INFO | stdout | INFO:     127.0.0.1:49032 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:22 | INFO | stdout | INFO:     127.0.0.1:49044 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:23 | INFO | stdout | INFO:     127.0.0.1:56028 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:24 | INFO | stdout | INFO:     127.0.0.1:56036 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:24 | INFO | stdout | INFO:     127.0.0.1:56052 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:26 | INFO | stdout | INFO:     127.0.0.1:56066 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:26 | INFO | stdout | INFO:     127.0.0.1:56078 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:27 | INFO | stdout | INFO:     127.0.0.1:56084 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:28 | INFO | stdout | INFO:     127.0.0.1:56094 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:28 | INFO | stdout | INFO:     127.0.0.1:56108 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:29 | INFO | stdout | INFO:     127.0.0.1:56112 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:29 | INFO | stdout | INFO:     127.0.0.1:56120 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:30 | INFO | stdout | INFO:     127.0.0.1:56130 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:31 | INFO | stdout | INFO:     127.0.0.1:56136 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:31 | INFO | stdout | INFO:     127.0.0.1:34070 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:32 | INFO | stdout | INFO:     127.0.0.1:34080 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:33 | INFO | stdout | INFO:     127.0.0.1:34088 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:35 | INFO | stdout | INFO:     127.0.0.1:34096 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:35 | INFO | stdout | INFO:     127.0.0.1:34104 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:36 | INFO | stdout | INFO:     127.0.0.1:34120 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:37 | INFO | stdout | INFO:     127.0.0.1:34130 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:37 | INFO | stdout | INFO:     127.0.0.1:34142 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:38 | INFO | stdout | INFO:     127.0.0.1:34150 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:38 | INFO | stdout | INFO:     127.0.0.1:34154 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:39 | INFO | stdout | INFO:     127.0.0.1:34156 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:39 | INFO | stdout | INFO:     127.0.0.1:34170 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:39 | INFO | stdout | INFO:     127.0.0.1:34184 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:40 | INFO | stdout | INFO:     127.0.0.1:34188 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:41 | INFO | stdout | INFO:     127.0.0.1:34198 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:43 | INFO | stdout | INFO:     127.0.0.1:47368 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:44 | INFO | stdout | INFO:     127.0.0.1:47380 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:45 | INFO | stdout | INFO:     127.0.0.1:47396 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:46 | INFO | stdout | INFO:     127.0.0.1:47402 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:48 | INFO | stdout | INFO:     127.0.0.1:47418 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:49 | INFO | stdout | INFO:     127.0.0.1:47434 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:49 | INFO | stdout | INFO:     127.0.0.1:47450 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:50 | INFO | stdout | INFO:     127.0.0.1:47454 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:51 | INFO | stdout | INFO:     127.0.0.1:47464 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:52 | INFO | stdout | INFO:     127.0.0.1:33952 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:52 | INFO | stdout | INFO:     127.0.0.1:33958 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:53 | INFO | stdout | INFO:     127.0.0.1:33972 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:53 | INFO | stdout | INFO:     127.0.0.1:33986 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:54 | INFO | stdout | INFO:     127.0.0.1:34000 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:56 | INFO | stdout | INFO:     127.0.0.1:34004 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:58 | INFO | stdout | INFO:     127.0.0.1:34012 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:40:59 | INFO | stdout | INFO:     127.0.0.1:34018 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:00 | INFO | stdout | INFO:     127.0.0.1:34030 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:00 | INFO | stdout | INFO:     127.0.0.1:34046 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:00 | INFO | stdout | INFO:     127.0.0.1:34054 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:01 | INFO | stdout | INFO:     127.0.0.1:34058 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:02 | INFO | stdout | INFO:     127.0.0.1:59220 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:02 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 428. worker_id: 5934a895. 
+2026-02-01 18:41:03 | INFO | stdout | INFO:     127.0.0.1:59236 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:03 | INFO | stdout | INFO:     127.0.0.1:59240 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:03 | INFO | stdout | INFO:     127.0.0.1:59252 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:04 | INFO | stdout | INFO:     127.0.0.1:59258 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:05 | INFO | stdout | INFO:     127.0.0.1:59260 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:05 | INFO | stdout | INFO:     127.0.0.1:59264 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:06 | INFO | stdout | INFO:     127.0.0.1:59276 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:07 | INFO | stdout | INFO:     127.0.0.1:59282 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:08 | INFO | stdout | INFO:     127.0.0.1:59298 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:08 | INFO | stdout | INFO:     127.0.0.1:59302 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:08 | INFO | stdout | INFO:     127.0.0.1:59316 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:09 | INFO | stdout | INFO:     127.0.0.1:59320 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:09 | INFO | stdout | INFO:     127.0.0.1:59322 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:10 | INFO | stdout | INFO:     127.0.0.1:59324 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:10 | INFO | stdout | INFO:     127.0.0.1:59328 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:11 | INFO | stdout | INFO:     127.0.0.1:59344 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:12 | INFO | stdout | INFO:     127.0.0.1:55248 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:12 | INFO | stdout | INFO:     127.0.0.1:55258 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:13 | INFO | stdout | INFO:     127.0.0.1:55274 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:13 | INFO | stdout | INFO:     127.0.0.1:55286 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:14 | INFO | stdout | INFO:     127.0.0.1:55288 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:15 | INFO | stdout | INFO:     127.0.0.1:55298 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:15 | INFO | stdout | INFO:     127.0.0.1:55308 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:16 | INFO | stdout | INFO:     127.0.0.1:55310 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:19 | INFO | stdout | INFO:     127.0.0.1:55312 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:20 | INFO | stdout | INFO:     127.0.0.1:55318 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:22 | INFO | stdout | INFO:     127.0.0.1:55332 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:24 | INFO | stdout | INFO:     127.0.0.1:45092 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:25 | INFO | stdout | INFO:     127.0.0.1:45106 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:26 | INFO | stdout | INFO:     127.0.0.1:45120 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:30 | INFO | stdout | INFO:     127.0.0.1:45130 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:30 | INFO | stdout | INFO:     127.0.0.1:45140 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:31 | INFO | stdout | INFO:     127.0.0.1:45154 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:32 | INFO | stdout | INFO:     127.0.0.1:51076 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:33 | INFO | stdout | INFO:     127.0.0.1:51092 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:33 | INFO | stdout | INFO:     127.0.0.1:51104 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:33 | INFO | stdout | INFO:     127.0.0.1:51118 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:34 | INFO | stdout | INFO:     127.0.0.1:51130 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:34 | INFO | stdout | INFO:     127.0.0.1:51132 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:35 | INFO | stdout | INFO:     127.0.0.1:51148 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:36 | INFO | stdout | INFO:     127.0.0.1:51164 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:36 | INFO | stdout | INFO:     127.0.0.1:51174 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:37 | INFO | stdout | INFO:     127.0.0.1:51190 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:37 | INFO | stdout | INFO:     127.0.0.1:51206 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:38 | INFO | stdout | INFO:     127.0.0.1:51220 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:38 | INFO | stdout | INFO:     127.0.0.1:51232 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:39 | INFO | stdout | INFO:     127.0.0.1:51240 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:39 | INFO | stdout | INFO:     127.0.0.1:51242 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:40 | INFO | stdout | INFO:     127.0.0.1:51254 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:40 | INFO | stdout | INFO:     127.0.0.1:51260 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:40 | INFO | stdout | INFO:     127.0.0.1:51272 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:41 | INFO | stdout | INFO:     127.0.0.1:51276 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:42 | INFO | stdout | INFO:     127.0.0.1:48042 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:43 | INFO | stdout | INFO:     127.0.0.1:48044 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:44 | INFO | stdout | INFO:     127.0.0.1:48056 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:44 | INFO | stdout | INFO:     127.0.0.1:48062 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:45 | INFO | stdout | INFO:     127.0.0.1:48072 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:46 | INFO | stdout | INFO:     127.0.0.1:48080 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:47 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 486. worker_id: 5934a895. 
+2026-02-01 18:41:48 | INFO | stdout | INFO:     127.0.0.1:48092 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:49 | INFO | stdout | INFO:     127.0.0.1:48102 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:49 | INFO | stdout | INFO:     127.0.0.1:48114 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:50 | INFO | stdout | INFO:     127.0.0.1:48120 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:51 | INFO | stdout | INFO:     127.0.0.1:48136 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:52 | INFO | stdout | INFO:     127.0.0.1:42886 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:52 | INFO | stdout | INFO:     127.0.0.1:42902 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:53 | INFO | stdout | INFO:     127.0.0.1:42910 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:54 | INFO | stdout | INFO:     127.0.0.1:42912 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:57 | INFO | stdout | INFO:     127.0.0.1:42920 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:41:59 | INFO | stdout | INFO:     127.0.0.1:42936 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:00 | INFO | stdout | INFO:     127.0.0.1:42942 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:01 | INFO | stdout | INFO:     127.0.0.1:42944 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:02 | INFO | stdout | INFO:     127.0.0.1:48738 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:03 | INFO | stdout | INFO:     127.0.0.1:48744 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:03 | INFO | stdout | INFO:     127.0.0.1:48760 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:04 | INFO | stdout | INFO:     127.0.0.1:48770 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:05 | INFO | stdout | INFO:     127.0.0.1:48776 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:05 | INFO | stdout | INFO:     127.0.0.1:48790 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:05 | INFO | stdout | INFO:     127.0.0.1:48794 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:06 | INFO | stdout | INFO:     127.0.0.1:48798 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:06 | INFO | stdout | INFO:     127.0.0.1:48814 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:07 | INFO | stdout | INFO:     127.0.0.1:48828 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:08 | INFO | stdout | INFO:     127.0.0.1:48842 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:09 | INFO | stdout | INFO:     127.0.0.1:48844 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:11 | INFO | stdout | INFO:     127.0.0.1:48846 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:11 | INFO | stdout | INFO:     127.0.0.1:50006 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:13 | INFO | stdout | INFO:     127.0.0.1:50018 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:14 | INFO | stdout | INFO:     127.0.0.1:50024 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:15 | INFO | stdout | INFO:     127.0.0.1:50034 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:18 | INFO | stdout | INFO:     127.0.0.1:50044 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:19 | INFO | stdout | INFO:     127.0.0.1:50052 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:20 | INFO | stdout | INFO:     127.0.0.1:50058 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:21 | INFO | stdout | INFO:     127.0.0.1:60016 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:22 | INFO | stdout | INFO:     127.0.0.1:60018 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:23 | INFO | stdout | INFO:     127.0.0.1:60034 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:24 | INFO | stdout | INFO:     127.0.0.1:60036 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:25 | INFO | stdout | INFO:     127.0.0.1:60052 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:26 | INFO | stdout | INFO:     127.0.0.1:60060 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:26 | INFO | stdout | INFO:     127.0.0.1:60076 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:27 | INFO | stdout | INFO:     127.0.0.1:60092 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:28 | INFO | stdout | INFO:     127.0.0.1:60102 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:29 | INFO | stdout | INFO:     127.0.0.1:60110 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:29 | INFO | stdout | INFO:     127.0.0.1:60114 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:30 | INFO | stdout | INFO:     127.0.0.1:60124 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:31 | INFO | stdout | INFO:     127.0.0.1:60126 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:32 | INFO | stdout | INFO:     127.0.0.1:51596 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:32 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 532. worker_id: 5934a895. 
+2026-02-01 18:42:35 | INFO | stdout | INFO:     127.0.0.1:51604 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:39 | INFO | stdout | INFO:     127.0.0.1:51606 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:39 | INFO | stdout | INFO:     127.0.0.1:51614 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:41 | INFO | stdout | INFO:     127.0.0.1:51622 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:42 | INFO | stdout | INFO:     127.0.0.1:51636 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:43 | INFO | stdout | INFO:     127.0.0.1:48602 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:44 | INFO | stdout | INFO:     127.0.0.1:48618 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:45 | INFO | stdout | INFO:     127.0.0.1:48624 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:46 | INFO | stdout | INFO:     127.0.0.1:48638 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:46 | INFO | stdout | INFO:     127.0.0.1:48644 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:48 | INFO | stdout | INFO:     127.0.0.1:48650 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:48 | INFO | stdout | INFO:     127.0.0.1:48662 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:50 | INFO | stdout | INFO:     127.0.0.1:48664 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:51 | INFO | stdout | INFO:     127.0.0.1:48678 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:52 | INFO | stdout | INFO:     127.0.0.1:45588 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:53 | INFO | stdout | INFO:     127.0.0.1:45592 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:54 | INFO | stdout | INFO:     127.0.0.1:45606 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:55 | INFO | stdout | INFO:     127.0.0.1:45608 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:56 | INFO | stdout | INFO:     127.0.0.1:45618 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:57 | INFO | stdout | INFO:     127.0.0.1:45634 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:57 | INFO | stdout | INFO:     127.0.0.1:45640 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:42:58 | INFO | stdout | INFO:     127.0.0.1:45644 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:03 | INFO | stdout | INFO:     127.0.0.1:45660 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:04 | INFO | stdout | INFO:     127.0.0.1:36976 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:05 | INFO | stdout | INFO:     127.0.0.1:36986 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:06 | INFO | stdout | INFO:     127.0.0.1:36998 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:06 | INFO | stdout | INFO:     127.0.0.1:37002 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:07 | INFO | stdout | INFO:     127.0.0.1:37008 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:08 | INFO | stdout | INFO:     127.0.0.1:37012 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:11 | INFO | stdout | INFO:     127.0.0.1:37018 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:12 | INFO | stdout | INFO:     127.0.0.1:46280 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:13 | INFO | stdout | INFO:     127.0.0.1:46290 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:14 | INFO | stdout | INFO:     127.0.0.1:46304 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:16 | INFO | stdout | INFO:     127.0.0.1:46312 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:18 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1023, locked=False). call_ct: 567. worker_id: 5934a895. 
+2026-02-01 18:43:18 | INFO | stdout | INFO:     127.0.0.1:46324 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:20 | INFO | stdout | INFO:     127.0.0.1:46334 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:21 | INFO | stdout | INFO:     127.0.0.1:46348 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:22 | INFO | stdout | INFO:     127.0.0.1:33004 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:22 | INFO | stdout | INFO:     127.0.0.1:33008 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:24 | INFO | stdout | INFO:     127.0.0.1:33014 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:25 | INFO | stdout | INFO:     127.0.0.1:33020 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:26 | INFO | stdout | INFO:     127.0.0.1:33024 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:27 | INFO | stdout | INFO:     127.0.0.1:33034 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:27 | INFO | stdout | INFO:     127.0.0.1:33036 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:28 | INFO | stdout | INFO:     127.0.0.1:33046 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:29 | INFO | stdout | INFO:     127.0.0.1:33050 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:30 | INFO | stdout | INFO:     127.0.0.1:33056 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:30 | INFO | stdout | INFO:     127.0.0.1:33062 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:30 | INFO | stdout | INFO:     127.0.0.1:33076 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:31 | INFO | stdout | INFO:     127.0.0.1:33092 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:31 | INFO | stdout | INFO:     127.0.0.1:45954 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:32 | INFO | stdout | INFO:     127.0.0.1:45960 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:43:32 | INFO | stdout | INFO:     127.0.0.1:45970 - "POST /worker_generate HTTP/1.1" 200 OK
+2026-02-01 18:44:03 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 585. worker_id: 5934a895. 
+2026-02-01 18:44:03 | ERROR | model_worker | heart beat error: HTTPConnectionPool(host='0.0.0.0', port=10014): Max retries exceeded with url: /receive_heart_beat (Caused by NewConnectionError("HTTPConnection(host='0.0.0.0', port=10014): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-02-01 18:44:08 | ERROR | model_worker | heart beat error: HTTPConnectionPool(host='0.0.0.0', port=10014): Max retries exceeded with url: /receive_heart_beat (Caused by NewConnectionError("HTTPConnection(host='0.0.0.0', port=10014): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-02-01 18:44:13 | ERROR | model_worker | heart beat error: HTTPConnectionPool(host='0.0.0.0', port=10014): Max retries exceeded with url: /receive_heart_beat (Caused by NewConnectionError("HTTPConnection(host='0.0.0.0', port=10014): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-02-01 18:44:18 | ERROR | model_worker | heart beat error: HTTPConnectionPool(host='0.0.0.0', port=10014): Max retries exceeded with url: /receive_heart_beat (Caused by NewConnectionError("HTTPConnection(host='0.0.0.0', port=10014): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-02-01 18:44:23 | ERROR | model_worker | heart beat error: HTTPConnectionPool(host='0.0.0.0', port=10014): Max retries exceeded with url: /receive_heart_beat (Caused by NewConnectionError("HTTPConnection(host='0.0.0.0', port=10014): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-02-01 18:44:28 | ERROR | model_worker | heart beat error: HTTPConnectionPool(host='0.0.0.0', port=10014): Max retries exceeded with url: /receive_heart_beat (Caused by NewConnectionError("HTTPConnection(host='0.0.0.0', port=10014): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-02-01 18:44:30 | ERROR | stderr | INFO:     Shutting down
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | ERROR:    Traceback (most recent call last):
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | [rank0]: Traceback (most recent call last):
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---
+2026-02-01 18:44:30 | ERROR | stderr | --- Logging error ---

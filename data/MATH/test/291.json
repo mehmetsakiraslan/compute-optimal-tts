@@ -1,0 +1,1 @@
+{"problem": "Consider the rectangular region with the following points as vertices: $$(5,4), (-5,4), (-5,-4), (5,-4).$$ How many points with integer coordinates will be strictly in the interior of this rectangular region?", "solution": "63", "level": 4, "type": "Counting & Probability"}

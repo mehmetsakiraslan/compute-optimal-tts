@@ -1,0 +1,738 @@
+2026-01-24 12:19:23 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-24 12:19:23 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1019112[0m]
+2026-01-24 12:19:23 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-24 12:19:23 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-24 12:19:23 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-24 13:23:59 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-24 13:23:59 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1048822[0m]
+2026-01-24 13:23:59 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-24 13:23:59 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-24 13:23:59 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-24 13:26:22 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-24 13:26:22 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1053973[0m]
+2026-01-24 13:26:22 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-24 13:26:22 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-24 13:26:22 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-24 13:26:57 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-24 13:26:57 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-24 13:26:57 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57604 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 13:27:42 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 13:27:42 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35586 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 13:28:27 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 13:28:27 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54690 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 13:29:13 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 13:29:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38814 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 13:29:58 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 13:29:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58174 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 13:30:43 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 13:30:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34352 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 13:31:28 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 13:31:28 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39938 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 13:32:13 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 13:32:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55302 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 13:32:58 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 13:32:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51196 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:23:01 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-24 17:23:01 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1118074[0m]
+2026-01-24 17:23:01 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-24 17:23:01 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-24 17:23:01 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-24 17:23:36 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-24 17:23:36 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-24 17:23:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53136 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:26:00 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-24 17:26:00 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1131105[0m]
+2026-01-24 17:26:00 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-24 17:26:00 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-24 17:26:00 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-24 17:26:14 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-24 17:26:14 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-24 17:26:14 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51702 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:26:35 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-24 17:26:35 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-24 17:26:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52384 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:26:59 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:26:59 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45492 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:27:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:27:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48626 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:27:44 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:27:44 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57486 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:28:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:28:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48392 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:28:29 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:28:29 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38656 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:28:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:28:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50070 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:29:14 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:29:14 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45536 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:29:35 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:29:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60342 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:29:59 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:29:59 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49400 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:30:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:30:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38410 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:30:44 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:30:44 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44024 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:31:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:31:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43436 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:31:30 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:31:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34574 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:31:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:31:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52534 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:32:15 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:32:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46344 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:32:35 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:32:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44600 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:33:00 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:33:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54876 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:33:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:33:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40166 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:33:45 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:33:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51708 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:34:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:34:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46048 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:34:30 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:34:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58344 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:34:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:34:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38702 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:35:15 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:35:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59120 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:35:35 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:35:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56396 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:36:00 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:36:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59976 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:36:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:36:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60718 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:36:45 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:36:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43594 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:37:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:37:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48214 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:37:30 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:37:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46838 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:37:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:37:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55882 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:38:15 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:38:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56264 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:38:35 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:38:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44334 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:39:00 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:39:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44886 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:39:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:39:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56670 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:39:45 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:39:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34964 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:40:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:40:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39056 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:40:30 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:40:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57662 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:40:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:40:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56644 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:41:15 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:41:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43166 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:41:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:41:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56136 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:42:01 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:42:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59388 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:42:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:42:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60804 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:42:46 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:42:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37256 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:43:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:43:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50428 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:43:31 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:43:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37606 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:43:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:43:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48018 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:44:16 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:44:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39382 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:44:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:44:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36810 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:45:01 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:45:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38826 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:45:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:45:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56880 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:45:46 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:45:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38842 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:46:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:46:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53994 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:46:31 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:46:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53624 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:46:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:46:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42542 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:47:16 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:47:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52360 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:47:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:47:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58304 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:48:01 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:48:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43794 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:48:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:48:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34190 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:48:46 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:48:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42412 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:49:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:49:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41316 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:49:31 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:49:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43642 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:49:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:49:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35856 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:50:17 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:50:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36274 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:50:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:50:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60532 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:51:02 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:51:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41232 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:51:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:51:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44900 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:51:47 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:51:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38016 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:52:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:52:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44444 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:52:32 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:52:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45822 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:52:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:52:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48386 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:53:17 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:53:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59794 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:53:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:53:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46758 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:54:02 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:54:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59232 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:54:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:54:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51828 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:54:47 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:54:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45892 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:55:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:55:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33052 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:55:32 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:55:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34522 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:55:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:55:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35918 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:56:17 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:56:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59620 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:56:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:56:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43826 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:57:02 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:57:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51040 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:57:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:57:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42676 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:57:47 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:57:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44562 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:58:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:58:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53074 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:58:32 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:58:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50434 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:58:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:58:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54330 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:59:18 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 17:59:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46728 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 17:59:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 17:59:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49936 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:00:03 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:00:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38818 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:00:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:00:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34898 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:00:48 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:00:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42890 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:01:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:01:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51040 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:01:33 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:01:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58246 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:01:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:01:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51188 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:02:18 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:02:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49760 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:02:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:02:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49132 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:03:03 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:03:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52442 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:03:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:03:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58004 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:03:48 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:03:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56222 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:04:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:04:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38688 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:04:33 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:04:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44026 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:04:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:04:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36864 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:05:18 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:05:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53242 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:05:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:05:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57578 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:06:03 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:06:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46138 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:06:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:06:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51030 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:06:48 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:06:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56974 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:07:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:07:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55540 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:07:33 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:07:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43104 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:07:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:07:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40802 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:08:18 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:08:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43112 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:08:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:08:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50950 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:09:03 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:09:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48588 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:09:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:09:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40002 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:09:48 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-24 18:09:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38378 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-24 18:10:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-24 18:10:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36996 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 10:53:55 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-25 10:53:55 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1383114[0m]
+2026-01-25 10:53:55 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-25 10:53:55 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-25 10:53:55 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-25 10:54:10 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-25 10:54:10 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-25 10:54:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35740 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 10:54:30 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-25 10:54:30 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-25 10:54:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51542 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 10:54:55 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 10:54:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58044 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:02:02 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-25 11:02:02 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1397095[0m]
+2026-01-25 11:02:02 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-25 11:02:02 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-25 11:02:02 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-25 11:02:16 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-25 11:02:16 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-25 11:02:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59622 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:02:36 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-25 11:02:36 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-25 11:02:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34726 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:03:01 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 11:03:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59932 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:09:41 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-25 11:09:41 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1410938[0m]
+2026-01-25 11:09:41 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-25 11:09:41 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-25 11:09:41 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-25 11:09:55 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-25 11:09:55 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-25 11:09:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36570 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:10:15 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-25 11:10:15 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-25 11:10:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56926 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:10:40 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 11:10:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47910 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:15:50 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-25 11:15:50 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1425350[0m]
+2026-01-25 11:15:50 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-25 11:15:50 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-25 11:15:50 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-25 11:16:04 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-25 11:16:04 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-25 11:16:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44706 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:16:25 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-25 11:16:25 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-25 11:16:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50770 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 11:16:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 11:16:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45144 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 21:58:03 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-25 21:58:03 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1552677[0m]
+2026-01-25 21:58:03 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-25 21:58:03 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-25 21:58:03 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-25 21:58:17 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-25 21:58:17 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-25 21:58:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38034 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 21:58:36 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-25 21:58:36 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-25 21:58:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58892 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 21:59:02 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 21:59:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54640 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 21:59:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 21:59:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40760 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 21:59:47 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 21:59:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41566 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:00:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 22:00:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35338 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:00:32 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 22:00:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59042 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:00:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 22:00:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43558 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:01:17 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 22:01:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54892 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:01:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 22:01:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48546 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:02:02 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 22:02:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50832 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:02:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 22:02:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45152 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:02:48 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 22:02:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57812 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:03:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 22:03:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53698 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:03:33 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 22:03:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35758 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:03:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 22:03:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44496 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 22:04:18 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 22:04:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58414 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:02:48 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-25 23:02:48 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1587650[0m]
+2026-01-25 23:02:48 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-25 23:02:48 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-25 23:02:48 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-25 23:03:02 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-25 23:03:02 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-25 23:03:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48192 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:03:20 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-25 23:03:20 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-25 23:03:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48162 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:03:47 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 23:03:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36392 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:04:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 23:04:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34150 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:04:32 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 23:04:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34870 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:04:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 23:04:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47802 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:05:17 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 23:05:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60828 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:05:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 23:05:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44806 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:06:02 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 23:06:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42130 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:06:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 23:06:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35856 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:06:47 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 23:06:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59458 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:07:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 23:07:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39788 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:07:32 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 23:07:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43054 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:07:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 23:07:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57184 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:08:17 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 23:08:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50698 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:08:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-25 23:08:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53748 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-25 23:09:02 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-25 23:09:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33106 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:21:35 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-26 19:21:35 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m1826402[0m]
+2026-01-26 19:21:35 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-26 19:21:35 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-26 19:21:35 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-26 19:21:48 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-26 19:21:48 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-26 19:21:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43340 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:22:08 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-26 19:22:08 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-26 19:22:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47698 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:22:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:22:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37686 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:22:53 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:22:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46182 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:23:19 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:23:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41212 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:23:38 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:23:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33840 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:24:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:24:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60758 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:24:23 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:24:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50796 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:24:49 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:24:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57208 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:25:08 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:25:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34592 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:25:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:25:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59162 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:25:53 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:25:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56976 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:26:19 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:26:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41016 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:26:38 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:26:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37154 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:27:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:27:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34548 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:27:23 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:27:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41796 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:27:49 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:27:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47288 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:28:08 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:28:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52784 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:28:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:28:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60978 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:28:53 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:28:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52856 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:29:19 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:29:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60130 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:29:39 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:29:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50074 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:30:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:30:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49492 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:30:24 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:30:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41144 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:30:49 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:30:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39558 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:31:09 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:31:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51280 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:31:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:31:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40422 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:31:54 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:31:54 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59640 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:32:19 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:32:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59640 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:32:39 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:32:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33468 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:33:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:33:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49678 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:33:24 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:33:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42230 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:33:49 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:33:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48596 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:34:09 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:34:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34788 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:34:35 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:34:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60536 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:34:54 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:34:54 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42576 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:35:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:35:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49234 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:35:39 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:35:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42580 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:36:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:36:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35542 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:36:24 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:36:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59744 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:36:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:36:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40682 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:37:09 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:37:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60864 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:37:35 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:37:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50524 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:37:54 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:37:54 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42526 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:38:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:38:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34540 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:38:39 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:38:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50046 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:39:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:39:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57146 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:39:24 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:39:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37050 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:39:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:39:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37522 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:40:09 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:40:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55310 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:40:35 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:40:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35586 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:40:54 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:40:54 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52496 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:41:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:41:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37984 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:41:39 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:41:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37358 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:42:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:42:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46228 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:42:24 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:42:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42688 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:42:50 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:42:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42830 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:43:09 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:43:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43450 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:43:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:43:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59936 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:43:54 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:43:54 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46266 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:44:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:44:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35054 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:44:40 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:44:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48404 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:45:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:45:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47896 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:45:25 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:45:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38002 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:45:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:45:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53174 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:46:10 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:46:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53362 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:46:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:46:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36296 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:46:55 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:46:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37156 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:47:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:47:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57382 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:47:40 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:47:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57470 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:48:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:48:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37584 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:48:25 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:48:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:58866 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:48:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:48:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51364 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:49:10 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:49:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59340 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:49:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:49:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48756 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:49:55 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:49:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48916 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:50:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:50:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36036 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:50:40 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:50:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49796 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:51:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:51:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45542 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:51:25 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:51:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60674 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:51:51 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:51:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46666 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:52:10 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:52:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45556 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:52:36 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:52:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57410 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:52:55 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:52:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37776 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:53:21 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:53:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56174 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:53:40 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:53:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46498 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:54:06 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:54:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34424 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:54:25 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:54:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41788 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:54:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:54:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36070 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:55:10 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:55:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59338 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:55:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:55:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42048 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:55:55 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:55:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:36898 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:56:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:56:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38898 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:56:40 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:56:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57808 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:57:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:57:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54028 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:57:25 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:57:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51260 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:57:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:57:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37050 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:58:10 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:58:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52608 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:58:37 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:58:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45320 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:58:55 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:58:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46526 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:59:22 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 19:59:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53546 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 19:59:40 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 19:59:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34040 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:00:07 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 20:00:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39934 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:00:26 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 20:00:26 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47772 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:00:52 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 20:00:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:33898 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:01:11 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 20:01:11 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60244 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:01:38 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 20:01:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38848 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:01:56 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 20:01:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60288 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:02:23 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 20:02:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51640 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:02:41 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-26 20:02:41 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42894 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-26 20:03:08 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-26 20:03:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42182 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:06:02 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-27 11:06:02 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2062772[0m]
+2026-01-27 11:06:02 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-27 11:06:02 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-27 11:06:02 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-27 11:06:15 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-27 11:06:15 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-27 11:06:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:45644 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:06:35 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-27 11:06:35 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-27 11:06:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34930 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:07:00 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-27 11:07:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59996 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:07:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-27 11:07:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60748 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:17:17 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-27 11:17:17 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2080267[0m]
+2026-01-27 11:17:17 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-27 11:17:17 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-27 11:17:17 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-27 11:17:30 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-27 11:17:30 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-27 11:17:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53050 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:17:50 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-27 11:17:50 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-27 11:17:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48990 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:18:15 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-27 11:18:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39240 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:18:35 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-27 11:18:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:52684 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:56:02 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-27 11:56:02 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2101958[0m]
+2026-01-27 11:56:02 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-27 11:56:02 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-27 11:56:02 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-27 11:56:15 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-27 11:56:15 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-27 11:56:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:37522 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:56:35 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-27 11:56:35 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-27 11:56:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59442 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:57:00 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-27 11:57:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40764 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 11:57:20 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-27 11:57:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57768 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:10:46 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-27 12:10:46 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2120926[0m]
+2026-01-27 12:10:46 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-27 12:10:46 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-27 12:10:46 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-27 12:11:00 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-27 12:11:00 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-27 12:11:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50218 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:11:20 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-27 12:11:20 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-27 12:11:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59538 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:11:45 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-27 12:11:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44130 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:12:05 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-27 12:12:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53316 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:23:46 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-27 12:23:46 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2150479[0m]
+2026-01-27 12:23:46 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-27 12:23:46 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-27 12:23:46 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-27 12:24:00 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-27 12:24:00 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-27 12:24:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53500 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:24:19 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-27 12:24:19 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-27 12:24:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35326 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:24:45 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-27 12:24:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48638 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:25:04 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-27 12:25:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47530 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:28:16 | INFO | controller | args: Namespace(host='127.0.0.1', port=10014, dispatch_method='shortest_queue', ssl=False)
+2026-01-27 12:28:16 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m2166233[0m]
+2026-01-27 12:28:16 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-27 12:28:16 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-27 12:28:16 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10014[0m (Press CTRL+C to quit)
+2026-01-27 12:28:29 | INFO | controller | Register a new worker: http://127.0.0.1:10081
+2026-01-27 12:28:29 | INFO | controller | Register done: http://127.0.0.1:10081, {'model_names': ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm'], 'speed': 1, 'queue_length': 0}
+2026-01-27 12:28:29 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46920 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:28:49 | INFO | controller | Register a new worker: http://127.0.0.1:10082
+2026-01-27 12:28:49 | INFO | controller | Register done: http://127.0.0.1:10082, {'model_names': ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'], 'speed': 1, 'queue_length': 0}
+2026-01-27 12:28:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40958 - "[1mPOST /register_worker HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:29:14 | INFO | controller | Receive heart beat. http://127.0.0.1:10081
+2026-01-27 12:29:14 | INFO | stdout | [32mINFO[0m:     127.0.0.1:54216 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m
+2026-01-27 12:29:34 | INFO | controller | Receive heart beat. http://127.0.0.1:10082
+2026-01-27 12:29:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51238 - "[1mPOST /receive_heart_beat HTTP/1.1[0m" [32m200 OK[0m

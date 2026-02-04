@@ -9,6 +9,9 @@ from typing import List
 import requests
 from transformers import AutoTokenizer
 
+# NVTX profiling imports
+from reason.profiling.nvtx_utils import nvtx_range, NVTXColors
+
 
 @dataclass
 class ConcatedLMGenResult:
@@ -93,8 +96,9 @@ def _generate_fastchat(
     }
 
     try:
-        response = requests.post(worker_addr + "/worker_generate", headers=headers, json=gen_params, stream=True)
-        results = response.json()
+        with nvtx_range("lm_http_request", NVTXColors.HTTP_ORANGE):
+            response = requests.post(worker_addr + "/worker_generate", headers=headers, json=gen_params, stream=True)
+            results = response.json()
     except Exception as e:
         print(f'Error in _generate_fastchat: {e}')
 

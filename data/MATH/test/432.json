@@ -1,0 +1,1 @@
+{"problem": "If\n\\[f(n + 1) = (-1)^{n + 1} n - 2f(n)\\]for $n \\ge 1,$ and $f(1) = f(1986),$ compute\n\\[f(1) + f(2) + f(3) + \\dots + f(1985).\\]", "solution": "331", "level": 5, "type": "Intermediate Algebra"}

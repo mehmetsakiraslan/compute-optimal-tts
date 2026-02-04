@@ -1,0 +1,1 @@
+{"problem": "Compute $a+b+c,$ given that $a,$ $b,$ and $c$ are the roots of \\[\\frac{1}{x} + 5x^2 = 6x - 24.\\]", "solution": "\\frac65", "level": 2, "type": "Intermediate Algebra"}

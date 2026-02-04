@@ -1,0 +1,382 @@
+========================================
+EXECUTION GRAPH PROFILING JOB START: Sun 01 Feb 2026 09:28:20 PM EST
+HOST: e5-cse-cbgpu01
+========================================
+/usr/local/anaconda3/bin/python3
+Python 3.9.7
+Sun Feb  1 21:28:20 2026       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.54.03              Driver Version: 535.54.03    CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  | 00000000:01:00.0 Off |                    0 |
+| N/A   35C    P0              55W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100 80GB PCIe          On  | 00000000:23:00.0 Off |                    0 |
+| N/A   38C    P0              71W / 300W |   3571MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   2  NVIDIA A100 80GB PCIe          On  | 00000000:41:00.0 Off |                    0 |
+| N/A   37C    P0              54W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   3  NVIDIA A100 80GB PCIe          On  | 00000000:61:00.0 Off |                    0 |
+| N/A   36C    P0              54W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   4  NVIDIA A100 80GB PCIe          On  | 00000000:81:00.0 Off |                    0 |
+| N/A   33C    P0              42W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   5  NVIDIA A100 80GB PCIe          On  | 00000000:A1:00.0 Off |                    0 |
+| N/A   34C    P0              44W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   6  NVIDIA A100 80GB PCIe          On  | 00000000:C1:00.0 Off |                    0 |
+| N/A   50C    P0              74W / 300W |  10605MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   7  NVIDIA A100 80GB PCIe          On  | 00000000:E1:00.0 Off |                    0 |
+| N/A   31C    P0              42W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    1   N/A  N/A   1454156      C   python                                     3558MiB |
+|    6   N/A  N/A   1584514      C   python                                    10592MiB |
++---------------------------------------------------------------------------------------+
+
+Profile output directory: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212823
+
+Configuration:
+  LM: models--meta-llama--Llama-3.2-1B-Instruct
+  RM: models--Skywork--Skywork-o1-Open-PRM-Qwen-2.5-7B
+  Method: beam_search
+  Num problems: 5
+  Tree depth: 40
+  Tree width: 4
+  Beam size: 1
+
+
+========================================
+PROFILING JOB COMPLETED
+Exit code: 1
+Profile directory: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212823
+End time: Sun 01 Feb 2026 09:28:25 PM EST
+========================================
+
+Generated profile files:
+total 0
+
+To visualize the execution graph:
+  1. Open https://ui.perfetto.dev/ or chrome://tracing
+  2. Load: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212823/chrome_trace_*.json
+
+For programmatic analysis, see: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212823/execution_graph_*.json
+========================================
+EXECUTION GRAPH PROFILING JOB START: Sun 01 Feb 2026 09:29:48 PM EST
+HOST: e5-cse-cbgpu01
+========================================
+/usr/local/anaconda3/bin/python3
+Python 3.9.7
+Sun Feb  1 21:29:48 2026       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.54.03              Driver Version: 535.54.03    CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  | 00000000:01:00.0 Off |                    0 |
+| N/A   35C    P0              55W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100 80GB PCIe          On  | 00000000:23:00.0 Off |                    0 |
+| N/A   39C    P0              70W / 300W |   3571MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   2  NVIDIA A100 80GB PCIe          On  | 00000000:41:00.0 Off |                    0 |
+| N/A   37C    P0              54W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   3  NVIDIA A100 80GB PCIe          On  | 00000000:61:00.0 Off |                    0 |
+| N/A   36C    P0              54W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   4  NVIDIA A100 80GB PCIe          On  | 00000000:81:00.0 Off |                    0 |
+| N/A   33C    P0              42W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   5  NVIDIA A100 80GB PCIe          On  | 00000000:A1:00.0 Off |                    0 |
+| N/A   34C    P0              44W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   6  NVIDIA A100 80GB PCIe          On  | 00000000:C1:00.0 Off |                    0 |
+| N/A   50C    P0              74W / 300W |  10605MiB / 81920MiB |     46%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   7  NVIDIA A100 80GB PCIe          On  | 00000000:E1:00.0 Off |                    0 |
+| N/A   31C    P0              42W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    1   N/A  N/A   1454156      C   python                                     3558MiB |
+|    6   N/A  N/A   1584514      C   python                                    10592MiB |
++---------------------------------------------------------------------------------------+
+
+Profile output directory: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212951
+
+Configuration:
+  LM: models--meta-llama--Llama-3.2-1B-Instruct
+  RM: models--Skywork--Skywork-o1-Open-PRM-Qwen-2.5-7B
+  Method: beam_search
+  Num problems: 5
+  Tree depth: 40
+  Tree width: 4
+  Beam size: 1
+
+============================================================
+EXECUTION GRAPH PROFILER
+============================================================
+LM: models--meta-llama--Llama-3.2-1B-Instruct
+RM: models--Skywork--Skywork-o1-Open-PRM-Qwen-2.5-7B
+Method: beam_search
+Num problems: 5
+Output dir: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212951
+============================================================
+
+Initializing traced LM caller...
+
+========================================
+PROFILING JOB COMPLETED
+Exit code: 1
+Profile directory: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212951
+End time: Sun 01 Feb 2026 09:29:53 PM EST
+========================================
+
+Generated profile files:
+total 0
+
+To visualize the execution graph:
+  1. Open https://ui.perfetto.dev/ or chrome://tracing
+  2. Load: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212951/chrome_trace_*.json
+
+For programmatic analysis, see: /scratch/msa6093/compute-optimal-tts/profiles/20260201_212951/execution_graph_*.json
+========================================
+EXECUTION GRAPH PROFILING JOB START: Sun 01 Feb 2026 09:33:49 PM EST
+HOST: e5-cse-cbgpu01
+========================================
+/usr/local/anaconda3/bin/python3
+Python 3.9.7
+Sun Feb  1 21:33:49 2026       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.54.03              Driver Version: 535.54.03    CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  | 00000000:01:00.0 Off |                    0 |
+| N/A   35C    P0              55W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100 80GB PCIe          On  | 00000000:23:00.0 Off |                    0 |
+| N/A   38C    P0              71W / 300W |   3571MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   2  NVIDIA A100 80GB PCIe          On  | 00000000:41:00.0 Off |                    0 |
+| N/A   37C    P0              54W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   3  NVIDIA A100 80GB PCIe          On  | 00000000:61:00.0 Off |                    0 |
+| N/A   36C    P0              54W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   4  NVIDIA A100 80GB PCIe          On  | 00000000:81:00.0 Off |                    0 |
+| N/A   33C    P0              42W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   5  NVIDIA A100 80GB PCIe          On  | 00000000:A1:00.0 Off |                    0 |
+| N/A   34C    P0              44W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   6  NVIDIA A100 80GB PCIe          On  | 00000000:C1:00.0 Off |                    0 |
+| N/A   51C    P0             257W / 300W |  10605MiB / 81920MiB |     78%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   7  NVIDIA A100 80GB PCIe          On  | 00000000:E1:00.0 Off |                    0 |
+| N/A   31C    P0              42W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    1   N/A  N/A   1454156      C   python                                     3558MiB |
+|    6   N/A  N/A   1584514      C   python                                    10592MiB |
++---------------------------------------------------------------------------------------+
+
+Profile output directory: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352
+
+Configuration:
+  LM: /scratch/msa6093/models/Qwen2.5-1.5B-Instruct
+  RM: /scratch/msa6093/models/math-shepherd-mistral-7b-prm
+  Method: beam_search
+  Num problems: 3
+  Tree depth: 40
+  Tree width: 4
+  Beam size: 1
+
+============================================================
+EXECUTION GRAPH PROFILER
+Started at: 2026-02-01 21:33:54
+============================================================
+LM: /scratch/msa6093/models/Qwen2.5-1.5B-Instruct
+RM: /scratch/msa6093/models/math-shepherd-mistral-7b-prm
+Method: beam_search
+Num problems: 3
+Output dir: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352
+============================================================
+
+=== Starting model servers ===
+Starting FastChat controller on port 10014...
+Controller started (PID: 303273), logging to /scratch/msa6093/tts_logs/profile_20260201_213354/controller.log
+Starting reward model worker on port 10081...
+  Model: /scratch/msa6093/models/math-shepherd-mistral-7b-prm
+Reward model worker started (PID: 304024), logging to /scratch/msa6093/tts_logs/profile_20260201_213354/reward_worker.log
+Starting language model worker on port 10082...
+  Model: /scratch/msa6093/models/Qwen2.5-1.5B-Instruct
+Language model worker started (PID: 304078), logging to /scratch/msa6093/tts_logs/profile_20260201_213354/lm_worker.log
+
+Waiting for workers to register (timeout: 300s)...
+  [0s] Registered models: []
+  [10s] Registered models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']
+  [20s] Registered models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']
+  [30s] Registered models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']
+  [40s] Registered models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm', '/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']
+Both workers registered successfully!
+
+Initializing traced LM caller...
+Initializing traced RM caller...
+
+Loading MATH test dataset...
+Loading MATH dataset
+Selected 3 problems: indices [0, 1, 2]
+
+------------------------------------------------------------
+Starting execution trace...
+------------------------------------------------------------
+
+[Problem 1/3] Index: 0
+  Question: Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Ente...
+  Completed in 3.35s, 1 solutions
+
+[Problem 2/3] Index: 1
+  Question: Define
+\[p = \sum_{k = 1}^\infty \frac{1}{k^2} \quad \text{and} \quad q = \sum_{...
+  Completed in 10.24s, 1 solutions
+
+[Problem 3/3] Index: 2
+  Question: If $f(x) = \frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)+f(0)$? Express ...
+  Completed in 6.63s, 1 solutions
+
+------------------------------------------------------------
+Total profiling time: 20.22s
+------------------------------------------------------------
+
+Computing stall times...
+
+============================================================
+EXECUTION GRAPH SUMMARY
+============================================================
+
+[Timing]
+  Total execution time:    20217.00 ms
+  Total compute time:      19826.23 ms
+  Total stall time:        0.11 ms
+  Pipeline efficiency:     98.1%
+
+[Language Model (Policy)]
+  Total calls:             31
+  Total time:              11846.18 ms
+  Avg call duration:       382.13 ms
+
+[Reward Model (Value)]
+  Total calls:             31
+  Total time:              7980.05 ms
+  Avg call duration:       257.42 ms
+
+[Stall Analysis]
+  LM waiting for RM:       0.00 ms
+  RM waiting for LM:       0.11 ms
+============================================================
+
+
+Exporting Chrome trace to: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352/chrome_trace_20260201_213502.json
+Exporting structured JSON to: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352/execution_graph_20260201_213502.json
+Exporting timeline CSV to: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352/timeline_20260201_213502.csv
+Saved config to: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352/config_20260201_213502.json
+
+================================================================================
+EXECUTION TIMELINE
+================================================================================
+Model        | Timeline                                                         
+--------------------------------------------------------------------------------
+Policy       |█  ████ ███ ██ ███ ███ ███ ██  ██ █ ██  █ ██ █ █ ███ █████ █      
+Value        | ██  █ █ █ █  █ █ ██  ██  █  ██  █ █  █  █ ███████ ██ ██ ███      
+--------------------------------------------------------------------------------
+Time (ms)    | 0                                                  20191.4
+================================================================================
+
+============================================================
+PROFILING COMPLETE
+============================================================
+
+To visualize the execution graph:
+  1. Open https://ui.perfetto.dev/ or chrome://tracing
+  2. Load: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352/chrome_trace_20260201_213502.json
+
+For programmatic analysis, see: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352/execution_graph_20260201_213502.json
+
+Server logs available at: /scratch/msa6093/tts_logs/profile_20260201_213354
+
+=== Cleaning up background processes ===
+Terminating process 303273...
+Terminating process 304024...
+Terminating process 304078...
+Cleanup complete.
+
+========================================
+PROFILING JOB COMPLETED
+Exit code: 0
+Profile directory: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352
+End time: Sun 01 Feb 2026 09:35:08 PM EST
+========================================
+
+Generated profile files:
+total 144K
+-rw------- 1 msa6093 crontab  50K Feb  1 21:35 chrome_trace_20260201_213502.json
+-rw------- 1 msa6093 crontab  353 Feb  1 21:35 config_20260201_213502.json
+-rw------- 1 msa6093 crontab  81K Feb  1 21:35 execution_graph_20260201_213502.json
+-rw------- 1 msa6093 crontab 3.4K Feb  1 21:35 timeline_20260201_213502.csv
+
+To visualize the execution graph:
+  1. Open https://ui.perfetto.dev/ or chrome://tracing
+  2. Load: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352/chrome_trace_*.json
+
+For programmatic analysis, see: /scratch/msa6093/compute-optimal-tts/profiles/20260201_213352/execution_graph_*.json

@@ -1,0 +1,1 @@
+{"problem": "Let $p(x)$ be a polynomial of degree 5 such that\n\\[p(n) = \\frac{n}{n^2 - 1}\\]for $n = 2,$ 3, 4, $\\dots,$ 7.  Find $p(8).$", "solution": "\\frac{3}{56}", "level": 5, "type": "Intermediate Algebra"}

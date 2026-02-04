@@ -17,6 +17,9 @@ from envs.base_env import CoTEnv
 import heapq
 from loguru import logger
 
+# NVTX profiling imports
+from reason.profiling.nvtx_utils import nvtx_range, NVTXColors
+
 
 class Node(object):
     """
@@ -267,6 +270,17 @@ class SearchTree:
             max_step: The maximum number of steps to search.
             reward_model_fn: The reward model function to evaluate the state.
         """
+        with nvtx_range("beam_search_total", NVTXColors.BEAM_RED):
+            return self._beam_search_impl(simulate_env, beam_size, max_step, reward_model_fn)
+
+    def _beam_search_impl(
+        self,
+        simulate_env: CoTEnv,
+        beam_size: int,
+        max_step: int,
+        reward_model_fn: Optional[Callable] = None,
+    ) -> List[Dict]:
+        """Internal beam search implementation."""
         if max_step == 1:
             assert self.direct_io
         api_call_completion_tokens = 0
@@ -281,66 +295,68 @@ class SearchTree:
         k = copy.deepcopy(beam_size)
 
         for i in range(max_step + 1):
-            cur_nodes_to_search = top_k_nodes
-            top_k_nodes = []
-            for cur_neg_q_plus_a, cur_neg_v, cur_neg_parent_v, cur_node, cur_env in cur_nodes_to_search:
-                if cur_node.terminated:
-                    end_nodes.append((cur_neg_q_plus_a, cur_neg_v, cur_neg_parent_v, cur_node, cur_env))
-                    if len(end_nodes) == beam_size:
-                        break
-                elif len(end_nodes) < beam_size:
-                    # select at most topk children add push to heap
-                    assert (len(cur_node.children) > 0), "in beam search you should expand this non-terminal node at first."
+            with nvtx_range(f"beam_depth_{i}", NVTXColors.DEPTH_CYAN):
+                cur_nodes_to_search = top_k_nodes
+                top_k_nodes = []
+                for cur_neg_q_plus_a, cur_neg_v, cur_neg_parent_v, cur_node, cur_env in cur_nodes_to_search:
+                    if cur_node.terminated:
+                        end_nodes.append((cur_neg_q_plus_a, cur_neg_v, cur_neg_parent_v, cur_node, cur_env))
+                        if len(end_nodes) == beam_size:
+                            break
+                    elif len(end_nodes) < beam_size:
+                        # select at most topk children add push to heap
+                        assert (len(cur_node.children) > 0), "in beam search you should expand this non-terminal node at first."
 
-                    if self.direct_io:
-                        ps = {child_idx: copy.deepcopy(child.prior_p) for child_idx, child in cur_node.children.items()}
-                        num_tokens = {child_idx: copy.deepcopy(child.num_generated_token) for child_idx, child in cur_node.children.items()}
-                        normalized_ps = {child_idx: p ** (1 / max(1, num_tokens[child_idx])) for child_idx, p in ps.items()}
-                        values = {child_idx: copy.deepcopy(child._initial_value) for child_idx, child in cur_node.children.items()}
-                        parent_values = {child_idx: copy.deepcopy(child._parent_value) for child_idx, child in cur_node.children.items()}
-                        q_plus_alpha_a = values
+                        if self.direct_io:
+                            ps = {child_idx: copy.deepcopy(child.prior_p) for child_idx, child in cur_node.children.items()}
+                            num_tokens = {child_idx: copy.deepcopy(child.num_generated_token) for child_idx, child in cur_node.children.items()}
+                            normalized_ps = {child_idx: p ** (1 / max(1, num_tokens[child_idx])) for child_idx, p in ps.items()}
+                            values = {child_idx: copy.deepcopy(child._initial_value) for child_idx, child in cur_node.children.items()}
+                            parent_values = {child_idx: copy.deepcopy(child._parent_value) for child_idx, child in cur_node.children.items()}
+                            q_plus_alpha_a = values
 
-                        k = beam_size - len(end_nodes)
-                        top_k_children = sorted(
-                            [(child_idx, child, q_plus_alpha_a[child_idx], values[child_idx], parent_values[child_idx]) for child_idx, child in
-                             cur_node.children.items()],
-                            key=lambda x: x[2], reverse=True,
-                        )[:k]
-                        for c_idx, c_node, c_q_plus_a, c_value, c_parent_value in top_k_children:
-                            new_env = cur_env.copy()
-                            heapq.heappush(top_k_nodes, (-c_q_plus_a, -c_value, -c_parent_value, c_node, new_env))
-                    else:
-                        ps = {action: copy.deepcopy(child.prior_p) for action, child in cur_node.children.items()}
-                        num_tokens = {action: copy.deepcopy(child.num_generated_token) for action, child in cur_node.children.items()}
-                        normalized_ps = {action: p ** (1 / max(1, num_tokens[action])) for action, p in ps.items()}
-                        values = {action: copy.deepcopy(child._initial_value) for action, child in cur_node.children.items()}
-                        parent_values = {action: copy.deepcopy(child._parent_value) for action, child in cur_node.children.items()}
-                        q_plus_alpha_a = values
+                            k = beam_size - len(end_nodes)
+                            top_k_children = sorted(
+                                [(child_idx, child, q_plus_alpha_a[child_idx], values[child_idx], parent_values[child_idx]) for child_idx, child in
+                                 cur_node.children.items()],
+                                key=lambda x: x[2], reverse=True,
+                            )[:k]
+                            for c_idx, c_node, c_q_plus_a, c_value, c_parent_value in top_k_children:
+                                new_env = cur_env.copy()
+                                heapq.heappush(top_k_nodes, (-c_q_plus_a, -c_value, -c_parent_value, c_node, new_env))
+                        else:
+                            ps = {action: copy.deepcopy(child.prior_p) for action, child in cur_node.children.items()}
+                            num_tokens = {action: copy.deepcopy(child.num_generated_token) for action, child in cur_node.children.items()}
+                            normalized_ps = {action: p ** (1 / max(1, num_tokens[action])) for action, p in ps.items()}
+                            values = {action: copy.deepcopy(child._initial_value) for action, child in cur_node.children.items()}
+                            parent_values = {action: copy.deepcopy(child._parent_value) for action, child in cur_node.children.items()}
+                            q_plus_alpha_a = values
 
-                        k = beam_size - len(end_nodes)
-                        top_k_children = sorted(
-                            [(action, child, q_plus_alpha_a[action], values[action], parent_values[action]) for action, child in cur_node.children.items()],
-                            key=lambda x: x[2], reverse=True,
-                        )[:k]
-                        for c_act, c_node, c_q_plus_a, c_value, c_parent_value in top_k_children:
-                            new_env = cur_env.copy()
-                            heapq.heappush(top_k_nodes, (-c_q_plus_a, -c_value, -c_parent_value, c_node, new_env))
-            top_k_nodes = heapq.nsmallest(k, top_k_nodes)  # nsmallest since we negate the value
+                            k = beam_size - len(end_nodes)
+                            top_k_children = sorted(
+                                [(action, child, q_plus_alpha_a[action], values[action], parent_values[action]) for action, child in cur_node.children.items()],
+                                key=lambda x: x[2], reverse=True,
+                            )[:k]
+                            for c_act, c_node, c_q_plus_a, c_value, c_parent_value in top_k_children:
+                                new_env = cur_env.copy()
+                                heapq.heappush(top_k_nodes, (-c_q_plus_a, -c_value, -c_parent_value, c_node, new_env))
+                top_k_nodes = heapq.nsmallest(k, top_k_nodes)  # nsmallest since we negate the value
 
-            # expand selected nodes
-            for q_plus_a, value, parent_value, node, new_env in top_k_nodes:
-                _, _, terminated, truncated, info = new_env.step(
-                    node.last_action, update_legal_action=self.direct_io == 0, model_name=node.model_name,
-                    reward=node._initial_value, num_token=node.num_generated_token, prob=node.prior_p,
-                )
-                api_call_completion_tokens += info["api_completion_token"]
-                if terminated or truncated:
-                    node.set_as_terminate_node()
-                else:
-                    self._expand_leaf_node(node, new_env, reward_model_fn)
+                # expand selected nodes
+                with nvtx_range(f"expand_nodes_depth_{i}", NVTXColors.TREE_BLUE):
+                    for q_plus_a, value, parent_value, node, new_env in top_k_nodes:
+                        _, _, terminated, truncated, info = new_env.step(
+                            node.last_action, update_legal_action=self.direct_io == 0, model_name=node.model_name,
+                            reward=node._initial_value, num_token=node.num_generated_token, prob=node.prior_p,
+                        )
+                        api_call_completion_tokens += info["api_completion_token"]
+                        if terminated or truncated:
+                            node.set_as_terminate_node()
+                        else:
+                            self._expand_leaf_node(node, new_env, reward_model_fn)
 
-            if len(end_nodes) == beam_size:
-                break
+                if len(end_nodes) == beam_size:
+                    break
 
         traj_list = []
         for i, (neg_e_q_plus_a, neg_e_v, neg_e_parent_v, e_node, e_env) in enumerate(end_nodes):
@@ -420,100 +436,101 @@ class SearchTree:
             if action in simulate_env.legal_actions:
                 node.children[action] = Node(parent=node, prior_p=prior_p)
         """
-
-        text_state = simulate_env.get_state(model_name='raw')
-        if not self._init_critic_value:
-            leaf_value = rm_call(text_state)
-        else:
-            leaf_value = node._initial_value
-            assert len(simulate_env.legal_actions) > 0
-            if self.direct_io:
-                prms = [[0.0] for _ in simulate_env.legal_actions]
+        with nvtx_range("expand_leaf_node", NVTXColors.TREE_BLUE):
+            text_state = simulate_env.get_state(model_name='raw')
+            if not self._init_critic_value:
+                leaf_value = rm_call(text_state)
             else:
-                prm_inputs = [(simulate_env.question, simulate_env.answer + x["action"]) for x in simulate_env.legal_actions]
-                for i in range(2):
-                    try:
-                        prms = rm_call(prm_inputs)
-                        break
-                    except Exception as e:
-                        import traceback
-                        traceback.print_exc()
-                        # prms = [[0.0] for _ in simulate_env.legal_actions]
-            child_values = []
-            for act, rs in zip(simulate_env.legal_actions, prms):
-                if len(simulate_env.action_history) + 1 != len(rs):
-                    logger.warning(f"PRM value length not match with action history. len(prm)={len(rs)}, "
-                                   f"len(action_history)={len(simulate_env.action_history)}\ns:\n{text_state}\na:\n{act}\nrs:{rs}")
-                    try:
-                        prm = rm_call([(simulate_env.question, simulate_env.answer + x["action"]) for x in [act]], verbose=True, legal_action=[act])
-                    except Exception as e:
-                        import traceback
-                        traceback.print_exc()
-                    child_values.append(0.0)
-                elif len(rs) == 0:
-                    logger.warning(f"Empty PRM value for: \nState: \n{text_state} \naction: \n{act}, will be set to 0.0")
-                    child_values.append(0.0)
-                else:
-                    # prm-last
-                    child_values.append(rs[-1])  # PRM get last r as single reward, [0.9783847332000732, 0.9621075391769409]
-                    # # prm-min
-                    # child_values.append(min(rs))
-                    # # prob-prm
-                    # child_values.append(act['prob'])
-
-        assert len(node.children) == 0
-        for i, action_dict in enumerate(simulate_env.legal_actions):
-            action, prob = action_dict["action"], action_dict["prob"]
-            model_name = action_dict["model_name"]
-
-            if self._init_critic_value:
-                child_value = child_values[i]
-            else:
-                # XXX(ziyu): consider turn off this branch, i.e. always assume
-                #  `self._init_critic=True`, since with LLM
-                child_value = 0.0
-
-            if self.direct_io:
-                node.children[i] = LanguageNode(
-                    parent=node,
-                    prior_p=prob,
-                    # prm_value=prm_value,
-                    text_state=text_state,
-                    last_action=action,
-                    initial_value=child_value,
-                    parent_value=leaf_value,
-                    num_generated_token=action_dict["num_token"],
-                    model_name=model_name,
-                )
-            else:
-                node.children[action] = LanguageNode(
-                    parent=node,
-                    prior_p=prob,
-                    # prm_value=prm_value,
-                    text_state=text_state,
-                    last_action=action,
-                    initial_value=child_value,
-                    parent_value=leaf_value,
-                    num_generated_token=action_dict["num_token"],
-                    model_name=model_name,
-                )
-            # set terminal node here
-            if simulate_env._next_state_terminated[action]:
+                leaf_value = node._initial_value
+                assert len(simulate_env.legal_actions) > 0
                 if self.direct_io:
-                    node.children[i].set_as_terminate_node()
+                    prms = [[0.0] for _ in simulate_env.legal_actions]
                 else:
-                    node.children[action].set_as_terminate_node()
-        if len(node.children) == 0:
-            print_rank_0("Prune all current children at node {}".format(node.last_action))
+                    prm_inputs = [(simulate_env.question, simulate_env.answer + x["action"]) for x in simulate_env.legal_actions]
+                    for i in range(2):
+                        try:
+                            with nvtx_range("rm_call_batch", NVTXColors.RM_YELLOW):
+                                prms = rm_call(prm_inputs)
+                            break
+                        except Exception as e:
+                            import traceback
+                            traceback.print_exc()
+                            # prms = [[0.0] for _ in simulate_env.legal_actions]
+                child_values = []
+                for act, rs in zip(simulate_env.legal_actions, prms):
+                    if len(simulate_env.action_history) + 1 != len(rs):
+                        logger.warning(f"PRM value length not match with action history. len(prm)={len(rs)}, "
+                                       f"len(action_history)={len(simulate_env.action_history)}\ns:\n{text_state}\na:\n{act}\nrs:{rs}")
+                        try:
+                            prm = rm_call([(simulate_env.question, simulate_env.answer + x["action"]) for x in [act]], verbose=True, legal_action=[act])
+                        except Exception as e:
+                            import traceback
+                            traceback.print_exc()
+                        child_values.append(0.0)
+                    elif len(rs) == 0:
+                        logger.warning(f"Empty PRM value for: \nState: \n{text_state} \naction: \n{act}, will be set to 0.0")
+                        child_values.append(0.0)
+                    else:
+                        # prm-last
+                        child_values.append(rs[-1])  # PRM get last r as single reward, [0.9783847332000732, 0.9621075391769409]
+                        # # prm-min
+                        # child_values.append(min(rs))
+                        # # prob-prm
+                        # child_values.append(act['prob'])
 
-        # collect num tokens
-        if not node.has_collected_token_num:
-            self._completion_tokens += sum(c.num_generated_token for c in node.children.values())
-            node.has_collected_token_num = True
-        else:
-            raise RuntimeError("Token number has been collected again.")
+            assert len(node.children) == 0
+            for i, action_dict in enumerate(simulate_env.legal_actions):
+                action, prob = action_dict["action"], action_dict["prob"]
+                model_name = action_dict["model_name"]
 
-        return leaf_value
+                if self._init_critic_value:
+                    child_value = child_values[i]
+                else:
+                    # XXX(ziyu): consider turn off this branch, i.e. always assume
+                    #  `self._init_critic=True`, since with LLM
+                    child_value = 0.0
+
+                if self.direct_io:
+                    node.children[i] = LanguageNode(
+                        parent=node,
+                        prior_p=prob,
+                        # prm_value=prm_value,
+                        text_state=text_state,
+                        last_action=action,
+                        initial_value=child_value,
+                        parent_value=leaf_value,
+                        num_generated_token=action_dict["num_token"],
+                        model_name=model_name,
+                    )
+                else:
+                    node.children[action] = LanguageNode(
+                        parent=node,
+                        prior_p=prob,
+                        # prm_value=prm_value,
+                        text_state=text_state,
+                        last_action=action,
+                        initial_value=child_value,
+                        parent_value=leaf_value,
+                        num_generated_token=action_dict["num_token"],
+                        model_name=model_name,
+                    )
+                # set terminal node here
+                if simulate_env._next_state_terminated[action]:
+                    if self.direct_io:
+                        node.children[i].set_as_terminate_node()
+                    else:
+                        node.children[action].set_as_terminate_node()
+            if len(node.children) == 0:
+                print_rank_0("Prune all current children at node {}".format(node.last_action))
+
+            # collect num tokens
+            if not node.has_collected_token_num:
+                self._completion_tokens += sum(c.num_generated_token for c in node.children.values())
+                node.has_collected_token_num = True
+            else:
+                raise RuntimeError("Token number has been collected again.")
+
+            return leaf_value
 
     def _ucb_score(self, parent: Node, child: Node) -> float:
         """

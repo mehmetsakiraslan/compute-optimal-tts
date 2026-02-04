@@ -1,0 +1,24 @@
+2026-01-24 12:19:31 | ERROR | stderr | Traceback (most recent call last):
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+2026-01-24 12:19:31 | ERROR | stderr |     return _run_code(code, main_globals, None,
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/runpy.py", line 86, in _run_code
+2026-01-24 12:19:31 | ERROR | stderr |     exec(code, run_globals)
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/compute-optimal-tts/src/reason/llm_service/workers/vllm_worker.py", line 270, in <module>
+2026-01-24 12:19:31 | ERROR | stderr |     engine = AsyncLLMEngine.from_engine_args(engine_args)
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/vllm/engine/async_llm_engine.py", line 683, in from_engine_args
+2026-01-24 12:19:31 | ERROR | stderr |     engine_config = engine_args.create_engine_config()
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/vllm/engine/arg_utils.py", line 959, in create_engine_config
+2026-01-24 12:19:31 | ERROR | stderr |     model_config = self.create_model_config()
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/vllm/engine/arg_utils.py", line 891, in create_model_config
+2026-01-24 12:19:31 | ERROR | stderr |     return ModelConfig(
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/vllm/config.py", line 208, in __init__
+2026-01-24 12:19:31 | ERROR | stderr |     hf_config = get_config(self.model, trust_remote_code, revision,
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/vllm/transformers_utils/config.py", line 161, in get_config
+2026-01-24 12:19:31 | ERROR | stderr |     if is_gguf or file_or_path_exists(
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/vllm/transformers_utils/config.py", line 81, in file_or_path_exists
+2026-01-24 12:19:31 | ERROR | stderr |     cached_filepath = try_to_load_from_cache(repo_id=model,
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+2026-01-24 12:19:31 | ERROR | stderr |     validate_repo_id(arg_value)
+2026-01-24 12:19:31 | ERROR | stderr |   File "/scratch/msa6093/.conda/envs/tts/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+2026-01-24 12:19:31 | ERROR | stderr |     raise HFValidationError(
+2026-01-24 12:19:31 | ERROR | stderr | huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'. Use `repo_type` argument if needed.

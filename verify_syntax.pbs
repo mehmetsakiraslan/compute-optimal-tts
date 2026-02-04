@@ -1,0 +1,98 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=4:mem=8gb
+#PBS -l walltime=0:10:00
+#PBS -q workq@e5-cse-cbgpu01.eecscl.psu.edu
+#PBS -N verify_syntax
+#PBS -k oed
+#PBS -o /scratch/msa6093/compute-optimal-tts/verify_syntax.out
+#PBS -e /scratch/msa6093/compute-optimal-tts/verify_syntax.err
+#PBS -V
+
+# Syntax verification script for profiling instrumentation changes
+
+echo "========================================"
+echo "SYNTAX VERIFICATION START: $(date)"
+echo "HOST: $(hostname)"
+echo "========================================"
+
+# Source the system conda.sh
+if [ -f /usr/local/anaconda3/etc/profile.d/conda.sh ]; then
+    source /usr/local/anaconda3/etc/profile.d/conda.sh
+else
+    export PATH=/usr/local/anaconda3/bin:$PATH
+fi
+
+# Activate tts environment
+conda activate /scratch/msa6093/.conda/envs/tts
+
+# Set environment variables
+export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
+
+cd /scratch/msa6093/compute-optimal-tts/src
+
+echo ""
+echo "Python version:"
+python3 --version
+
+echo ""
+echo "=== Verifying NVTX utilities module ==="
+python3 -c "import reason.profiling.nvtx_utils; print('nvtx_utils import: OK')" || echo "nvtx_utils import: FAILED"
+
+echo ""
+echo "=== Verifying syntax of modified files ==="
+
+echo ""
+echo "Checking reason/profiling/__init__.py..."
+python3 -m py_compile reason/profiling/__init__.py && echo "  OK" || echo "  FAILED"
+
+echo ""
+echo "Checking reason/profiling/nvtx_utils.py..."
+python3 -m py_compile reason/profiling/nvtx_utils.py && echo "  OK" || echo "  FAILED"
+
+echo ""
+echo "Checking reason/guided_search/tree.py..."
+python3 -m py_compile reason/guided_search/tree.py && echo "  OK" || echo "  FAILED"
+
+echo ""
+echo "Checking reason/inference/text_generation.py..."
+python3 -m py_compile reason/inference/text_generation.py && echo "  OK" || echo "  FAILED"
+
+echo ""
+echo "Checking reason/inference/rm_call.py..."
+python3 -m py_compile reason/inference/rm_call.py && echo "  OK" || echo "  FAILED"
+
+echo ""
+echo "Checking envs/base_env.py..."
+python3 -m py_compile envs/base_env.py && echo "  OK" || echo "  FAILED"
+
+echo ""
+echo "Checking scripts/profile_beam.py..."
+python3 -m py_compile scripts/profile_beam.py && echo "  OK" || echo "  FAILED"
+
+echo ""
+echo "=== Testing NVTX utilities functionality ==="
+python3 -c "
+from reason.profiling.nvtx_utils import nvtx_range, nvtx_annotate, NVTXColors, NVTX_AVAILABLE
+
+print(f'NVTX available: {NVTX_AVAILABLE}')
+print(f'NVTXColors.LM_GREEN = {hex(NVTXColors.LM_GREEN)}')
+print(f'NVTXColors.RM_YELLOW = {hex(NVTXColors.RM_YELLOW)}')
+print(f'NVTXColors.BEAM_RED = {hex(NVTXColors.BEAM_RED)}')
+
+# Test context manager (no-op if NVTX not available)
+with nvtx_range('test_range', NVTXColors.LM_GREEN):
+    print('Context manager test: OK')
+
+# Test decorator
+@nvtx_annotate('test_func', NVTXColors.RM_YELLOW)
+def test_function():
+    return 'hello'
+
+result = test_function()
+print(f'Decorator test: OK (result={result})')
+"
+
+echo ""
+echo "========================================"
+echo "SYNTAX VERIFICATION COMPLETE: $(date)"
+echo "========================================"

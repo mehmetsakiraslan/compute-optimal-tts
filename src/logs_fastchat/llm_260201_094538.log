@@ -1,0 +1,2 @@
+2026-02-01 09:45:43 | INFO | model_worker | Register to controller
+2026-02-01 09:46:28 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/math-shepherd-mistral-7b-prm']. Semaphore: None. call_ct: 0. worker_id: 86ef3cee. 

@@ -1,0 +1,1 @@
+{"problem": "What is the smallest positive integer $n$ such that all the roots of $z^4 + z^2 + 1 = 0$ are $n^{\\text{th}}$ roots of unity?", "solution": "6", "level": 2, "type": "Precalculus"}

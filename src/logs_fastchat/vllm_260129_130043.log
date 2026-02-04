@@ -1,0 +1,296 @@
+2026-01-29 13:00:48 | ERROR | stderr | Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+2026-01-29 13:00:48 | ERROR | stderr | 
+2026-01-29 13:00:48 | ERROR | stderr | Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.80it/s]
+2026-01-29 13:00:48 | ERROR | stderr | 
+2026-01-29 13:00:48 | ERROR | stderr | Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.80it/s]
+2026-01-29 13:00:48 | ERROR | stderr | 
+2026-01-29 13:00:48 | ERROR | stderr | 
+2026-01-29 13:01:08 | INFO | model_worker | Loading the model ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct'] on worker f164510d, worker type: vLLM worker...
+2026-01-29 13:01:08 | INFO | model_worker | Register to controller
+2026-01-29 13:01:08 | INFO | stdout | Namespace(host='127.0.0.1', port=10082, worker_address='http://127.0.0.1:10082', controller_address='http://127.0.0.1:10014', model_path='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', model_names=None, limit_worker_concurrency=1024, no_register=False, num_gpus=1, conv_template=None, trust_remote_code=True, gpu_memory_utilization=0.88, swap_space=16.0, max_model_length=8192, max_num_sequences=0, enable_chunked_prefill=False, model='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', task='auto', tokenizer=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', chat_template_text_format='string', allowed_local_media_path=None, download_dir=None, load_format='auto', config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, max_model_len=8192, guided_decoding_backend='outlines', distributed_executor_backend=None, worker_use_ray=False, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, ray_workers_use_nsight=False, block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, num_lookahead_slots=0, seed=0, cpu_offload_gb=0, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_seqs=256, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, hf_overrides=None, enforce_eager=False, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, limit_mm_per_prompt=None, mm_processor_kwargs=None, enable_lora=False, enable_lora_bias=False, max_loras=1, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', num_scheduler_steps=1, multi_step_stream_outputs=True, scheduler_delay_factor=0.0, speculative_model=None, speculative_model_quantization=None, num_speculative_tokens=None, speculative_disable_mqa_scorer=False, speculative_draft_tensor_parallel_size=None, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', typical_acceptance_sampler_posterior_threshold=None, typical_acceptance_sampler_posterior_alpha=None, disable_logprobs_during_spec_decoding=None, model_loader_extra_config=None, ignore_patterns=[], preemption_mode=None, served_model_name=None, qlora_adapter_name_or_path=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, scheduling_policy='fcfs', override_neuron_config=None, override_pooler_config=None, disable_log_requests=False)
+2026-01-29 13:01:08 | INFO | stdout | **************************************************
+2026-01-29 13:01:08 | INFO | stdout | AsyncEngineArgs(model='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', served_model_name=None, tokenizer='/scratch/msa6093/models/Qwen2.5-1.5B-Instruct', task='auto', skip_tokenizer_init=False, tokenizer_mode='auto', chat_template_text_format='string', trust_remote_code=True, allowed_local_media_path=None, download_dir=None, load_format='auto', config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, seed=0, max_model_len=8192, worker_use_ray=False, distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, swap_space=16.0, cpu_offload_gb=0, gpu_memory_utilization=0.88, max_num_batched_tokens=None, max_num_seqs=256, max_logprobs=20, disable_log_stats=False, revision=None, code_revision=None, rope_scaling=None, rope_theta=None, hf_overrides=None, tokenizer_revision=None, quantization=None, enforce_eager=False, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, limit_mm_per_prompt=None, mm_processor_kwargs=None, enable_lora=False, enable_lora_bias=False, max_loras=1, max_lora_rank=16, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, fully_sharded_loras=False, lora_extra_vocab_size=256, long_lora_scaling_factors=None, lora_dtype='auto', max_cpu_loras=None, device='auto', num_scheduler_steps=1, multi_step_stream_outputs=True, ray_workers_use_nsight=False, num_gpu_blocks_override=None, num_lookahead_slots=0, model_loader_extra_config=None, ignore_patterns=[], preemption_mode=None, scheduler_delay_factor=0.0, enable_chunked_prefill=False, guided_decoding_backend='outlines', speculative_model=None, speculative_model_quantization=None, speculative_draft_tensor_parallel_size=None, num_speculative_tokens=None, speculative_disable_mqa_scorer=False, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', typical_acceptance_sampler_posterior_threshold=None, typical_acceptance_sampler_posterior_alpha=None, qlora_adapter_name_or_path=None, disable_logprobs_during_spec_decoding=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, scheduling_policy='fcfs', override_neuron_config=None, override_pooler_config=None, disable_log_requests=False)
+2026-01-29 13:01:08 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m3090158[0m]
+2026-01-29 13:01:08 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2026-01-29 13:01:08 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2026-01-29 13:01:08 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://127.0.0.1:10082[0m (Press CTRL+C to quit)
+2026-01-29 13:01:53 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1019, locked=False). call_ct: 5. worker_id: f164510d. 
+2026-01-29 13:01:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39928 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39894 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39938 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39950 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39924 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39976 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39992 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39962 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40014 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40008 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39996 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40020 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40002 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39984 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40046 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:39908 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:57 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40032 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:57 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40048 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:57 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40072 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:57 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40004 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40082 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40106 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40118 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40130 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:59 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40062 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:59 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40090 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:01:59 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40134 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40160 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40148 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46830 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46854 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46842 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46878 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46816 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46894 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40064 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46908 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46862 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46938 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46954 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46924 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46966 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46974 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46988 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46972 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47006 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46998 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47012 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47016 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47038 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:08 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47024 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47040 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47046 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47072 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47076 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47066 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47056 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47090 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47058 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47104 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:11 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47098 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:11 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47122 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:12 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47108 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:12 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47130 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:12 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59234 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:12 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59246 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:12 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59240 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59258 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59274 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59298 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:14 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59312 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:14 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59326 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:14 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59286 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59264 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59316 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59330 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59338 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59344 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59372 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59356 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59354 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59334 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59378 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59374 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59382 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59398 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59412 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59450 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59420 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59434 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59466 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59478 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59468 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59494 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59490 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59500 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55768 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59498 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:59510 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55782 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55834 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55836 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55842 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55796 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55818 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55810 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55858 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55888 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:26 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55864 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:26 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55892 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:26 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55896 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:27 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55930 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:27 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55882 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:27 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55906 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:28 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55952 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:28 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55868 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:28 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55920 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:29 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55954 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:29 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55970 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:29 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55956 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55966 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55946 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55972 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55994 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:55984 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40166 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40172 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56010 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40176 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40196 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40222 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40206 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40190 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40258 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40236 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40264 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40250 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40288 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40296 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40272 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40304 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40290 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40322 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40338 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:38 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1019, locked=False). call_ct: 149. worker_id: f164510d. 
+2026-01-29 13:02:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40352 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40316 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40376 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40368 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40354 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40384 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40402 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40420 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40410 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:41 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40430 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:42 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40442 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46732 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46706 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46720 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46692 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:44 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46742 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46688 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46782 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46762 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46746 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46804 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46792 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46778 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46814 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46816 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46838 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40398 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46828 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46840 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:49 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46864 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46860 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46870 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:50 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46848 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46886 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46926 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46902 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46912 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46922 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:52 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46942 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48642 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:53 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48662 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:54 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48628 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48668 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48666 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:55 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48658 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48682 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48694 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48674 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:57 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48692 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48714 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48724 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48722 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:58 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48708 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:02:59 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48738 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48754 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48762 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48750 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48770 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48756 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41334 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41342 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41356 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:03 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41396 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41354 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41366 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41382 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41402 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41404 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41422 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41418 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41426 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:07 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41436 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41474 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48732 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41490 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41494 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41438 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:09 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41468 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41442 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41496 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41500 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41454 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:11 | INFO | stdout | [32mINFO[0m:     127.0.0.1:41504 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:12 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40206 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40212 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:14 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40232 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40228 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40246 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:15 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40250 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40248 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40258 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40242 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:18 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40282 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:19 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40274 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40266 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40296 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:20 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40304 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40324 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:21 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40310 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:22 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40338 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40280 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:23 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40346 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:23 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 246. worker_id: f164510d. 
+2026-01-29 13:03:24 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40364 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40360 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40380 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:27 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40388 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:27 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40402 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:28 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40384 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:29 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40412 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40422 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40426 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40436 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46544 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:33 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46560 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:34 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46574 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46600 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46584 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:37 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46610 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46632 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46624 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46636 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46648 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:03:41 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46662 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2026-01-29 13:04:08 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:04:53 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:05:38 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:06:23 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:07:08 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:07:53 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:08:38 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:09:23 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:10:08 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 
+2026-01-29 13:10:53 | INFO | model_worker | Send heart beat. Models: ['/scratch/msa6093/models/Qwen2.5-1.5B-Instruct']. Semaphore: Semaphore(value=1024, locked=False). call_ct: 267. worker_id: f164510d. 

@@ -1,0 +1,1 @@
+{"problem": "Let \\[f(n) =\n\\begin{cases}\n4n+3 &\\text{if }n<a, \\\\\n7n-12 &\\text{if }n\\ge{a}.\n\\end{cases}\n\\]Find $a$ if the graph of $y=f(n)$ is continuous.", "solution": "5", "level": 2, "type": "Intermediate Algebra"}
