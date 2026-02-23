@@ -1,0 +1,275 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=16:ngpus=1:mem=128gb
+#PBS -l walltime=04:00:00
+#PBS -q workq@e5-cse-cbgpu01.eecscl.psu.edu
+#PBS -N math500_bench
+#PBS -k oed
+#PBS -o /scratch/msa6093/compute-optimal-tts/benchmark_math500.out
+#PBS -e /scratch/msa6093/compute-optimal-tts/benchmark_math500.err
+#PBS -V
+
+# ============================================================
+# MATH-500 Benchmark: async_beam_search vs beam_search
+# Compares accuracy (majority_vote) and throughput (wall-clock)
+# ============================================================
+
+echo "========================================"
+echo "MATH-500 BENCHMARK START: $(date)"
+echo "HOST: $(hostname)"
+echo "========================================"
+
+# --- Environment setup ---
+if [ -f /usr/local/anaconda3/etc/profile.d/conda.sh ]; then
+    source /usr/local/anaconda3/etc/profile.d/conda.sh
+else
+    export PATH=/usr/local/anaconda3/bin:$PATH
+fi
+conda activate /scratch/msa6093/.conda/envs/tts
+
+export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
+export CUDA_VISIBLE_DEVICES=0
+cd /scratch/msa6093/compute-optimal-tts/src
+
+# --- Configuration ---
+LM_PATH="/scratch/msa6093/models/Qwen2.5-1.5B-Instruct"
+RM_PATH="/scratch/msa6093/models/math-shepherd-mistral-7b-prm"
+HOST_ADDR="0.0.0.0"
+CONTROLLER_PORT=10014
+WORKER_BASE_PORT=10081
+LOGDIR="${PYTHONPATH}/logs_fastchat"
+export LOGDIR
+
+SAVE_DIR="/scratch/msa6093/compute-optimal-tts/output_benchmark"
+mkdir -p "${SAVE_DIR}"
+
+# --- Cleanup function ---
+cleanup() {
+    echo ""
+    echo "=== Cleaning up background processes ==="
+    if [ -n "$CONTROLLER_PID" ]; then kill $CONTROLLER_PID 2>/dev/null; fi
+    if [ -n "$RM_WORKER_PID" ]; then kill $RM_WORKER_PID 2>/dev/null; fi
+    if [ -n "$LM_WORKER_PID" ]; then kill $LM_WORKER_PID 2>/dev/null; fi
+    wait 2>/dev/null
+    echo "Cleanup complete."
+}
+trap cleanup EXIT
+
+# --- Start FastChat controller ---
+echo ""
+echo "=== Starting FastChat controller on port ${CONTROLLER_PORT} ==="
+python -m fastchat.serve.controller \
+    --port ${CONTROLLER_PORT} \
+    --host ${HOST_ADDR} \
+    > "${LOGDIR}/controller_bench.log" 2>&1 &
+CONTROLLER_PID=$!
+echo "Controller PID: ${CONTROLLER_PID}"
+sleep 5
+
+# --- Start Reward Model worker ---
+echo "=== Starting Reward Model worker on port ${WORKER_BASE_PORT} ==="
+python -m reason.llm_service.workers.reward_model_worker \
+    --model-path "${RM_PATH}" \
+    --controller-address "http://${HOST_ADDR}:${CONTROLLER_PORT}" \
+    --host ${HOST_ADDR} \
+    --port ${WORKER_BASE_PORT} \
+    --worker-address "http://${HOST_ADDR}:${WORKER_BASE_PORT}" \
+    > "${LOGDIR}/rm_bench.log" 2>&1 &
+RM_WORKER_PID=$!
+echo "RM Worker PID: ${RM_WORKER_PID}"
+sleep 2
+
+# --- Start Language Model worker ---
+LM_WORKER_PORT=$((WORKER_BASE_PORT + 1))
+echo "=== Starting Language Model worker on port ${LM_WORKER_PORT} ==="
+python -m reason.llm_service.workers.vllm_worker \
+    --model-path "${LM_PATH}" \
+    --controller-address "http://${HOST_ADDR}:${CONTROLLER_PORT}" \
+    --host ${HOST_ADDR} \
+    --port ${LM_WORKER_PORT} \
+    --worker-address "http://${HOST_ADDR}:${LM_WORKER_PORT}" \
+    --gpu_memory_utilization 0.88 \
+    --max_model_length 8192 \
+    --swap_space 16 \
+    > "${LOGDIR}/lm_bench.log" 2>&1 &
+LM_WORKER_PID=$!
+echo "LM Worker PID: ${LM_WORKER_PID}"
+
+# --- Wait for workers to register ---
+echo ""
+echo "=== Waiting for workers to register (up to 300s) ==="
+TIMEOUT=300
+ELAPSED=0
+while [ $ELAPSED -lt $TIMEOUT ]; do
+    MODELS=$(python -c "
+import requests, sys
+try:
+    r = requests.post('http://127.0.0.1:${CONTROLLER_PORT}/list_models', timeout=5)
+    models = r.json().get('models', [])
+    print(' '.join(models))
+except:
+    print('')
+" 2>/dev/null)
+    echo "  [${ELAPSED}s] Registered models: ${MODELS}"
+
+    HAS_LM=0
+    HAS_RM=0
+    if echo "$MODELS" | grep -q "Qwen2.5-1.5B-Instruct"; then HAS_LM=1; fi
+    if echo "$MODELS" | grep -q "math-shepherd"; then HAS_RM=1; fi
+
+    if [ $HAS_LM -eq 1 ] && [ $HAS_RM -eq 1 ]; then
+        echo "Both workers registered!"
+        break
+    fi
+
+    if ! kill -0 $CONTROLLER_PID 2>/dev/null; then echo "ERROR: Controller died!"; exit 1; fi
+    if ! kill -0 $RM_WORKER_PID 2>/dev/null; then echo "ERROR: RM worker died!"; exit 1; fi
+    if ! kill -0 $LM_WORKER_PID 2>/dev/null; then echo "ERROR: LM worker died!"; exit 1; fi
+
+    sleep 10
+    ELAPSED=$((ELAPSED + 10))
+done
+
+if [ $ELAPSED -ge $TIMEOUT ]; then
+    echo "ERROR: Workers failed to register within ${TIMEOUT}s"
+    exit 1
+fi
+
+CONTROLLER_ADDR="http://${HOST_ADDR}:${CONTROLLER_PORT}"
+
+# ============================================================
+# BENCHMARK 1: async_beam_search on MATH-500
+# ============================================================
+echo ""
+echo "========================================"
+echo "BENCHMARK 1: async_beam_search (MATH-500)"
+echo "========================================"
+ASYNC_START=$(date +%s)
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    --LM "${LM_PATH}" \
+    --RM "${RM_PATH}" \
+    --task_name MATH \
+    --temperature 0.7 \
+    --max_new_tokens 2048 \
+    --num_sequence 1 \
+    --tree_max_width 4 \
+    --tree_max_depth 40 \
+    --save_dir "${SAVE_DIR}" \
+    --method async_beam_search \
+    --num_worker 1 \
+    --controller_addr "${CONTROLLER_ADDR}" \
+    --add_step_prompt \
+    --double_line_break 1 \
+    --batch_size 500 \
+    --max_time 0 \
+    --local 1
+
+ASYNC_RC=$?
+ASYNC_END=$(date +%s)
+ASYNC_ELAPSED=$((ASYNC_END - ASYNC_START))
+echo "async_beam_search exit code: ${ASYNC_RC}"
+echo "async_beam_search wall-clock: ${ASYNC_ELAPSED}s"
+echo "Finished: $(date)"
+
+# ============================================================
+# BENCHMARK 2: beam_search on MATH-500
+# ============================================================
+echo ""
+echo "========================================"
+echo "BENCHMARK 2: beam_search (MATH-500)"
+echo "========================================"
+SYNC_START=$(date +%s)
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    --LM "${LM_PATH}" \
+    --RM "${RM_PATH}" \
+    --task_name MATH \
+    --temperature 0.7 \
+    --max_new_tokens 2048 \
+    --num_sequence 1 \
+    --tree_max_width 4 \
+    --tree_max_depth 40 \
+    --save_dir "${SAVE_DIR}" \
+    --method beam_search \
+    --num_worker 1 \
+    --controller_addr "${CONTROLLER_ADDR}" \
+    --add_step_prompt \
+    --double_line_break 1 \
+    --batch_size 500 \
+    --max_time 0 \
+    --local 1
+
+SYNC_RC=$?
+SYNC_END=$(date +%s)
+SYNC_ELAPSED=$((SYNC_END - SYNC_START))
+echo "beam_search exit code: ${SYNC_RC}"
+echo "beam_search wall-clock: ${SYNC_ELAPSED}s"
+echo "Finished: $(date)"
+
+# ============================================================
+# RESULTS SUMMARY
+# ============================================================
+echo ""
+echo "========================================"
+echo "MATH-500 BENCHMARK RESULTS"
+echo "========================================"
+echo ""
+echo "--- Timing ---"
+echo "async_beam_search: ${ASYNC_ELAPSED}s (exit code: ${ASYNC_RC})"
+echo "beam_search:       ${SYNC_ELAPSED}s (exit code: ${SYNC_RC})"
+echo ""
+
+ASYNC_RESULT_DIR="${SAVE_DIR}/MATH_async_beam_search/Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
+SYNC_RESULT_DIR="${SAVE_DIR}/MATH_beam_search/Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
+
+echo "--- Accuracy ---"
+python -c "
+import json, os, glob
+
+def compute_stats(result_dir):
+    correct = 0
+    total = 0
+    total_tokens = 0
+    total_tree_tokens = 0
+    for jsonl_path in sorted(glob.glob(os.path.join(result_dir, '*/record_0.jsonl'))):
+        with open(jsonl_path) as f:
+            for line in f:
+                d = json.loads(line)
+                total += 1
+                correct += d['result']['majority_vote']
+                total_tokens += d['result']['total_completion_tokens']
+                for out in d.get('output', []):
+                    total_tree_tokens += out.get('tree_completion_tokens', 0)
+    return correct, total, total_tokens, total_tree_tokens
+
+print('async_beam_search:')
+c, t, tok, tree_tok = compute_stats('${ASYNC_RESULT_DIR}')
+print(f'  Accuracy: {c}/{t} = {c/max(t,1)*100:.1f}%')
+print(f'  Total completion tokens: {tok:,}')
+print(f'  Total tree tokens: {tree_tok:,}')
+print(f'  Avg tokens/problem: {tok/max(t,1):.0f}')
+print()
+
+print('beam_search:')
+c, t, tok, tree_tok = compute_stats('${SYNC_RESULT_DIR}')
+print(f'  Accuracy: {c}/{t} = {c/max(t,1)*100:.1f}%')
+print(f'  Total completion tokens: {tok:,}')
+print(f'  Total tree tokens: {tree_tok:,}')
+print(f'  Avg tokens/problem: {tok/max(t,1):.0f}')
+"
+
+# Show avg_result.json if available
+echo ""
+echo "--- avg_result.json ---"
+echo "async_beam_search:"
+cat "${ASYNC_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
+echo ""
+echo "beam_search:"
+cat "${SYNC_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
+
+echo ""
+echo "========================================"
+echo "BENCHMARK COMPLETE: $(date)"
+echo "========================================"

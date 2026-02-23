@@ -19,7 +19,7 @@ import ray
 from ray.util.actor_pool import ActorPool
 
 from reason.evaluation.evaluator import RemoteMathEvaluator
-from reason.evaluation.methods import BeamSearchConfig, beam_search, Task
+from reason.evaluation.methods import BeamSearchConfig, beam_search, AsyncBeamSearchConfig, async_beam_search, Task
 from reason.inference.lm_call import LMCallingConfig, VLLMRemoteCaller
 from reason.inference.rm_call import (
     RMRemoteCaller,
@@ -95,6 +95,8 @@ if __name__ == "__main__":
     parser.add_argument("--multi_gpu", action="store_true")
     parser.add_argument("--batch_size", type=int, default=0)
     parser.add_argument("--max_time", type=int, default=0)
+    parser.add_argument("--max_frontier_width", type=int, default=0)
+    parser.add_argument("--children_per_node", type=int, default=0)
 
     args = parser.parse_args()
 
@@ -293,6 +295,26 @@ if __name__ == "__main__":
             double_line_break=args.double_line_break,
         )
         solver_fn = partial(beam_search, method_config, gen_config)
+    elif "async_beam_search" in args.method:
+        max_fw = args.max_frontier_width if args.max_frontier_width > 0 else args.tree_max_width
+        cpn = args.children_per_node if args.children_per_node > 0 else 1
+        method_config = AsyncBeamSearchConfig(
+            task_name=args.task_name,
+            tree_max_depth=args.tree_max_depth,
+            tree_max_width=args.tree_max_width,
+            beam_size=args.num_sequence,
+            max_frontier_width=max_fw,
+            children_per_node=cpn,
+            model_names=args.LM,
+            is_few_shot=args.is_few_shot,
+            add_step_prompt=args.add_step_prompt,
+            cot_prompt=args.cot_prompt,
+            stop_str=args.stop_str,
+            sep=args.sep,
+            direct_io=direct_io,
+            double_line_break=args.double_line_break,
+        )
+        solver_fn = partial(async_beam_search, method_config, gen_config)
     elif "beam_search" in args.method:
         method_config = BeamSearchConfig(
             task_name=args.task_name,

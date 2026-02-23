@@ -1,0 +1,266 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=16:ngpus=1:mem=128gb
+#PBS -l walltime=01:00:00
+#PBS -q workq@e5-cse-cbgpu01.eecscl.psu.edu
+#PBS -N test_async_bs
+#PBS -k oed
+#PBS -o /scratch/msa6093/compute-optimal-tts/test_async_bs.out
+#PBS -e /scratch/msa6093/compute-optimal-tts/test_async_bs.err
+#PBS -V
+
+# ============================================================
+# Single-problem test of async_beam_search
+# Usage: qsub test_async_beam_search.pbs
+# ============================================================
+
+echo "========================================"
+echo "ASYNC BEAM SEARCH TEST START: $(date)"
+echo "HOST: $(hostname)"
+echo "========================================"
+
+# --- Environment setup ---
+if [ -f /usr/local/anaconda3/etc/profile.d/conda.sh ]; then
+    source /usr/local/anaconda3/etc/profile.d/conda.sh
+else
+    export PATH=/usr/local/anaconda3/bin:$PATH
+fi
+conda activate /scratch/msa6093/.conda/envs/tts
+
+export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
+export CUDA_VISIBLE_DEVICES=0
+cd /scratch/msa6093/compute-optimal-tts/src
+
+# --- Configuration ---
+LM_PATH="/scratch/msa6093/models/Qwen2.5-1.5B-Instruct"
+RM_PATH="/scratch/msa6093/models/math-shepherd-mistral-7b-prm"
+HOST_ADDR="0.0.0.0"
+CONTROLLER_PORT=10014
+WORKER_BASE_PORT=10081
+LOGDIR="${PYTHONPATH}/logs_fastchat"
+export LOGDIR
+
+SAVE_DIR="/scratch/msa6093/compute-optimal-tts/output_async_test"
+mkdir -p "${SAVE_DIR}"
+
+# --- Cleanup function ---
+cleanup() {
+    echo ""
+    echo "=== Cleaning up background processes ==="
+    if [ -n "$CONTROLLER_PID" ]; then kill $CONTROLLER_PID 2>/dev/null; fi
+    if [ -n "$RM_WORKER_PID" ]; then kill $RM_WORKER_PID 2>/dev/null; fi
+    if [ -n "$LM_WORKER_PID" ]; then kill $LM_WORKER_PID 2>/dev/null; fi
+    wait 2>/dev/null
+    echo "Cleanup complete."
+}
+trap cleanup EXIT
+
+# --- Start FastChat controller ---
+echo ""
+echo "=== Starting FastChat controller on port ${CONTROLLER_PORT} ==="
+python -m fastchat.serve.controller \
+    --port ${CONTROLLER_PORT} \
+    --host ${HOST_ADDR} \
+    > "${LOGDIR}/controller_async_test.log" 2>&1 &
+CONTROLLER_PID=$!
+echo "Controller PID: ${CONTROLLER_PID}"
+sleep 5
+
+# --- Start Reward Model worker ---
+echo "=== Starting Reward Model worker on port ${WORKER_BASE_PORT} ==="
+python -m reason.llm_service.workers.reward_model_worker \
+    --model-path "${RM_PATH}" \
+    --controller-address "http://${HOST_ADDR}:${CONTROLLER_PORT}" \
+    --host ${HOST_ADDR} \
+    --port ${WORKER_BASE_PORT} \
+    --worker-address "http://${HOST_ADDR}:${WORKER_BASE_PORT}" \
+    > "${LOGDIR}/rm_async_test.log" 2>&1 &
+RM_WORKER_PID=$!
+echo "RM Worker PID: ${RM_WORKER_PID}"
+sleep 2
+
+# --- Start Language Model worker ---
+LM_WORKER_PORT=$((WORKER_BASE_PORT + 1))
+echo "=== Starting Language Model worker on port ${LM_WORKER_PORT} ==="
+python -m reason.llm_service.workers.vllm_worker \
+    --model-path "${LM_PATH}" \
+    --controller-address "http://${HOST_ADDR}:${CONTROLLER_PORT}" \
+    --host ${HOST_ADDR} \
+    --port ${LM_WORKER_PORT} \
+    --worker-address "http://${HOST_ADDR}:${LM_WORKER_PORT}" \
+    --gpu_memory_utilization 0.88 \
+    --max_model_length 8192 \
+    --swap_space 16 \
+    > "${LOGDIR}/lm_async_test.log" 2>&1 &
+LM_WORKER_PID=$!
+echo "LM Worker PID: ${LM_WORKER_PID}"
+
+# --- Wait for workers to register ---
+echo ""
+echo "=== Waiting for workers to register (up to 300s) ==="
+TIMEOUT=300
+ELAPSED=0
+while [ $ELAPSED -lt $TIMEOUT ]; do
+    MODELS=$(python -c "
+import requests, sys
+try:
+    r = requests.post('http://127.0.0.1:${CONTROLLER_PORT}/list_models', timeout=5)
+    models = r.json().get('models', [])
+    print(' '.join(models))
+except:
+    print('')
+" 2>/dev/null)
+    echo "  [${ELAPSED}s] Registered models: ${MODELS}"
+
+    HAS_LM=0
+    HAS_RM=0
+    if echo "$MODELS" | grep -q "Qwen2.5-1.5B-Instruct"; then HAS_LM=1; fi
+    if echo "$MODELS" | grep -q "math-shepherd"; then HAS_RM=1; fi
+
+    if [ $HAS_LM -eq 1 ] && [ $HAS_RM -eq 1 ]; then
+        echo "Both workers registered!"
+        break
+    fi
+
+    # Check if processes are still alive
+    if ! kill -0 $CONTROLLER_PID 2>/dev/null; then echo "ERROR: Controller died!"; exit 1; fi
+    if ! kill -0 $RM_WORKER_PID 2>/dev/null; then echo "ERROR: RM worker died!"; exit 1; fi
+    if ! kill -0 $LM_WORKER_PID 2>/dev/null; then echo "ERROR: LM worker died!"; exit 1; fi
+
+    sleep 10
+    ELAPSED=$((ELAPSED + 10))
+done
+
+if [ $ELAPSED -ge $TIMEOUT ]; then
+    echo "ERROR: Workers failed to register within ${TIMEOUT}s"
+    exit 1
+fi
+
+CONTROLLER_ADDR="http://${HOST_ADDR}:${CONTROLLER_PORT}"
+
+# ============================================================
+# TEST 1: Run async_beam_search on a single problem
+# ============================================================
+echo ""
+echo "========================================"
+echo "TEST 1: async_beam_search (single problem, local mode)"
+echo "========================================"
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    --LM "${LM_PATH}" \
+    --RM "${RM_PATH}" \
+    --task_name MATH \
+    --temperature 0.7 \
+    --max_new_tokens 2048 \
+    --num_sequence 1 \
+    --tree_max_width 4 \
+    --tree_max_depth 40 \
+    --save_dir "${SAVE_DIR}" \
+    --method async_beam_search \
+    --num_worker 1 \
+    --controller_addr "${CONTROLLER_ADDR}" \
+    --add_step_prompt \
+    --double_line_break 1 \
+    --batch_size 1 \
+    --max_time 0 \
+    --local 1
+
+ASYNC_RC=$?
+echo "async_beam_search exit code: ${ASYNC_RC}"
+echo "Finished: $(date)"
+
+# ============================================================
+# TEST 2: Run standard beam_search on the same problem for comparison
+# ============================================================
+echo ""
+echo "========================================"
+echo "TEST 2: standard beam_search (single problem, local mode)"
+echo "========================================"
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    --LM "${LM_PATH}" \
+    --RM "${RM_PATH}" \
+    --task_name MATH \
+    --temperature 0.7 \
+    --max_new_tokens 2048 \
+    --num_sequence 1 \
+    --tree_max_width 4 \
+    --tree_max_depth 40 \
+    --save_dir "${SAVE_DIR}" \
+    --method beam_search \
+    --num_worker 1 \
+    --controller_addr "${CONTROLLER_ADDR}" \
+    --add_step_prompt \
+    --double_line_break 1 \
+    --batch_size 1 \
+    --max_time 0 \
+    --local 1
+
+SYNC_RC=$?
+echo "beam_search exit code: ${SYNC_RC}"
+echo "Finished: $(date)"
+
+# ============================================================
+# RESULTS
+# ============================================================
+echo ""
+echo "========================================"
+echo "TEST RESULTS"
+echo "========================================"
+echo "async_beam_search exit code: ${ASYNC_RC}"
+echo "beam_search exit code:       ${SYNC_RC}"
+echo ""
+
+# Check output files
+echo "async_beam_search output:"
+find "${SAVE_DIR}/MATH_async_beam_search" -name "*.jsonl" 2>/dev/null | head -5
+echo ""
+echo "beam_search output:"
+find "${SAVE_DIR}/MATH_beam_search" -name "*.jsonl" 2>/dev/null | head -5
+
+# Show first result from each
+echo ""
+echo "--- async_beam_search first result ---"
+ASYNC_FILE=$(find "${SAVE_DIR}/MATH_async_beam_search" -name "*.jsonl" 2>/dev/null | head -1)
+if [ -n "$ASYNC_FILE" ]; then
+    python -c "
+import json
+with open('${ASYNC_FILE}') as f:
+    for line in f:
+        d = json.loads(line)
+        print('Question:', d.get('question', '')[:80])
+        print('Result:', json.dumps(d.get('result', {}), indent=2)[:200])
+        break
+"
+else
+    echo "(no output files found)"
+fi
+
+echo ""
+echo "--- beam_search first result ---"
+SYNC_FILE=$(find "${SAVE_DIR}/MATH_beam_search" -name "*.jsonl" 2>/dev/null | head -1)
+if [ -n "$SYNC_FILE" ]; then
+    python -c "
+import json
+with open('${SYNC_FILE}') as f:
+    for line in f:
+        d = json.loads(line)
+        print('Question:', d.get('question', '')[:80])
+        print('Result:', json.dumps(d.get('result', {}), indent=2)[:200])
+        break
+"
+else
+    echo "(no output files found)"
+fi
+
+echo ""
+echo "========================================"
+echo "ALL TESTS COMPLETE: $(date)"
+echo "========================================"
+
+if [ $ASYNC_RC -eq 0 ]; then
+    echo "PASS: async_beam_search completed successfully"
+else
+    echo "FAIL: async_beam_search failed with exit code ${ASYNC_RC}"
+fi
