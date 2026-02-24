@@ -1,6 +1,6 @@
 #!/bin/bash
-#PBS -l select=1:ncpus=16:ngpus=1:mem=128gb
-#PBS -l walltime=04:00:00
+#PBS -l select=1:ncpus=16:ngpus=2:mem=128gb
+#PBS -l walltime=08:00:00
 #PBS -q workq@e5-cse-cbgpu01.eecscl.psu.edu
 #PBS -N math500_bench
 #PBS -k oed
@@ -27,7 +27,6 @@ fi
 conda activate /scratch/msa6093/.conda/envs/tts
 
 export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
-export CUDA_VISIBLE_DEVICES=0
 cd /scratch/msa6093/compute-optimal-tts/src
 
 # --- Configuration ---
@@ -65,9 +64,9 @@ CONTROLLER_PID=$!
 echo "Controller PID: ${CONTROLLER_PID}"
 sleep 5
 
-# --- Start Reward Model worker ---
-echo "=== Starting Reward Model worker on port ${WORKER_BASE_PORT} ==="
-python -m reason.llm_service.workers.reward_model_worker \
+# --- Start Reward Model worker on GPU 0 ---
+echo "=== Starting Reward Model worker on port ${WORKER_BASE_PORT} (GPU 0) ==="
+CUDA_VISIBLE_DEVICES=0 python -m reason.llm_service.workers.reward_model_worker \
     --model-path "${RM_PATH}" \
     --controller-address "http://${HOST_ADDR}:${CONTROLLER_PORT}" \
     --host ${HOST_ADDR} \
@@ -78,10 +77,10 @@ RM_WORKER_PID=$!
 echo "RM Worker PID: ${RM_WORKER_PID}"
 sleep 2
 
-# --- Start Language Model worker ---
+# --- Start Language Model worker on GPU 1 ---
 LM_WORKER_PORT=$((WORKER_BASE_PORT + 1))
-echo "=== Starting Language Model worker on port ${LM_WORKER_PORT} ==="
-python -m reason.llm_service.workers.vllm_worker \
+echo "=== Starting Language Model worker on port ${LM_WORKER_PORT} (GPU 1) ==="
+CUDA_VISIBLE_DEVICES=1 python -m reason.llm_service.workers.vllm_worker \
     --model-path "${LM_PATH}" \
     --controller-address "http://${HOST_ADDR}:${CONTROLLER_PORT}" \
     --host ${HOST_ADDR} \

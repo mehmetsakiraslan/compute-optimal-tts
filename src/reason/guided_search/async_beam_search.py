@@ -7,6 +7,7 @@ trajectory selection (and optionally for frontier capping when available).
 
 import queue
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Callable, Dict, List, Optional, Tuple
 
@@ -30,11 +31,15 @@ class AsyncSearchTree(SearchTree):
     """
 
     def __init__(self, cfg, max_frontier_width: int = 4, children_per_node: int = 1,
-                 stop_str: Optional[List[str]] = None) -> None:
+                 stop_str: Optional[List[str]] = None,
+                 prm_wait_timeout: float = 0.5,
+                 prm_coverage_threshold: float = 0.8) -> None:
         super().__init__(cfg)
         self.max_frontier_width = max_frontier_width
         self.children_per_node = children_per_node
         self._stop_str = stop_str or []
+        self.prm_wait_timeout = prm_wait_timeout
+        self.prm_coverage_threshold = prm_coverage_threshold
         # PRM scores: maps id(node) -> float, protected by lock
         self._prm_scores: Dict[int, float] = {}
         self._prm_lock = threading.Lock()
@@ -98,7 +103,7 @@ class AsyncSearchTree(SearchTree):
             frontier.append((child_node, simulate_env.copy()))
 
         # Cap frontier to max width
-        frontier = self._cap_frontier(frontier)
+        frontier = self._cap_frontier(frontier, beam_size=beam_size)
 
         end_nodes: List[Tuple[LanguageNode, CoTEnv]] = []
 
@@ -142,8 +147,8 @@ class AsyncSearchTree(SearchTree):
                                 node.set_as_terminate_node()
                                 end_nodes.append((node, env))
 
-                # Cap frontier
-                frontier = self._cap_frontier(next_frontier)
+                # Cap frontier with beam_size shrunk by completed trajectories
+                frontier = self._cap_frontier(next_frontier, beam_size=beam_size - len(end_nodes))
 
                 # Don't exit early based on beam_size — we want to
                 # explore all depths and let PRM pick the best completed
@@ -386,31 +391,82 @@ class AsyncSearchTree(SearchTree):
                     break
             _score_batch(batch)
 
+    def _wait_for_prm_coverage(
+        self,
+        frontier: List[Tuple[LanguageNode, CoTEnv]],
+    ) -> None:
+        """Poll for PRM scores until coverage threshold is met or timeout expires.
+
+        At early depths where PRM hasn't scored anything, this times out quickly.
+        At later depths, PRM has caught up and coverage is met immediately.
+        """
+        if not frontier:
+            return
+
+        deadline = time.monotonic() + self.prm_wait_timeout
+        required = int(len(frontier) * self.prm_coverage_threshold)
+
+        while time.monotonic() < deadline:
+            covered = 0
+            with self._prm_lock:
+                for node, _ in frontier:
+                    if id(node) in self._prm_scores:
+                        covered += 1
+                    elif node.parent is not None and id(node.parent) in self._prm_scores:
+                        covered += 1
+            if covered >= required:
+                return
+            time.sleep(0.05)
+
     def _cap_frontier(
         self,
         frontier: List[Tuple[LanguageNode, CoTEnv]],
+        beam_size: int = 0,
     ) -> List[Tuple[LanguageNode, CoTEnv]]:
-        """Cap frontier to max_frontier_width.
+        """Cap frontier using PRM-guided tiered scoring.
 
-        Uses parent PRM scores if available, otherwise falls back to LM log-prob.
+        Effective width = min(max_frontier_width, beam_size) when beam_size > 0.
+        Waits briefly for PRM scores, then ranks nodes using:
+          tier 2: node's own PRM score (best signal)
+          tier 1: parent's PRM score (inherited)
+          tier 0: LM log-prob (fallback for early depths)
         """
-        if len(frontier) <= self.max_frontier_width:
+        effective_width = self.max_frontier_width
+        if beam_size > 0:
+            effective_width = min(effective_width, beam_size)
+
+        if effective_width <= 0:
+            return []
+
+        if len(frontier) <= effective_width:
             return frontier
 
-        def score_fn(entry: Tuple[LanguageNode, CoTEnv]) -> float:
-            node = entry[0]
-            # Check if parent has a PRM score
-            if node.parent is not None:
-                with self._prm_lock:
-                    parent_score = self._prm_scores.get(id(node.parent))
-                if parent_score is not None:
-                    return parent_score
-            # Fallback to LM prob (prior_p)
-            return node.prior_p
+        # Wait briefly for PRM scores to arrive
+        self._wait_for_prm_coverage(frontier)
 
-        # Sort descending by score, take top max_frontier_width
+        def score_fn(entry: Tuple[LanguageNode, CoTEnv]) -> Tuple[int, float]:
+            node = entry[0]
+            with self._prm_lock:
+                node_score = self._prm_scores.get(id(node))
+                if node_score is not None:
+                    return (2, node_score)
+                if node.parent is not None:
+                    parent_score = self._prm_scores.get(id(node.parent))
+                    if parent_score is not None:
+                        return (1, parent_score)
+            return (0, node.prior_p)
+
+        # Sort descending by (tier, score), take top effective_width
         scored = sorted(frontier, key=score_fn, reverse=True)
-        return scored[:self.max_frontier_width]
+        kept = scored[:effective_width]
+        pruned_count = len(frontier) - len(kept)
+        if pruned_count > 0:
+            tiers = [score_fn(e)[0] for e in kept]
+            logger.info(
+                f"Frontier capped: {len(frontier)} -> {len(kept)} "
+                f"(beam_size={beam_size}, tiers={tiers})"
+            )
+        return kept
 
     def _select_best_trajectories(
         self,

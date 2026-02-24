@@ -97,6 +97,8 @@ if __name__ == "__main__":
     parser.add_argument("--max_time", type=int, default=0)
     parser.add_argument("--max_frontier_width", type=int, default=0)
     parser.add_argument("--children_per_node", type=int, default=0)
+    parser.add_argument("--prm_wait_timeout", type=float, default=0.5)
+    parser.add_argument("--prm_coverage_threshold", type=float, default=0.8)
 
     args = parser.parse_args()
 
@@ -305,6 +307,8 @@ if __name__ == "__main__":
             beam_size=args.num_sequence,
             max_frontier_width=max_fw,
             children_per_node=cpn,
+            prm_wait_timeout=args.prm_wait_timeout,
+            prm_coverage_threshold=args.prm_coverage_threshold,
             model_names=args.LM,
             is_few_shot=args.is_few_shot,
             add_step_prompt=args.add_step_prompt,

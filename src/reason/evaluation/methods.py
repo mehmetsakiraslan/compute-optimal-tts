@@ -105,6 +105,8 @@ class AsyncBeamSearchConfig(TreeSearchConfig):
     beam_size: int = 4
     max_frontier_width: int = 4
     children_per_node: int = 1
+    prm_wait_timeout: float = 0.5
+    prm_coverage_threshold: float = 0.8
 
     def __post_init__(self):
         super().__post_init__()
@@ -155,6 +157,8 @@ def async_beam_search(
         max_frontier_width=config.max_frontier_width,
         children_per_node=config.children_per_node,
         stop_str=config.stop_str,
+        prm_wait_timeout=config.prm_wait_timeout,
+        prm_coverage_threshold=config.prm_coverage_threshold,
     )
     traj_list = search_tree.async_beam_search(env, config.beam_size, config.tree_max_depth, rm_call)
 
