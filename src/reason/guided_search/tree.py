@@ -17,8 +17,9 @@ from envs.base_env import CoTEnv
 import heapq
 from loguru import logger
 
-# NVTX profiling imports
+# Profiling imports
 from reason.profiling.nvtx_utils import nvtx_range, NVTXColors
+from reason.profiling.execution_tracer import ExecutionTracer
 
 
 class Node(object):
@@ -284,6 +285,8 @@ class SearchTree:
         if max_step == 1:
             assert self.direct_io
         api_call_completion_tokens = 0
+        tracer = ExecutionTracer.get_instance()
+        tracer.set_current_depth(0)
         _, info = simulate_env.reset(update_legal_action=True)
         api_call_completion_tokens += info["api_completion_token"]
         if self.root is None:
@@ -295,6 +298,7 @@ class SearchTree:
         k = copy.deepcopy(beam_size)
 
         for i in range(max_step + 1):
+            tracer.set_current_depth(i + 1)
             with nvtx_range(f"beam_depth_{i}", NVTXColors.DEPTH_CYAN):
                 cur_nodes_to_search = top_k_nodes
                 top_k_nodes = []

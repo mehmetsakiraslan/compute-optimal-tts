@@ -29,6 +29,10 @@ conda activate /scratch/msa6093/.conda/envs/tts
 export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
 cd /scratch/msa6093/compute-optimal-tts/src
 
+# PBS may set CUDA_VISIBLE_DEVICES to GPU UUIDs; normalize to numeric indices
+# (vLLM cannot parse UUID format, so remap to 0,1 for the 2 allocated GPUs)
+export CUDA_VISIBLE_DEVICES=0,1
+
 # --- Configuration ---
 LM_PATH="/scratch/msa6093/models/Qwen2.5-1.5B-Instruct"
 RM_PATH="/scratch/msa6093/models/math-shepherd-mistral-7b-prm"
@@ -40,11 +44,14 @@ export LOGDIR
 
 SAVE_DIR="/scratch/msa6093/compute-optimal-tts/output_benchmark"
 mkdir -p "${SAVE_DIR}"
+# Clear old results to avoid mixing with new run
+rm -rf "${SAVE_DIR}/MATH_async_beam_search" "${SAVE_DIR}/MATH_beam_search"
 
 # --- Cleanup function ---
 cleanup() {
     echo ""
     echo "=== Cleaning up background processes ==="
+    if [ -n "$GPU_MONITOR_PID" ]; then kill $GPU_MONITOR_PID 2>/dev/null; fi
     if [ -n "$CONTROLLER_PID" ]; then kill $CONTROLLER_PID 2>/dev/null; fi
     if [ -n "$RM_WORKER_PID" ]; then kill $RM_WORKER_PID 2>/dev/null; fi
     if [ -n "$LM_WORKER_PID" ]; then kill $LM_WORKER_PID 2>/dev/null; fi
@@ -64,7 +71,7 @@ CONTROLLER_PID=$!
 echo "Controller PID: ${CONTROLLER_PID}"
 sleep 5
 
-# --- Start Reward Model worker on GPU 0 ---
+# --- Start Reward Model worker (GPU 0) ---
 echo "=== Starting Reward Model worker on port ${WORKER_BASE_PORT} (GPU 0) ==="
 CUDA_VISIBLE_DEVICES=0 python -m reason.llm_service.workers.reward_model_worker \
     --model-path "${RM_PATH}" \
@@ -77,7 +84,7 @@ RM_WORKER_PID=$!
 echo "RM Worker PID: ${RM_WORKER_PID}"
 sleep 2
 
-# --- Start Language Model worker on GPU 1 ---
+# --- Start Language Model worker ---
 LM_WORKER_PORT=$((WORKER_BASE_PORT + 1))
 echo "=== Starting Language Model worker on port ${LM_WORKER_PORT} (GPU 1) ==="
 CUDA_VISIBLE_DEVICES=1 python -m reason.llm_service.workers.vllm_worker \
@@ -134,6 +141,21 @@ if [ $ELAPSED -ge $TIMEOUT ]; then
 fi
 
 CONTROLLER_ADDR="http://${HOST_ADDR}:${CONTROLLER_PORT}"
+
+# --- Start GPU utilization monitor ---
+echo ""
+echo "=== Starting GPU utilization monitor (30s interval) ==="
+nvidia-smi --query-gpu=timestamp,index,utilization.gpu,memory.used,memory.total \
+    --format=csv -l 30 > "${SAVE_DIR}/gpu_utilization.csv" 2>&1 &
+GPU_MONITOR_PID=$!
+echo "GPU Monitor PID: ${GPU_MONITOR_PID}"
+
+# Log initial GPU state
+echo ""
+echo "=== GPU State ==="
+nvidia-smi --query-gpu=index,name,memory.total,memory.free \
+    --format=csv,noheader
+echo ""
 
 # ============================================================
 # BENCHMARK 1: async_beam_search on MATH-500
@@ -267,6 +289,33 @@ cat "${ASYNC_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
 echo ""
 echo "beam_search:"
 cat "${SYNC_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
+
+# --- GPU Utilization Summary ---
+echo ""
+echo "--- GPU Utilization (from ${SAVE_DIR}/gpu_utilization.csv) ---"
+if [ -f "${SAVE_DIR}/gpu_utilization.csv" ]; then
+    echo "Samples collected: $(wc -l < "${SAVE_DIR}/gpu_utilization.csv")"
+    echo "Average utilization per GPU:"
+    python -c "
+import csv
+from collections import defaultdict
+utils = defaultdict(list)
+with open('${SAVE_DIR}/gpu_utilization.csv') as f:
+    reader = csv.reader(f)
+    header = next(reader, None)
+    for row in reader:
+        if len(row) >= 3:
+            gpu_idx = row[1].strip()
+            try:
+                util = float(row[2].strip().replace(' %', ''))
+                utils[gpu_idx].append(util)
+            except ValueError:
+                pass
+for gpu in sorted(utils.keys()):
+    vals = utils[gpu]
+    print(f'  GPU {gpu}: avg={sum(vals)/len(vals):.1f}%, min={min(vals):.0f}%, max={max(vals):.0f}% ({len(vals)} samples)')
+" 2>/dev/null || echo "  (parse error)"
+fi
 
 echo ""
 echo "========================================"
