@@ -1,0 +1,321 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=16:ngpus=2:mem=128gb
+#PBS -l walltime=12:00:00
+#PBS -q workq@e5-cse-cbgpu02.eecscl.psu.edu
+#PBS -N lazy_bench
+#PBS -k oed
+#PBS -o /scratch/msa6093/compute-optimal-tts/benchmark_lazy.out
+#PBS -e /scratch/msa6093/compute-optimal-tts/benchmark_lazy.err
+#PBS -V
+
+# ============================================================
+# MATH-500 Benchmark: beam_search vs async_beam_search vs lazy_beam_search
+# Compares accuracy (majority_vote) and throughput (wall-clock)
+# ============================================================
+
+echo "========================================"
+echo "LAZY BEAM SEARCH BENCHMARK START: $(date)"
+echo "HOST: $(hostname)"
+echo "========================================"
+
+# --- Environment setup ---
+if [ -f /usr/local/anaconda3/etc/profile.d/conda.sh ]; then
+    source /usr/local/anaconda3/etc/profile.d/conda.sh
+else
+    export PATH=/usr/local/anaconda3/bin:$PATH
+fi
+conda activate /scratch/msa6093/.conda/envs/tts
+
+export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
+cd /scratch/msa6093/compute-optimal-tts/src
+
+# PBS may set CUDA_VISIBLE_DEVICES to GPU UUIDs; normalize to numeric indices
+export CUDA_VISIBLE_DEVICES=0,1
+
+# --- Configuration ---
+LM_PATH="/scratch/msa6093/models/Qwen2.5-1.5B-Instruct"
+RM_PATH="/scratch/msa6093/models/math-shepherd-mistral-7b-prm"
+HOST_ADDR="0.0.0.0"
+CONTROLLER_PORT=10014
+WORKER_BASE_PORT=10081
+LOGDIR="${PYTHONPATH}/logs_fastchat"
+export LOGDIR
+
+SAVE_DIR="/scratch/msa6093/compute-optimal-tts/output_benchmark"
+mkdir -p "${SAVE_DIR}"
+# Clear old results to avoid mixing with new run
+rm -rf "${SAVE_DIR}/MATH_lazy_beam_search" "${SAVE_DIR}/MATH_async_beam_search" "${SAVE_DIR}/MATH_beam_search"
+
+# --- Cleanup function ---
+cleanup() {
+    echo ""
+    echo "=== Cleaning up background processes ==="
+    if [ -n "$GPU_MONITOR_PID" ]; then kill $GPU_MONITOR_PID 2>/dev/null; fi
+    if [ -n "$CONTROLLER_PID" ]; then kill $CONTROLLER_PID 2>/dev/null; fi
+    if [ -n "$RM_WORKER_PID" ]; then kill $RM_WORKER_PID 2>/dev/null; fi
+    if [ -n "$LM_WORKER_PID" ]; then kill $LM_WORKER_PID 2>/dev/null; fi
+    wait 2>/dev/null
+    echo "Cleanup complete."
+}
+trap cleanup EXIT
+
+# --- Start FastChat controller ---
+echo ""
+echo "=== Starting FastChat controller on port ${CONTROLLER_PORT} ==="
+python -m fastchat.serve.controller \
+    --port ${CONTROLLER_PORT} \
+    --host ${HOST_ADDR} \
+    > "${LOGDIR}/controller_bench.log" 2>&1 &
+CONTROLLER_PID=$!
+echo "Controller PID: ${CONTROLLER_PID}"
+sleep 5
+
+# --- Start Reward Model worker (GPU 0) ---
+echo "=== Starting Reward Model worker on port ${WORKER_BASE_PORT} (GPU 0) ==="
+CUDA_VISIBLE_DEVICES=0 python -m reason.llm_service.workers.reward_model_worker \
+    --model-path "${RM_PATH}" \
+    --controller-address "http://${HOST_ADDR}:${CONTROLLER_PORT}" \
+    --host ${HOST_ADDR} \
+    --port ${WORKER_BASE_PORT} \
+    --worker-address "http://${HOST_ADDR}:${WORKER_BASE_PORT}" \
+    > "${LOGDIR}/rm_bench.log" 2>&1 &
+RM_WORKER_PID=$!
+echo "RM Worker PID: ${RM_WORKER_PID}"
+sleep 2
+
+# --- Start Language Model worker (GPU 1) ---
+LM_WORKER_PORT=$((WORKER_BASE_PORT + 1))
+echo "=== Starting Language Model worker on port ${LM_WORKER_PORT} (GPU 1) ==="
+CUDA_VISIBLE_DEVICES=1 python -m reason.llm_service.workers.vllm_worker \
+    --model-path "${LM_PATH}" \
+    --controller-address "http://${HOST_ADDR}:${CONTROLLER_PORT}" \
+    --host ${HOST_ADDR} \
+    --port ${LM_WORKER_PORT} \
+    --worker-address "http://${HOST_ADDR}:${LM_WORKER_PORT}" \
+    --gpu_memory_utilization 0.88 \
+    --max_model_length 8192 \
+    --swap_space 16 \
+    > "${LOGDIR}/lm_bench.log" 2>&1 &
+LM_WORKER_PID=$!
+echo "LM Worker PID: ${LM_WORKER_PID}"
+
+# --- Wait for workers to register ---
+echo ""
+echo "=== Waiting for workers to register (up to 300s) ==="
+TIMEOUT=300
+ELAPSED=0
+while [ $ELAPSED -lt $TIMEOUT ]; do
+    MODELS=$(python -c "
+import requests, sys
+try:
+    r = requests.post('http://127.0.0.1:${CONTROLLER_PORT}/list_models', timeout=5)
+    models = r.json().get('models', [])
+    print(' '.join(models))
+except:
+    print('')
+" 2>/dev/null)
+    echo "  [${ELAPSED}s] Registered models: ${MODELS}"
+
+    HAS_LM=0
+    HAS_RM=0
+    if echo "$MODELS" | grep -q "Qwen2.5-1.5B-Instruct"; then HAS_LM=1; fi
+    if echo "$MODELS" | grep -q "math-shepherd"; then HAS_RM=1; fi
+
+    if [ $HAS_LM -eq 1 ] && [ $HAS_RM -eq 1 ]; then
+        echo "Both workers registered!"
+        break
+    fi
+
+    if ! kill -0 $CONTROLLER_PID 2>/dev/null; then echo "ERROR: Controller died!"; exit 1; fi
+    if ! kill -0 $RM_WORKER_PID 2>/dev/null; then echo "ERROR: RM worker died!"; exit 1; fi
+    if ! kill -0 $LM_WORKER_PID 2>/dev/null; then echo "ERROR: LM worker died!"; exit 1; fi
+
+    sleep 10
+    ELAPSED=$((ELAPSED + 10))
+done
+
+if [ $ELAPSED -ge $TIMEOUT ]; then
+    echo "ERROR: Workers failed to register within ${TIMEOUT}s"
+    exit 1
+fi
+
+CONTROLLER_ADDR="http://${HOST_ADDR}:${CONTROLLER_PORT}"
+
+# --- Start GPU utilization monitor ---
+echo ""
+echo "=== Starting GPU utilization monitor (30s interval) ==="
+nvidia-smi --query-gpu=timestamp,index,utilization.gpu,memory.used,memory.total \
+    --format=csv -l 30 > "${SAVE_DIR}/gpu_utilization.csv" 2>&1 &
+GPU_MONITOR_PID=$!
+echo "GPU Monitor PID: ${GPU_MONITOR_PID}"
+
+# Log initial GPU state
+echo ""
+echo "=== GPU State ==="
+nvidia-smi --query-gpu=index,name,memory.total,memory.free \
+    --format=csv,noheader
+echo ""
+
+# Common eval args
+COMMON_ARGS="--LM ${LM_PATH} --RM ${RM_PATH} --task_name MATH \
+    --temperature 0.7 --max_new_tokens 2048 --num_sequence 1 \
+    --tree_max_width 4 --tree_max_depth 40 --save_dir ${SAVE_DIR} \
+    --num_worker 1 --controller_addr ${CONTROLLER_ADDR} \
+    --add_step_prompt --double_line_break 1 --batch_size 500 \
+    --max_time 0 --local 1"
+
+# ============================================================
+# BENCHMARK 1: lazy_beam_search (prune_interval=2)
+# ============================================================
+echo ""
+echo "========================================"
+echo "BENCHMARK 1: lazy_beam_search (MATH-500)"
+echo "========================================"
+LAZY_START=$(date +%s)
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    ${COMMON_ARGS} \
+    --method lazy_beam_search \
+    --prune_interval 2
+
+LAZY_RC=$?
+LAZY_END=$(date +%s)
+LAZY_ELAPSED=$((LAZY_END - LAZY_START))
+echo "lazy_beam_search exit code: ${LAZY_RC}"
+echo "lazy_beam_search wall-clock: ${LAZY_ELAPSED}s"
+echo "Finished: $(date)"
+
+# ============================================================
+# BENCHMARK 2: async_beam_search
+# ============================================================
+echo ""
+echo "========================================"
+echo "BENCHMARK 2: async_beam_search (MATH-500)"
+echo "========================================"
+ASYNC_START=$(date +%s)
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    ${COMMON_ARGS} \
+    --method async_beam_search
+
+ASYNC_RC=$?
+ASYNC_END=$(date +%s)
+ASYNC_ELAPSED=$((ASYNC_END - ASYNC_START))
+echo "async_beam_search exit code: ${ASYNC_RC}"
+echo "async_beam_search wall-clock: ${ASYNC_ELAPSED}s"
+echo "Finished: $(date)"
+
+# ============================================================
+# BENCHMARK 3: beam_search (synchronous baseline)
+# ============================================================
+echo ""
+echo "========================================"
+echo "BENCHMARK 3: beam_search (MATH-500)"
+echo "========================================"
+SYNC_START=$(date +%s)
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    ${COMMON_ARGS} \
+    --method beam_search
+
+SYNC_RC=$?
+SYNC_END=$(date +%s)
+SYNC_ELAPSED=$((SYNC_END - SYNC_START))
+echo "beam_search exit code: ${SYNC_RC}"
+echo "beam_search wall-clock: ${SYNC_ELAPSED}s"
+echo "Finished: $(date)"
+
+# ============================================================
+# RESULTS SUMMARY
+# ============================================================
+echo ""
+echo "========================================"
+echo "MATH-500 BENCHMARK RESULTS"
+echo "========================================"
+echo ""
+echo "--- Timing ---"
+echo "lazy_beam_search:  ${LAZY_ELAPSED}s (exit code: ${LAZY_RC})"
+echo "async_beam_search: ${ASYNC_ELAPSED}s (exit code: ${ASYNC_RC})"
+echo "beam_search:       ${SYNC_ELAPSED}s (exit code: ${SYNC_RC})"
+echo ""
+
+LAZY_RESULT_DIR="${SAVE_DIR}/MATH_lazy_beam_search/Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
+ASYNC_RESULT_DIR="${SAVE_DIR}/MATH_async_beam_search/Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
+SYNC_RESULT_DIR="${SAVE_DIR}/MATH_beam_search/Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
+
+echo "--- Accuracy ---"
+python -c "
+import json, os, glob
+
+def compute_stats(result_dir, label):
+    correct = 0
+    total = 0
+    total_tokens = 0
+    total_tree_tokens = 0
+    for jsonl_path in sorted(glob.glob(os.path.join(result_dir, '*/record_0.jsonl'))):
+        with open(jsonl_path) as f:
+            for line in f:
+                d = json.loads(line)
+                total += 1
+                correct += d['result']['majority_vote']
+                total_tokens += d['result']['total_completion_tokens']
+                for out in d.get('output', []):
+                    total_tree_tokens += out.get('tree_completion_tokens', 0)
+    print(f'{label}:')
+    print(f'  Accuracy: {correct}/{total} = {correct/max(total,1)*100:.1f}%')
+    print(f'  Total completion tokens: {total_tokens:,}')
+    print(f'  Total tree tokens: {total_tree_tokens:,}')
+    print(f'  Avg tokens/problem: {total_tokens/max(total,1):.0f}')
+    print()
+
+compute_stats('${LAZY_RESULT_DIR}', 'lazy_beam_search')
+compute_stats('${ASYNC_RESULT_DIR}', 'async_beam_search')
+compute_stats('${SYNC_RESULT_DIR}', 'beam_search')
+"
+
+# Show avg_result.json if available
+echo ""
+echo "--- avg_result.json ---"
+echo "lazy_beam_search:"
+cat "${LAZY_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
+echo ""
+echo "async_beam_search:"
+cat "${ASYNC_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
+echo ""
+echo "beam_search:"
+cat "${SYNC_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
+
+# --- GPU Utilization Summary ---
+echo ""
+echo "--- GPU Utilization (from ${SAVE_DIR}/gpu_utilization.csv) ---"
+if [ -f "${SAVE_DIR}/gpu_utilization.csv" ]; then
+    echo "Samples collected: $(wc -l < "${SAVE_DIR}/gpu_utilization.csv")"
+    echo "Average utilization per GPU:"
+    python -c "
+import csv
+from collections import defaultdict
+utils = defaultdict(list)
+with open('${SAVE_DIR}/gpu_utilization.csv') as f:
+    reader = csv.reader(f)
+    header = next(reader, None)
+    for row in reader:
+        if len(row) >= 3:
+            gpu_idx = row[1].strip()
+            try:
+                util = float(row[2].strip().replace(' %', ''))
+                utils[gpu_idx].append(util)
+            except ValueError:
+                pass
+for gpu in sorted(utils.keys()):
+    vals = utils[gpu]
+    print(f'  GPU {gpu}: avg={sum(vals)/len(vals):.1f}%, min={min(vals):.0f}%, max={max(vals):.0f}% ({len(vals)} samples)')
+" 2>/dev/null || echo "  (parse error)"
+fi
+
+echo ""
+echo "========================================"
+echo "BENCHMARK COMPLETE: $(date)"
+echo "========================================"

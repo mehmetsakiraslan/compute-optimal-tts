@@ -96,7 +96,11 @@ done
 echo "LM: $LM, RM: $RM, task: $task_name, tree_max_width: $tree_max_width, num_sequence: $num_sequence, question_parallel_num: $question_parallel_num"
 echo "batch_size: $batch_size, max_time: $max_time, n_gpus: $n_gpus, double_line_break: $double_line_break"
 
-if [ $method == "async_beam_search" ]; then
+if [ $method == "lazy_beam_search" ]; then
+    temperature=0.7
+    max_new_tokens=2048
+    tree_max_depth=40
+elif [ $method == "async_beam_search" ]; then
     temperature=0.7
     max_new_tokens=2048
     tree_max_depth=40
