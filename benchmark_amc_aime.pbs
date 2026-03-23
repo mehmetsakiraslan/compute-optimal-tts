@@ -1,20 +1,20 @@
 #!/bin/bash
 #PBS -l select=1:ncpus=16:ngpus=2:mem=128gb
-#PBS -l walltime=08:00:00
+#PBS -l walltime=04:00:00
 #PBS -q workq@e5-cse-cbgpu02.eecscl.psu.edu
-#PBS -N math500_bench
+#PBS -N amc_aime_bench
 #PBS -k oed
-#PBS -o /scratch/msa6093/compute-optimal-tts/benchmark_math500.out
-#PBS -e /scratch/msa6093/compute-optimal-tts/benchmark_math500.err
+#PBS -o /scratch/msa6093/compute-optimal-tts/benchmark_amc_aime.out
+#PBS -e /scratch/msa6093/compute-optimal-tts/benchmark_amc_aime.err
 #PBS -V
 
 # ============================================================
-# MATH-500 Benchmark: async_beam_search vs beam_search
+# AMC23 & AIME24 Benchmark: lazy_beam_search vs beam_search
 # Compares accuracy (majority_vote) and throughput (wall-clock)
 # ============================================================
 
 echo "========================================"
-echo "MATH-500 BENCHMARK START: $(date)"
+echo "AMC23 & AIME24 BENCHMARK START: $(date)"
 echo "HOST: $(hostname)"
 echo "========================================"
 
@@ -29,8 +29,6 @@ conda activate /scratch/msa6093/.conda/envs/tts
 export PYTHONPATH=/scratch/msa6093/compute-optimal-tts/src
 cd /scratch/msa6093/compute-optimal-tts/src
 
-# PBS may set CUDA_VISIBLE_DEVICES to GPU UUIDs; normalize to numeric indices
-# (vLLM cannot parse UUID format, so remap to 0,1 for the 2 allocated GPUs)
 export CUDA_VISIBLE_DEVICES=0,1
 
 # --- Configuration ---
@@ -42,10 +40,11 @@ WORKER_BASE_PORT=10081
 LOGDIR="${PYTHONPATH}/logs_fastchat"
 export LOGDIR
 
-SAVE_DIR="/scratch/msa6093/compute-optimal-tts/output_benchmark"
+SAVE_DIR="/scratch/msa6093/compute-optimal-tts/output_benchmark_amc_aime"
 mkdir -p "${SAVE_DIR}"
-# Clear old results to avoid mixing with new run
-rm -rf "${SAVE_DIR}/MATH_async_beam_search" "${SAVE_DIR}/MATH_beam_search"
+# Clear old results
+rm -rf "${SAVE_DIR}/AMC23_lazy_beam_search" "${SAVE_DIR}/AMC23_beam_search"
+rm -rf "${SAVE_DIR}/AIME24_lazy_beam_search" "${SAVE_DIR}/AIME24_beam_search"
 
 # --- Cleanup function ---
 cleanup() {
@@ -84,7 +83,7 @@ RM_WORKER_PID=$!
 echo "RM Worker PID: ${RM_WORKER_PID}"
 sleep 2
 
-# --- Start Language Model worker ---
+# --- Start Language Model worker (GPU 1) ---
 LM_WORKER_PORT=$((WORKER_BASE_PORT + 1))
 echo "=== Starting Language Model worker on port ${LM_WORKER_PORT} (GPU 1) ==="
 CUDA_VISIBLE_DEVICES=1 python -m reason.llm_service.workers.vllm_worker \
@@ -150,83 +149,112 @@ nvidia-smi --query-gpu=timestamp,index,utilization.gpu,memory.used,memory.total 
 GPU_MONITOR_PID=$!
 echo "GPU Monitor PID: ${GPU_MONITOR_PID}"
 
-# Log initial GPU state
 echo ""
 echo "=== GPU State ==="
 nvidia-smi --query-gpu=index,name,memory.total,memory.free \
     --format=csv,noheader
 echo ""
 
+# Common eval args
+COMMON_ARGS="--LM ${LM_PATH} --RM ${RM_PATH} \
+    --temperature 0.7 --max_new_tokens 2048 --num_sequence 1 \
+    --tree_max_width 4 --tree_max_depth 40 --save_dir ${SAVE_DIR} \
+    --num_worker 1 --controller_addr ${CONTROLLER_ADDR} \
+    --add_step_prompt --double_line_break 1 \
+    --max_time 0 --local 1"
+
 # ============================================================
-# BENCHMARK 1: async_beam_search on MATH-500
+# BENCHMARK 1: AMC23 lazy_beam_search
 # ============================================================
 echo ""
 echo "========================================"
-echo "BENCHMARK 1: async_beam_search (MATH-500)"
+echo "BENCHMARK 1: AMC23 lazy_beam_search"
 echo "========================================"
-ASYNC_START=$(date +%s)
+AMC_LAZY_START=$(date +%s)
 echo "Start: $(date)"
 
 python reason/evaluation/evaluate.py \
-    --LM "${LM_PATH}" \
-    --RM "${RM_PATH}" \
-    --task_name MATH \
-    --temperature 0.7 \
-    --max_new_tokens 2048 \
-    --num_sequence 1 \
-    --tree_max_width 4 \
-    --tree_max_depth 40 \
-    --save_dir "${SAVE_DIR}" \
-    --method async_beam_search \
-    --num_worker 1 \
-    --controller_addr "${CONTROLLER_ADDR}" \
-    --add_step_prompt \
-    --double_line_break 1 \
-    --batch_size 500 \
-    --max_time 0 \
-    --local 1
+    ${COMMON_ARGS} \
+    --task_name AMC23 \
+    --method lazy_beam_search \
+    --prune_interval 2 \
+    --batch_size 40
 
-ASYNC_RC=$?
-ASYNC_END=$(date +%s)
-ASYNC_ELAPSED=$((ASYNC_END - ASYNC_START))
-echo "async_beam_search exit code: ${ASYNC_RC}"
-echo "async_beam_search wall-clock: ${ASYNC_ELAPSED}s"
+AMC_LAZY_RC=$?
+AMC_LAZY_END=$(date +%s)
+AMC_LAZY_ELAPSED=$((AMC_LAZY_END - AMC_LAZY_START))
+echo "AMC23 lazy_beam_search exit code: ${AMC_LAZY_RC}"
+echo "AMC23 lazy_beam_search wall-clock: ${AMC_LAZY_ELAPSED}s"
 echo "Finished: $(date)"
 
 # ============================================================
-# BENCHMARK 2: beam_search on MATH-500
+# BENCHMARK 2: AMC23 beam_search
 # ============================================================
 echo ""
 echo "========================================"
-echo "BENCHMARK 2: beam_search (MATH-500)"
+echo "BENCHMARK 2: AMC23 beam_search"
 echo "========================================"
-SYNC_START=$(date +%s)
+AMC_SYNC_START=$(date +%s)
 echo "Start: $(date)"
 
 python reason/evaluation/evaluate.py \
-    --LM "${LM_PATH}" \
-    --RM "${RM_PATH}" \
-    --task_name MATH \
-    --temperature 0.7 \
-    --max_new_tokens 2048 \
-    --num_sequence 1 \
-    --tree_max_width 4 \
-    --tree_max_depth 40 \
-    --save_dir "${SAVE_DIR}" \
+    ${COMMON_ARGS} \
+    --task_name AMC23 \
     --method beam_search \
-    --num_worker 1 \
-    --controller_addr "${CONTROLLER_ADDR}" \
-    --add_step_prompt \
-    --double_line_break 1 \
-    --batch_size 500 \
-    --max_time 0 \
-    --local 1
+    --batch_size 40
 
-SYNC_RC=$?
-SYNC_END=$(date +%s)
-SYNC_ELAPSED=$((SYNC_END - SYNC_START))
-echo "beam_search exit code: ${SYNC_RC}"
-echo "beam_search wall-clock: ${SYNC_ELAPSED}s"
+AMC_SYNC_RC=$?
+AMC_SYNC_END=$(date +%s)
+AMC_SYNC_ELAPSED=$((AMC_SYNC_END - AMC_SYNC_START))
+echo "AMC23 beam_search exit code: ${AMC_SYNC_RC}"
+echo "AMC23 beam_search wall-clock: ${AMC_SYNC_ELAPSED}s"
+echo "Finished: $(date)"
+
+# ============================================================
+# BENCHMARK 3: AIME24 lazy_beam_search
+# ============================================================
+echo ""
+echo "========================================"
+echo "BENCHMARK 3: AIME24 lazy_beam_search"
+echo "========================================"
+AIME_LAZY_START=$(date +%s)
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    ${COMMON_ARGS} \
+    --task_name AIME24 \
+    --method lazy_beam_search \
+    --prune_interval 2 \
+    --batch_size 30
+
+AIME_LAZY_RC=$?
+AIME_LAZY_END=$(date +%s)
+AIME_LAZY_ELAPSED=$((AIME_LAZY_END - AIME_LAZY_START))
+echo "AIME24 lazy_beam_search exit code: ${AIME_LAZY_RC}"
+echo "AIME24 lazy_beam_search wall-clock: ${AIME_LAZY_ELAPSED}s"
+echo "Finished: $(date)"
+
+# ============================================================
+# BENCHMARK 4: AIME24 beam_search
+# ============================================================
+echo ""
+echo "========================================"
+echo "BENCHMARK 4: AIME24 beam_search"
+echo "========================================"
+AIME_SYNC_START=$(date +%s)
+echo "Start: $(date)"
+
+python reason/evaluation/evaluate.py \
+    ${COMMON_ARGS} \
+    --task_name AIME24 \
+    --method beam_search \
+    --batch_size 30
+
+AIME_SYNC_RC=$?
+AIME_SYNC_END=$(date +%s)
+AIME_SYNC_ELAPSED=$((AIME_SYNC_END - AIME_SYNC_START))
+echo "AIME24 beam_search exit code: ${AIME_SYNC_RC}"
+echo "AIME24 beam_search wall-clock: ${AIME_SYNC_ELAPSED}s"
 echo "Finished: $(date)"
 
 # ============================================================
@@ -234,26 +262,26 @@ echo "Finished: $(date)"
 # ============================================================
 echo ""
 echo "========================================"
-echo "MATH-500 BENCHMARK RESULTS"
+echo "AMC23 & AIME24 BENCHMARK RESULTS"
 echo "========================================"
 echo ""
 echo "--- Timing ---"
-echo "async_beam_search: ${ASYNC_ELAPSED}s (exit code: ${ASYNC_RC})"
-echo "beam_search:       ${SYNC_ELAPSED}s (exit code: ${SYNC_RC})"
+echo "AMC23  lazy_beam_search: ${AMC_LAZY_ELAPSED}s (exit code: ${AMC_LAZY_RC})"
+echo "AMC23  beam_search:      ${AMC_SYNC_ELAPSED}s (exit code: ${AMC_SYNC_RC})"
+echo "AIME24 lazy_beam_search: ${AIME_LAZY_ELAPSED}s (exit code: ${AIME_LAZY_RC})"
+echo "AIME24 beam_search:      ${AIME_SYNC_ELAPSED}s (exit code: ${AIME_SYNC_RC})"
 echo ""
 
-ASYNC_RESULT_DIR="${SAVE_DIR}/MATH_async_beam_search/Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
-SYNC_RESULT_DIR="${SAVE_DIR}/MATH_beam_search/Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
+RESULT_SUBDIR="Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
 
 echo "--- Accuracy ---"
 python -c "
 import json, os, glob
 
-def compute_stats(result_dir):
+def compute_stats(result_dir, label):
     correct = 0
     total = 0
     total_tokens = 0
-    total_tree_tokens = 0
     for jsonl_path in sorted(glob.glob(os.path.join(result_dir, '*/record_0.jsonl'))):
         with open(jsonl_path) as f:
             for line in f:
@@ -261,38 +289,33 @@ def compute_stats(result_dir):
                 total += 1
                 correct += d['result']['majority_vote']
                 total_tokens += d['result']['total_completion_tokens']
-                for out in d.get('output', []):
-                    total_tree_tokens += out.get('tree_completion_tokens', 0)
-    return correct, total, total_tokens, total_tree_tokens
+    print(f'{label}:')
+    print(f'  Accuracy: {correct}/{total} = {correct/max(total,1)*100:.1f}%')
+    print(f'  Total completion tokens: {total_tokens:,}')
+    print(f'  Avg tokens/problem: {total_tokens/max(total,1):.0f}')
+    print()
 
-print('async_beam_search:')
-c, t, tok, tree_tok = compute_stats('${ASYNC_RESULT_DIR}')
-print(f'  Accuracy: {c}/{t} = {c/max(t,1)*100:.1f}%')
-print(f'  Total completion tokens: {tok:,}')
-print(f'  Total tree tokens: {tree_tok:,}')
-print(f'  Avg tokens/problem: {tok/max(t,1):.0f}')
-print()
-
-print('beam_search:')
-c, t, tok, tree_tok = compute_stats('${SYNC_RESULT_DIR}')
-print(f'  Accuracy: {c}/{t} = {c/max(t,1)*100:.1f}%')
-print(f'  Total completion tokens: {tok:,}')
-print(f'  Total tree tokens: {tree_tok:,}')
-print(f'  Avg tokens/problem: {tok/max(t,1):.0f}')
+base = '${SAVE_DIR}'
+sub = '${RESULT_SUBDIR}'
+compute_stats(f'{base}/AMC23_lazy_beam_search/{sub}', 'AMC23 lazy_beam_search')
+compute_stats(f'{base}/AMC23_beam_search/{sub}', 'AMC23 beam_search')
+compute_stats(f'{base}/AIME24_lazy_beam_search/{sub}', 'AIME24 lazy_beam_search')
+compute_stats(f'{base}/AIME24_beam_search/{sub}', 'AIME24 beam_search')
 "
 
-# Show avg_result.json if available
 echo ""
 echo "--- avg_result.json ---"
-echo "async_beam_search:"
-cat "${ASYNC_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
-echo ""
-echo "beam_search:"
-cat "${SYNC_RESULT_DIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
+for TASK in AMC23 AIME24; do
+    for METHOD in lazy_beam_search beam_search; do
+        echo "${TASK} ${METHOD}:"
+        cat "${SAVE_DIR}/${TASK}_${METHOD}/${RESULT_SUBDIR}/avg_result.json" 2>/dev/null || echo "  (not found)"
+        echo ""
+    done
+done
 
 # --- GPU Utilization Summary ---
 echo ""
-echo "--- GPU Utilization (from ${SAVE_DIR}/gpu_utilization.csv) ---"
+echo "--- GPU Utilization ---"
 if [ -f "${SAVE_DIR}/gpu_utilization.csv" ]; then
     echo "Samples collected: $(wc -l < "${SAVE_DIR}/gpu_utilization.csv")"
     echo "Average utilization per GPU:"
