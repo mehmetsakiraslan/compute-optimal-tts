@@ -52,6 +52,9 @@ class LazyPruningSearchTree(SearchTree):
         # PRM scores: maps id(node) -> float, protected by lock
         self._prm_scores: Dict[int, float] = {}
         self._prm_lock = threading.Lock()
+        # Keep references to scored nodes so GC doesn't reclaim their
+        # memory addresses (which would invalidate id()-based lookups).
+        self._scored_node_refs: List[LanguageNode] = []
         # Lock for _completion_tokens (modified from ThreadPoolExecutor workers)
         self._tokens_lock = threading.Lock()
 
@@ -186,7 +189,8 @@ class LazyPruningSearchTree(SearchTree):
                 # per depth equals sync; using max_frontier_width here
                 # would expand more nodes than sync at every non-prune depth.
                 frontier = self._cap_frontier_lightweight(
-                    next_frontier, beam_size, len(end_nodes)
+                    next_frontier, beam_size, len(end_nodes),
+                    current_depth=depth, reward_model_fn=reward_model_fn,
                 )
 
         # Phase 4: Signal PRM done and wait
@@ -286,6 +290,9 @@ class LazyPruningSearchTree(SearchTree):
                             score = 0.0
                         self._prm_scores[id(node)] = score
                         node._initial_value = score
+                        # Retain reference so GC won't reclaim the node's
+                        # memory address (which would invalidate id() lookups).
+                        self._scored_node_refs.append(node)
                 logger.info(
                     f"PRM scored {len(batch_nodes)} nodes, "
                     f"scores: {[self._prm_scores[id(n)] for n in batch_nodes]}"
@@ -361,6 +368,31 @@ class LazyPruningSearchTree(SearchTree):
     # Frontier pruning (deterministic — scores guaranteed available)
     # ------------------------------------------------------------------
 
+    def _score_node_with_ancestors(
+        self, node: LanguageNode
+    ) -> Tuple[int, float]:
+        """Score a node using PRM scores, walking up ancestors if needed.
+
+        Returns (tier, score) where tier indicates score source:
+          2 = node's own PRM score
+          1 = nearest ancestor's PRM score
+          0 = LM log-prob fallback
+        """
+        with self._prm_lock:
+            # Tier 2: node's own PRM score
+            node_score = self._prm_scores.get(id(node))
+            if node_score is not None:
+                return (2, node_score)
+            # Tier 1: walk up ancestors to find nearest scored node
+            ancestor = node.parent
+            while ancestor is not None:
+                ancestor_score = self._prm_scores.get(id(ancestor))
+                if ancestor_score is not None:
+                    return (1, ancestor_score)
+                ancestor = ancestor.parent
+        # Tier 0: LM log-prob fallback
+        return (0, node.prior_p)
+
     def _prune_frontier(
         self,
         frontier: List[Tuple[LanguageNode, CoTEnv]],
@@ -380,16 +412,7 @@ class LazyPruningSearchTree(SearchTree):
             return frontier
 
         def score_fn(entry: Tuple[LanguageNode, CoTEnv]) -> Tuple[int, float]:
-            node = entry[0]
-            with self._prm_lock:
-                node_score = self._prm_scores.get(id(node))
-                if node_score is not None:
-                    return (2, node_score)
-                if node.parent is not None:
-                    parent_score = self._prm_scores.get(id(node.parent))
-                    if parent_score is not None:
-                        return (1, parent_score)
-            return (0, node.prior_p)
+            return self._score_node_with_ancestors(entry[0])
 
         scored = sorted(frontier, key=score_fn, reverse=True)
         kept = scored[:cap]
@@ -407,14 +430,18 @@ class LazyPruningSearchTree(SearchTree):
         frontier: List[Tuple[LanguageNode, CoTEnv]],
         beam_size: int,
         num_end_nodes: int,
+        current_depth: int = -1,
+        reward_model_fn: Optional[Callable] = None,
     ) -> List[Tuple[LanguageNode, CoTEnv]]:
-        """Cap frontier to beam_size at every depth.
+        """Cap frontier to beam_size at every depth (hybrid sync/async).
 
-        Matches sync beam_search's frontier width so the LM workload per
-        depth is identical. The PRM overlap then yields a pure speed gain
-        (no extra LM cost). Uses PRM scores opportunistically if the
-        background worker has already scored the node or its parent,
-        falls back to LM log-prob.
+        Fast path: when frontier <= cap, no capping needed — async preserved.
+        When capping is required:
+          1. Wait for parent-depth PRM scores.
+          2. Check how many frontier nodes have tier-1+ ancestor scores.
+          3. If coverage >= 50%, use ancestor scores (async path).
+          4. Otherwise, make a synchronous PRM call on all frontier nodes
+             to ensure every capping decision is PRM-guided.
         """
         cap = max(0, beam_size - num_end_nodes)
 
@@ -424,24 +451,83 @@ class LazyPruningSearchTree(SearchTree):
         if len(frontier) <= cap:
             return frontier
 
-        def score_fn(entry: Tuple[LanguageNode, CoTEnv]) -> Tuple[int, float]:
-            node = entry[0]
-            with self._prm_lock:
-                node_score = self._prm_scores.get(id(node))
-                if node_score is not None:
-                    return (2, node_score)
-                if node.parent is not None:
-                    parent_score = self._prm_scores.get(id(node.parent))
-                    if parent_score is not None:
-                        return (1, parent_score)
-            return (0, node.prior_p)
+        # Wait for parent-depth PRM scores (async scores for parents).
+        parent_depth = current_depth - 1
+        if parent_depth >= 0 and parent_depth in self._depth_scored_events:
+            self._depth_scored_events[parent_depth].wait(timeout=5.0)
 
-        scored = sorted(frontier, key=score_fn, reverse=True)
+        # Check PRM coverage: how many frontier nodes have tier-1+ scores?
+        tier_counts = {0: 0, 1: 0, 2: 0}
+        for node, env in frontier:
+            tier, _ = self._score_node_with_ancestors(node)
+            tier_counts[tier] += 1
+
+        high_quality = tier_counts[1] + tier_counts[2]
+        coverage = high_quality / len(frontier)
+
+        if coverage >= 0.5:
+            # Fast path: enough async PRM info to make an informed decision.
+            scored = sorted(
+                frontier,
+                key=lambda e: self._score_node_with_ancestors(e[0]),
+                reverse=True,
+            )
+            kept = scored[:cap]
+            tiers = [self._score_node_with_ancestors(e[0])[0] for e in kept]
+            logger.info(
+                f"Lightweight cap (async): {len(frontier)} -> {len(kept)} "
+                f"(cap={cap}, coverage={coverage:.0%}, tiers={tiers})"
+            )
+            return kept
+
+        # Slow path: insufficient async coverage — synchronous PRM scoring.
+        if reward_model_fn is not None:
+            logger.info(
+                f"Lightweight cap: sync PRM fallback on {len(frontier)} nodes "
+                f"(coverage={coverage:.0%}, tier_counts={dict(tier_counts)})"
+            )
+            prm_inputs = [
+                (env.question, env.answer) for _, env in frontier
+            ]
+            try:
+                with nvtx_range("lazy_sync_prm_cap", NVTXColors.RM_YELLOW):
+                    prm_results = reward_model_fn(prm_inputs)
+
+                scored = []
+                for i, ((node, env), rs) in enumerate(zip(frontier, prm_results)):
+                    if isinstance(rs, list) and len(rs) > 0:
+                        score = rs[-1]
+                    elif isinstance(rs, (int, float)):
+                        score = float(rs)
+                    else:
+                        score = 0.0
+                    with self._prm_lock:
+                        self._prm_scores[id(node)] = score
+                        self._scored_node_refs.append(node)
+                    node._initial_value = score
+                    scored.append((score, i, node, env))
+
+                scored.sort(key=lambda x: -x[0])
+                kept = [(node, env) for _, _, node, env in scored[:cap]]
+                logger.info(
+                    f"Lightweight cap (sync): {len(frontier)} -> {len(kept)} "
+                    f"(cap={cap}, scores={[s for s,_,_,_ in scored[:cap]]})"
+                )
+                return kept
+            except Exception as e:
+                logger.warning(f"Sync PRM fallback failed: {e}, using LM log-prob")
+
+        # Final fallback: LM log-prob (tier-0)
+        scored = sorted(
+            frontier,
+            key=lambda e: self._score_node_with_ancestors(e[0]),
+            reverse=True,
+        )
         kept = scored[:cap]
-        tiers = [score_fn(e)[0] for e in kept]
+        tiers = [self._score_node_with_ancestors(e[0])[0] for e in kept]
         logger.info(
-            f"Lightweight cap: {len(frontier)} -> {len(kept)} "
-            f"(beam_size={beam_size}, end_nodes={num_end_nodes}, tiers={tiers})"
+            f"Lightweight cap (fallback): {len(frontier)} -> {len(kept)} "
+            f"(cap={cap}, tiers={tiers})"
         )
         return kept
 

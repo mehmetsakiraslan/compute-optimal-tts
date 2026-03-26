@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -l select=1:ncpus=16:ngpus=2:mem=128gb
-#PBS -l walltime=04:00:00
-#PBS -q workq@e5-cse-cbgpu02.eecscl.psu.edu
+#PBS -l walltime=12:00:00
+#PBS -q workq@e5-cse-cbgpu01.eecscl.psu.edu
 #PBS -N amc_aime_bench
 #PBS -k oed
 #PBS -o /scratch/msa6093/compute-optimal-tts/benchmark_amc_aime.out
@@ -32,8 +32,8 @@ cd /scratch/msa6093/compute-optimal-tts/src
 export CUDA_VISIBLE_DEVICES=0,1
 
 # --- Configuration ---
-LM_PATH="/scratch/msa6093/models/Qwen2.5-1.5B-Instruct"
-RM_PATH="/scratch/msa6093/models/math-shepherd-mistral-7b-prm"
+LM_PATH="/scratch/msa6093/models/Qwen2.5-3B-Instruct"
+RM_PATH="/scratch/msa6093/models/Skywork-o1-Open-PRM-Qwen-2.5-7B"
 HOST_ADDR="0.0.0.0"
 CONTROLLER_PORT=10014
 WORKER_BASE_PORT=10081
@@ -81,7 +81,8 @@ CUDA_VISIBLE_DEVICES=0 python -m reason.llm_service.workers.reward_model_worker 
     > "${LOGDIR}/rm_bench.log" 2>&1 &
 RM_WORKER_PID=$!
 echo "RM Worker PID: ${RM_WORKER_PID}"
-sleep 2
+echo "Waiting 60s for RM worker to fully load Skywork 7B model..."
+sleep 60
 
 # --- Start Language Model worker (GPU 1) ---
 LM_WORKER_PORT=$((WORKER_BASE_PORT + 1))
@@ -92,7 +93,7 @@ CUDA_VISIBLE_DEVICES=1 python -m reason.llm_service.workers.vllm_worker \
     --host ${HOST_ADDR} \
     --port ${LM_WORKER_PORT} \
     --worker-address "http://${HOST_ADDR}:${LM_WORKER_PORT}" \
-    --gpu_memory_utilization 0.88 \
+    --gpu_memory_utilization 0.85 \
     --max_model_length 8192 \
     --swap_space 16 \
     > "${LOGDIR}/lm_bench.log" 2>&1 &
@@ -118,8 +119,8 @@ except:
 
     HAS_LM=0
     HAS_RM=0
-    if echo "$MODELS" | grep -q "Qwen2.5-1.5B-Instruct"; then HAS_LM=1; fi
-    if echo "$MODELS" | grep -q "math-shepherd"; then HAS_RM=1; fi
+    if echo "$MODELS" | grep -q "Qwen2.5-3B-Instruct"; then HAS_LM=1; fi
+    if echo "$MODELS" | grep -q "Skywork"; then HAS_RM=1; fi
 
     if [ $HAS_LM -eq 1 ] && [ $HAS_RM -eq 1 ]; then
         echo "Both workers registered!"
@@ -157,7 +158,7 @@ echo ""
 
 # Common eval args
 COMMON_ARGS="--LM ${LM_PATH} --RM ${RM_PATH} \
-    --temperature 0.7 --max_new_tokens 2048 --num_sequence 1 \
+    --temperature 0.7 --max_new_tokens 2048 --num_sequence 4 \
     --tree_max_width 4 --tree_max_depth 40 --save_dir ${SAVE_DIR} \
     --num_worker 1 --controller_addr ${CONTROLLER_ADDR} \
     --add_step_prompt --double_line_break 1 \
@@ -272,7 +273,7 @@ echo "AIME24 lazy_beam_search: ${AIME_LAZY_ELAPSED}s (exit code: ${AIME_LAZY_RC}
 echo "AIME24 beam_search:      ${AIME_SYNC_ELAPSED}s (exit code: ${AIME_SYNC_RC})"
 echo ""
 
-RESULT_SUBDIR="Qwen2.5-1.5B-Instruct/math-shepherd-mistral-7b-prm/40_4_1"
+RESULT_SUBDIR="Qwen2.5-3B-Instruct/Skywork-o1-Open-PRM-Qwen-2.5-7B/40_4_4"
 
 echo "--- Accuracy ---"
 python -c "
